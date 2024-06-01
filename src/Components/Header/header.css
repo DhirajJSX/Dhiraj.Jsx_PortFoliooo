@@ -2,11 +2,7 @@
     position: relative;
     overflow: hidden;
 }
-.bg-blur {
-   background: transparent;
-   backdrop-filter: blur(0.8);
-  }
-  
+
 #socialHandle .flex:hover svg,
 #socialHandle .flex:hover a  {
     color: white; 
