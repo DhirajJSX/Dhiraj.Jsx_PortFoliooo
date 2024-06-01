@@ -1,0 +1,200 @@
+/* General Styles for Hero Section */
+.hero-section {
+    background-color: #1f2937; /* bg-gray-800 */
+    color: #ffffff; /* text-white */
+    min-height: 100vh; /* min-h-screen */
+    display: flex; /* flex */
+    align-items: center; /* items-center */
+    margin-top: 2.5rem; /* mt-10 */
+    padding: 2rem; /* General padding */
+}
+
+.container {
+    max-width: 1140px; /* mx-auto */
+    margin: 0 auto;
+    padding: 0px; /* p-8 */
+    display: flex;
+    flex-direction: column; /* flex-col */
+    align-items: center; /* items-center */
+}
+
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row; /* md:flex-row */
+        justify-content: space-between; /* Align children with space between on medium screens */
+    }
+}
+
+.text-center {
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .text-left-md {
+        text-align: left; /* md:text-left */
+    }
+}
+
+.mb-8 {
+    margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+    .mb-0-md {
+        margin-bottom: 0; /* md:mb-0 */
+    }
+
+    
+}
+
+#heading1 {
+    font-size: 30px; /* text-[30px] */
+    line-height: 1.1;
+    font-family: 'Bebas Neue', cursive; /* font-Bebasneue */
+    font-weight: bold; /* font-bold */
+    margin-top: 3rem; /* Default margin-top */
+}
+
+.text-lg {
+    font-size: 15px; /* text-[15px] */
+}
+
+@media (min-width: 640px) {
+    #heading1 {
+        font-size: 3rem; /* sm:text-5xl */
+        margin-top: 2rem; /* Adjust margin-top for small screens */
+    }
+
+
+    .text-lg {
+        font-size: 1.25rem; /* sm:text-xl */
+    }
+   
+}
+
+@media (min-width: 768px) {
+    #heading1 {
+        font-size: 4rem; /* md:text-6xl */
+        margin-top: 6rem; /* Adjust margin-top for medium screens */
+    }
+
+    .text-lg {
+        font-size: 1.5rem; /* md:text-2xl */
+    }
+    
+}
+
+.max-w-md {
+    max-width: 28rem;
+}
+
+.mt-4 {
+    margin-top: 1rem;
+}
+
+.md-mx-0 {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* Media queries for Hero Section */
+@media (max-width: 768px) {
+    .md:w-1 {
+        width: 100%;
+    }
+    #heading {
+        font-size: 23px;
+    }
+    .md:w-1:nth-child(2) {
+        display: none;
+    }
+
+    .container {
+        max-width: 100%;
+        margin: 0 auto;
+        
+        padding-top: 2rem; /* Adding padding to top for mobile */
+        padding-bottom: 2rem; /* Adding padding to bottom for mobile */
+    }
+
+    #heading1 {
+        font-size: 30px;
+        line-height: 1.1;
+        margin-top: 5rem; /* Adjust margin-top for small screens */
+        padding: 0; /* Adding padding to sides for mobile */
+    }
+
+    
+
+    #HeroImg {
+        width: 100%; /* Set width to 100% for mobile */
+        height: auto;
+        border-radius: 15px; /* Set height to auto for mobile */
+    }
+    .text-lg {
+        font-size: 1rem; /* Adjust font-size for mobile */
+        padding: 0 1rem; /* Adding padding to sides for mobile */
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .md:w-1 {
+        width: 50%;
+    }
+
+
+    #HeroImg {
+        max-width: 100%;
+        height: auto;
+        border-radius: 30px;
+    }
+
+    .container {
+        padding: 0 2rem;
+    }
+
+    #heading1 {
+        font-size: 3.5rem;
+        margin-top: 2rem;
+    }
+
+   
+}
+
+/* Larger screens adjustments */
+@media (min-width: 1025px) {
+    .container {
+        padding: 0 3rem;
+    }
+
+    #heading1 {
+        font-size: 4.5rem;
+        margin-top: 4rem;
+    }
+
+    .text-lg {
+        font-size: 1.75rem; /* Larger text size for large screens */
+    }
+    #HeroImg {
+        max-width: 100%; /* Set max-width to 100% for larger screens */
+        height: auto; /* Set height to auto for larger screens */
+    }
+}
+@keyframes sketch {
+    0% {
+      transform: scale(1) rotateY(0deg) perspective(500px);
+    }
+    50% {
+      transform: scale(1.02) rotateY(2deg) perspective(500px);
+    }
+    100% {
+      transform: scale(1) rotateY(-2deg) perspective(500px);
+    }
+  }
+  
+  .sketch-animation {
+    animation: sketch 1s ease-in-out infinite alternate;
+  }
+  .bg-radial-gradient {
+  background: radial-gradient(circle, #111827 10%, rgba(0,0,0,0.9) 100%);
+}
