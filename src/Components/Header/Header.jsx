@@ -68,13 +68,15 @@ const Header = () => {
         >
             <div className="flex items-center md:mb-0 m-2 px-4">
                 <div className="relative my-1" ref={profileRef}>
-                    <motion.img 
+                     <motion.img 
                         src={Profile}
                         alt="Profile"
                         className="w-[50px] rounded-full cursor-pointer mr-2 shadow-md"
                         onClick={handleProfileClick}
                         whileHover={{ scale: 1.1 }} 
-                    />
+                        whileTap={{ scale: 0.9, rotateZ: 500 }} // Add a 3D tap effect
+                        animate={{ y: [0, -3, 0], transition: { duration: 1, repeat: Infinity } }} // Looping animation
+                    />  
                     {showSocialHandles && (
                         <motion.div // Use motion.div for social handles container
                             id='socialHandle'
