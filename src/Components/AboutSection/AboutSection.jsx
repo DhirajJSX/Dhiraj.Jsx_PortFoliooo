@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import ProfileImage from './../../assets/Img/PROFILE.jpg'; 
 
 const AboutSection = () => {
@@ -16,30 +16,42 @@ const AboutSection = () => {
       }
     };
 
-
     window.addEventListener('scroll', handleScroll);
     return () => {
-      
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-
 
   const titleVariants = {
     hidden: { opacity: 0, scale: 0.5 },
     visible: { opacity: 1, scale: 1, transition: { duration: 0.8 } },
   };
 
+  const imageVariants = {
+    hidden: { opacity: 0, scale: 0 },
+    visible: { opacity: 1, scale: 1, transition: { duration: 1, delay: 0.4 } },
+  };
+
   return (
     <section id="about-section" className="min-h-screen flex items-center bg-radial-gradient text-white">
       <div className="container mx-auto flex flex-col md:flex-row items-center text-center md:text-left px-4 md:px-8 lg:px-16">
-        <div className="md:w-1/2 flex justify-center mb-8 md:mb-0 cursor-pointer">
-          <img
-            src={ProfileImage} 
-            alt="Profile"
-            className="w-[200px] h-[200px] md:w-[300px] md:h-[300px] rounded-full shadow-md"
-          />
-        </div>
+        <AnimatePresence>
+          {isVisible && (
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={imageVariants}
+              exit="hidden"
+              className="md:w-1/2 flex justify-center mb-8 md:mb-0 cursor-pointer"
+            >
+              <img
+                src={ProfileImage} 
+                alt="Profile"
+                className="w-[200px] h-[200px] md:w-[300px] md:h-[300px] rounded-full shadow-md"
+              />
+            </motion.div>
+          )}
+        </AnimatePresence>
         <div className="md:w-1/2 flex flex-col items-center md:items-start">
           <motion.h1
             className="text-4xl sm:text-5xl md:text-6xl font-bold mb-8"
