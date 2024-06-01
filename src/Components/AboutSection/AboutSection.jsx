@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import ProfileImage from './../../assets/Img/PROFILE.jpg';
+import './../../Components/AboutSection/AboutSection.css';
 
 const AboutSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -24,7 +25,7 @@ const AboutSection = () => {
 
   return (
     <section id="about-section" className="min-h-screen flex items-center bg-radial-gradient text-white">
-      <div className="container mx-auto flex flex-col md:flex-row items-center text-center md:text-left px-4 md:px-8 lg:px-16">
+      <div id='Contain' className="container mx-auto flex flex-col md:flex-row items-center text-center md:text-left px-4 md:px-8 lg:px-16">
         <AnimatePresence>
           {isVisible && (
             <motion.div
@@ -33,7 +34,7 @@ const AboutSection = () => {
               exit={{ opacity: 0, rotateY: 90, scale: 0.8, transition: { duration: 1 } }}
               className="md:w-1/2 flex justify-center mb-8 md:mb-0 cursor-pointer"
             >
-              <img
+              <img id='Image'
                 src={ProfileImage}
                 alt="Profile"
                 className="w-[200px] h-[200px] md:w-[300px] md:h-[300px] rounded-full shadow-md"
@@ -62,8 +63,8 @@ const AboutSection = () => {
               &nbsp;Me
             </motion.span>
           </motion.h1>
-          <motion.p
-            className="sm:text-xl md:text-2xl max-w-2xl font-Caveat p-6 rounded-[30px] bg-white text-black shadow-md"
+          <motion.p id='pTag'
+            className="sm:text-xl md:text-2xl max-w-2xl font-Caveat font-bold p-6 rounded-[30px] bg-white text-black shadow-md"
             initial={{ opacity: 0, y: 50, rotateX: -90, scale: 0.8 }}
             animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 50, rotateX: 0, scale: 1, transition: { duration: 1, delay: 0.6 } }}
           >

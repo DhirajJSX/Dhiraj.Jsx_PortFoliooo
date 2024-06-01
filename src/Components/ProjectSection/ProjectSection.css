@@ -1,0 +1,136 @@
+/* Container for the entire project section */
+.project-section {
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #f0f0f0 0%, #d9d9d9 100%);
+    text-align: center;
+    color: #333;
+}
+
+/* Heading for the project section */
+.project-section h1 {
+    font-size: 42px;
+    margin-bottom: 40px;
+    color: #2c3e50;
+}
+
+/* Container for the project cards */
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Individual project cards */
+.project-card {
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    margin: 15px;
+    padding: 20px;
+    width: 320px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Hover effect for project cards */
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Project titles */
+.project-card h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #3498db;
+}
+
+/* Project descriptions */
+.project-card p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Links to project repositories */
+.project-link {
+    text-decoration: none;
+    color: #e74c3c;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+/* Hover effect for links */
+.project-link:hover {
+    color: #c0392b;
+}
+
+/* Responsive design: adjust layout for smaller screens */
+@media (max-width: 768px) {
+    .project-card {
+        width: 90%;
+    }
+}
+.project-section {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+    color: #333;
+}
+
+.project-section h1 {
+    font-size: 42px;
+    margin-bottom: 40px;
+    color: #2c3e50;
+}
+
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.project-card {
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    margin: 15px;
+    padding: 20px;
+    width: 320px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.project-card h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #3498db;
+}
+
+.project-card p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.project-link {
+    text-decoration: none;
+    color: #e74c3c;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.project-link:hover {
+    color: #c0392b;
+}
+
+.project-image {
+    width: 100%; /* Ensure image fills its container */
+    margin-bottom: 20px; /* Add margin below the image */
+    border-radius: 8px; /* Optional: Add border radius to match project card */
+}
