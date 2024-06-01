@@ -113,10 +113,10 @@ const Header = () => {
                 >
                     DHIRAJ BHAWSAR
                 </motion.h1>
-                <motion.div
+                <motion.div 
                     className={`md:hidden ml-auto ${isMobileMenuOpen ? 'active' : ''}`}
                     onClick={handleToggleMobileMenu}
-                    whileHover={{ scale: 1.1 }} 
+                    whileHover={{ scale: 1.1 }} // Scale effect on hover
                 >
                     <button className="group rounded-lg flex items-center justify-center focus:outline-none">
                         <div className="grid justify-items-center gap-1.5">
@@ -127,29 +127,28 @@ const Header = () => {
                     </button>
                 </motion.div>
             </div>
-            <motion.div 
+            <motion.div // Use motion.div for menu div
                 id='menu-div'
                 className={`text-center font-Josefin md:flex md:items-center text-black ${isMobileMenuOpen ? 'block shadow-2xl bg-gray-900 rounded-b-[10px] text-white' : 'hidden'}`}
-                initial={{ opacity: 0, y: -10 }} 
-                animate={{ opacity: 1, y: 0 }} 
-                transition={{ duration: 0.5 }} 
+                initial={{ opacity: 0, y: -10 }} // Initial animation properties
+                animate={{ opacity: 1, y: 0 }} // Animation on component mount
+                transition={{ duration: 0.5 }} // Transition duration
             >
-               <ul className="flex flex-col md:flex-row">
-                    <li className="p-3">
+               <ul className="flex flex-col md:flex-row rounded-2xl p-3 ">
+                    <li className="p-3 font-extrabold">
                         <a href="#" className="nav-link p-4 relative hover:text-white hover:after:absolute hover:after:left-0 hover:after:w-full hover:after:h-0.5 hover:bg-black  hover:rounded-2xl hover:after:bottom-0 hover:after:content:'' hover:after:transition:width duration-300 hover:after:ease-in-out">Home</a>
                     </li>
-                    <li className="p-3">
+                    <li className="p-3 font-extrabold">
                         <a href="#" className="nav-link p-4 relative hover:text-white hover:after:absolute hover:after:left-0 hover:after:w-full hover:after:h-0.5 hover:bg-black  hover:rounded-2xl hover:after:bottom-0 hover:after:content:'' hover:after:transition:width duration-300 hover:after:ease-in-out">Portfolio</a>
                     </li>
-                    <li className="p-3">
+                    <li className="p-3 font-extrabold">
                         <a href="#" className="nav-link p-4 relative hover:text-white hover:after:absolute hover:after:left-0 hover:after:w-full hover:after:h-0.5 hover:bg-black  hover:rounded-2xl hover:after:bottom-0 hover:after:content:'' hover:after:transition:width duration-300 hover:after:ease-in-out">Projects</a>
                     </li>
-                    <li className="p-3">
+                    <li className="p-3 font-extrabold">
                         <a href="#" className="nav-link p-4 relative hover:text-white hover:after:absolute hover:after:left-0 hover:after:w-full hover:after:h-0.5 hover:bg-black  hover:rounded-2xl hover:after:bottom-0 hover:after:content:'' hover:after:transition:width duration-300 hover:after:ease-in-out">About Me</a>
                     </li>
                     
                     <div className='self-center' id='cv-btn'>
-                        
                         <button className="px-4 p-4 flex py-2 text-white bg-blue-600 rounded-[30px]  hover:bg-blue-500 " onClick={handleDownloadCV}>
                             <span>Download CV</span>
                         </button>
