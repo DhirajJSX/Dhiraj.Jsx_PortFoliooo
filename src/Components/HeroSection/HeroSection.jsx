@@ -65,7 +65,7 @@ TypingEffect.propTypes = {
 const HeroSection = () => {
   return (
     <section className="min-h-screen flex items-center bg-radial-gradient text-white">
-      <div className="container mx-auto p-8 flex flex-col md:flex-row items-center">
+      <div className="container mx-auto  flex flex-col md:flex-row items-center">
         <div className="md:w-1/2 text-center md:text-left mb-8 md:mb-0 mx-9">
           <motion.h1
             id="heading1"

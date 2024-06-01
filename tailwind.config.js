@@ -5,8 +5,16 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        Josefin: ["Josefin Sans", "sans-serif"],
+        Bebasneue:["Bebas Neue", "sans-serif"],
+        Pacifico:["Pacifico", "cursive"],
+        Kushan:["Kaushan Script", "cursive"],
+        Kalam:["Kalam", "cursive"],
+        Caveat:[ "Caveat", "cursive"]
+      },
+    },
   },
   plugins: [],
 }
-

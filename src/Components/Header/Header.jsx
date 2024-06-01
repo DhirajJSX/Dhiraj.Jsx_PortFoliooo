@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';// Import motion and AnimatePresence
+import { useState, useRef, useEffect } from 'react';
 import Profile from './../../assets/Img/20048676-103287613161_1-s5-v1.png'
 import './header.css'
 
