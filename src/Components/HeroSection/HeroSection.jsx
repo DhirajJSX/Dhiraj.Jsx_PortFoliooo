@@ -77,13 +77,15 @@ const HeroSection = () => {
             <span className="font-Pacifico cursor-pointer]">Welcome to My Portfolio...</span>
           </motion.h1>
           <motion.p
-  className="sm:text-xl md:text-2xl max-w-md md:mx-0 mt-4 font-Caveat shadow-xl p-6 rounded-[30px] bg-white text-black"
-  initial={{ opacity: 0, y: 20 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ delay: 1, duration: 1.5, ease: 'easeInOut' }}
->
-  <TypingEffect text="Hey, I'm Dhiraj Bhawsar, a passionate developer with expertise in creating stunning web experiences. Explore my projects and learn more about my journey in the tech world." />
-</motion.p>
+            className="sm:text-xl md:text-2xl max-w-md md:mx-0 mt-4 font-Caveat shadow-xl p-6 rounded-[30px] bg-white text-black"
+            style={{ fontWeight: 'bold' }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1, duration: 1.5, ease: 'easeInOut' }}
+          >
+            <TypingEffect text="Hey, I'm Dhiraj Bhawsar, a passionate developer with expertise in creating stunning web experiences. Explore my projects and learn more about my journey in the tech world." />
+          </motion.p>
+
 
         </div>
         <div className="md:w-1/2 mx-9 flex justify-center cursor-pointer">
