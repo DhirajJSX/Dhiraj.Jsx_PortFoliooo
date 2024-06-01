@@ -68,7 +68,7 @@ const AboutSection = () => {
             initial={{ opacity: 0, y: 50, rotateX: -90, scale: 0.8 }}
             animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 50, rotateX: 0, scale: 1, transition: { duration: 1, delay: 0.6 } }}
           >
-            Hey, I'm Dhiraj Bhawsar, a passionate developer with a knack for creating stunning web experiences. My journey in the tech world has been driven by curiosity and a constant desire to learn and innovate. From developing sleek user interfaces to architecting robust backend systems, I love every aspect of software development. Let's dive deeper into my story and explore what drives me to code.
+            A passionate developer with a knack for creating stunning web experiences. My journey in the tech world has been driven by curiosity and a constant desire to learn and innovate. From developing sleek user interfaces to architecting robust backend systems, I love every aspect of software development. Let's dive deeper into my story and explore what drives me to code.
           </motion.p>
         </div>
       </div>
