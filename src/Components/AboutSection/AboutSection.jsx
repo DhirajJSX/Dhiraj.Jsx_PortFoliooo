@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import ProfileImage from './../../assets/Img/PROFILE.jpg'; // Import your image here
+import ProfileImage from './../../assets/Img/PROFILE.jpg'; 
 
 const AboutSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -11,21 +11,20 @@ const AboutSection = () => {
       const aboutSection = document.getElementById('about-section');
       const offsetTop = aboutSection.offsetTop;
 
-      // Set isVisible to true if the scroll position is greater than the offsetTop
       if (scrollTop > offsetTop - window.innerHeight / 2) {
         setIsVisible(true);
       }
     };
 
-    // Add event listener for scroll
+
     window.addEventListener('scroll', handleScroll);
     return () => {
-      // Remove event listener when component unmounts
+      
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
-  // Animation variants
+
   const titleVariants = {
     hidden: { opacity: 0, scale: 0.5 },
     visible: { opacity: 1, scale: 1, transition: { duration: 0.8 } },
@@ -34,9 +33,9 @@ const AboutSection = () => {
   return (
     <section id="about-section" className="min-h-screen flex items-center bg-radial-gradient text-white">
       <div className="container mx-auto flex flex-col md:flex-row items-center text-center md:text-left px-4 md:px-8 lg:px-16">
-        <div className="md:w-1/2 flex justify-center md:justify-end mb-8 md:mb-0">
+        <div className="md:w-1/2 flex justify-center mb-8 md:mb-0 cursor-pointer">
           <img
-            src={ProfileImage} // Use the imported image here
+            src={ProfileImage} 
             alt="Profile"
             className="w-[200px] h-[200px] md:w-[300px] md:h-[300px] rounded-full shadow-md"
           />

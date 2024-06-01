@@ -74,7 +74,7 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: 'easeInOut' }}
           >
-            <span className="font-Pacifico cursor-pointer]">Welcome to My Portfolio....!</span>
+            <span className="font-Pacifico cursor-pointer]">Welcome to My Portfolio...</span>
           </motion.h1>
           <motion.p
             className="sm:text-xl md:text-2xl max-w-md md:mx-0 mt-4 font-Caveat shadow-xl p-6 rounded-[30px] bg-slate-900"
