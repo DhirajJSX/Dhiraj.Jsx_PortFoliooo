@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import './ProjectSection.css';
-import ProjectOneImage from './../../assets/Img/ng.png'; // Import your project images
-import ProjectTwoImage from './../../assets/Img/Untitled design (13)-fotor-bg-remover-2024053113400.png';
-import ProjectThreeImage from './../../assets/Img/PROFILE-removebg-preview.png';
+import ProjectOneImage from './../../assets/Img/aaaaaaaaaaaa.jpg';
+import ProjectTwoImage from './../../assets/Img/aaaaaaaaaaaa.jpg';
+import ProjectThreeImage from './../../assets/Img/aaaaaaaaaaaa.jpg';
 
 const ProjectSection = () => {
     const [isVisible, setIsVisible] = useState(false);
