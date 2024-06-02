@@ -46,15 +46,7 @@ const Header = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen);
     };
 
-    // const handleDownloadCV = () => {
-    //     const pdfFilePath = '/path/to/your/resume.pdf';
-    //     const link = document.createElement('a');
-    //     link.href = pdfFilePath;
-    //     link.setAttribute('download', 'DHIRAJ_BHAWSAR_Resume.pdf');
-    //     document.body.appendChild(link);
-    //     link.click();
-    //     document.body.removeChild(link);
-    // };
+    
 
     const handleProfileClick = () => {
         setShowSocialHandles(!showSocialHandles);
