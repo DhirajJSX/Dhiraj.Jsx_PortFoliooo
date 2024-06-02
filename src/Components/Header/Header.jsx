@@ -9,6 +9,8 @@ const Header = () => {
     const [isNavbarHidden, setIsNavbarHidden] = useState(false);
     const profileRef = useRef(null);
 
+    
+    
     useEffect(() => {
         const handleScroll = () => {
             const scrollTop = window.scrollY;
@@ -57,6 +59,8 @@ const Header = () => {
     const handleProfileClick = () => {
         setShowSocialHandles(!showSocialHandles);
     };
+   
+    
 
     return (
         <motion.nav 
@@ -68,6 +72,7 @@ const Header = () => {
         >
             <div className="flex items-center md:mb-0 m-2 px-4">
                 <div className="relative my-1" ref={profileRef}>
+                    
                      <motion.img 
                         src={Profile}
                         alt="Profile"
@@ -138,16 +143,16 @@ const Header = () => {
             >
                <ul className="flex flex-col md:flex-row rounded-2xl p-3 ">
                     <li className="p-3 font-extrabold">
-                        <a href="#" className="nav-link p-4 relative hover:text-white hover:after:absolute hover:after:left-0 hover:after:w-full hover:after:h-0.5 hover:bg-black  hover:rounded-2xl hover:after:bottom-0 hover:after:content:'' hover:after:transition:width duration-300 hover:after:ease-in-out">Home</a>
+                        <a href="#" className="nav-link p-4 relative text-white hover:text-black hover:after:absolute hover:after:left-0 hover:after:w-full hover:after:h-0.5 hover:bg-white  hover:rounded-2xl hover:after:bottom-0 hover:after:content:'' hover:after:transition:width duration-300 hover:after:ease-in-out">Home</a>
                     </li>
                     <li className="p-3 font-extrabold">
-                        <a href="#" className="nav-link p-4 relative hover:text-white hover:after:absolute hover:after:left-0 hover:after:w-full hover:after:h-0.5 hover:bg-black  hover:rounded-2xl hover:after:bottom-0 hover:after:content:'' hover:after:transition:width duration-300 hover:after:ease-in-out">Portfolio</a>
+                        <a href="#" className="nav-link p-4 relative text-white hover:text-black hover:after:absolute hover:after:left-0 hover:after:w-full hover:after:h-0.5 hover:bg-white  hover:rounded-2xl hover:after:bottom-0 hover:after:content:'' hover:after:transition:width duration-300 hover:after:ease-in-out">Portfolio</a>
                     </li>
                     <li className="p-3 font-extrabold">
-                        <a href="#" className="nav-link p-4 relative hover:text-white hover:after:absolute hover:after:left-0 hover:after:w-full hover:after:h-0.5 hover:bg-black  hover:rounded-2xl hover:after:bottom-0 hover:after:content:'' hover:after:transition:width duration-300 hover:after:ease-in-out">Projects</a>
+                        <a href="#" className="nav-link p-4 relative text-white hover:text-black hover:after:absolute hover:after:left-0 hover:after:w-full hover:after:h-0.5 hover:bg-white  hover:rounded-2xl hover:after:bottom-0 hover:after:content:'' hover:after:transition:width duration-300 hover:after:ease-in-out">Projects</a>
                     </li>
                     <li className="p-3 font-extrabold">
-                        <a href="#" className="nav-link p-4 relative hover:text-white hover:after:absolute hover:after:left-0 hover:after:w-full hover:after:h-0.5 hover:bg-black  hover:rounded-2xl hover:after:bottom-0 hover:after:content:'' hover:after:transition:width duration-300 hover:after:ease-in-out">About Me</a>
+                        <a href="#" className="nav-link p-4 relative text-white hover:text-black hover:after:absolute hover:after:left-0 hover:after:w-full hover:after:h-0.5 hover:bg-white  hover:rounded-2xl hover:after:bottom-0 hover:after:content:'' hover:after:transition:width duration-300 hover:after:ease-in-out">About Me</a>
                     </li>
                     
                     <div className='self-center' id='cv-btn'>

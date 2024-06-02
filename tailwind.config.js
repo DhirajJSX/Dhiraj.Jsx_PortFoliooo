@@ -12,7 +12,8 @@ export default {
         Pacifico:["Pacifico", "cursive"],
         Kushan:["Kaushan Script", "cursive"],
         Kalam:["Kalam", "cursive"],
-        Caveat:[ "Caveat", "cursive"]
+        Caveat:[ "Caveat", "cursive"],
+        FIra:["Fira Code", "monospace"]
       },
     },
   },
