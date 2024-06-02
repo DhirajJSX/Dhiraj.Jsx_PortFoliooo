@@ -40,36 +40,33 @@ const HeroSection = () => {
   return (
     <section className="min-h-screen flex items-center bg-radial-gradient text-white">
       <div className="container mx-auto flex flex-col md:flex-row items-center">
-        <div className="md:w-1/2 text-center md:text-left mb-8 md:mb-0 mx-9">
-        <motion.h1
-          id="heading1"
-          className=" sm:text-5xl md:text-6xl leading-tight"
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: 'easeInOut' }}
-        >
-          <span className="font-FIra cursor-pointer">
-            <span className="typing-effect">
-              Hey! <span className="text-red-600">(</span><span className='text-yellow-400'>{displayedText}</span><span className=" text-red-600">)</span>
-            </span>
-          </span>
-        </motion.h1>
-
-         
-        </div>
         <div className="md:w-1/2 mx-9 flex justify-center cursor-pointer">
-  <motion.img
-    id="HeroImg"
-    src={ProfileImage}
-    alt="Profile"
-    className="w-full rounded-full shadow-md"
-    initial={{ opacity: 0, rotateY: -90 }}
-    animate={{ opacity: 1, rotateY: 0 }}
-    exit={{ opacity: 0, rotateY: 90 }}
-    transition={{ duration: 1, ease: 'easeInOut' }}
-  />
-</div>
-
+          <motion.img
+            id="HeroImg"
+            src={ProfileImage}
+            alt="Profile"
+            className="w-full shadow-md"
+            initial={{ opacity: 0, rotateY: -90 }}
+            animate={{ opacity: 1, rotateY: 0 }}
+            exit={{ opacity: 0, rotateY: 90 }}
+            transition={{ duration: 1, ease: 'easeInOut' }}
+          />
+        </div>
+        <div className="md:w-1/2 text-center md:text-left mb-8 md:mb-0 mx-9">
+          <motion.h1
+            id="heading1"
+            className="sm:text-5xl md:text-6xl leading-tight"
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: 'easeInOut' }}
+          >
+            <span className="font-FIra cursor-pointer">
+              <span className="typing-effect">
+                Hey! <span className="text-red-600">(</span><span className="text-yellow-400">{displayedText}</span><span className="text-red-600">)</span>
+              </span>
+            </span>
+          </motion.h1>
+        </div>
       </div>
     </section>
   );

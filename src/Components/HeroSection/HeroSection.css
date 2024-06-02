@@ -10,33 +10,27 @@
 }
 
 #HeroImg {
-    transition: box-shadow 0.5s ease; /* Add transition for box-shadow */
-    position: relative; /* Ensure the shadow is positioned relative to the image */
+    transition: box-shadow 0.5s ease;
+    position: relative;
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
+    border-radius: 100%; /* Make the image circular */
+    width: 70%;
+    height: auto;
 }
 
-#HeroImg {
-    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5); /* Shadow properties */
-}
-
-
-  
 .typing-effect::after {
     content: '|';
     animation: blink 1s infinite;
-    font-weight: normal;
     width: 0.2em; /* Adjust the width of the cursor here */
-  }
-  
-  @keyframes blink {
+}
+
+@keyframes blink {
     0% { opacity: 2; }
     50% { opacity: 0; }
     100% { opacity: 1; }
-  }
-  
-
+}
 
 .container {
-    /* max-width: 1140px; */
     margin: 0;
     padding: 0;
     display: flex;
@@ -79,18 +73,10 @@
     margin-top: 0rem;
 }
 
-.text-lg {
-    font-size: 15px;
-}
-
 @media (min-width: 640px) {
     #heading1 {
         font-size: 3rem;
         margin-top: 2rem;
-    }
-
-    .text-lg {
-        font-size: 1.25rem;
     }
 }
 
@@ -99,42 +85,27 @@
         font-size: 4rem;
         margin-top: 6rem;
     }
-
-    .text-lg {
-        font-size: 1.5rem;
-    }
 }
 
-.max-w-md {
-    max-width: 28rem;
-}
-
-.mt-4 {
-    margin-top: 1rem;
-}
-
-.md\:mx-0 {
-    margin-left: 0;
-    margin-right: 0;
-}
-
-/* Media queries for Hero Section */
 @media (max-width: 768px) {
     .md\:w-1 {
         width: 100%;
     }
 
     #heading1 {
-        font-size: 25px;
+        font-size: 30px;
         line-height: 1.1;
-        margin-top: 7rem;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
         padding: 0;
     }
 
     #HeroImg {
-        width: 96%;
-        height: auto;
-        /* border-radius: 15px; */
+        width: 50%;
+
+        border-radius: 40%;
+        margin-top: 6rem;
+        margin-bottom: 4rem;
     }
 
     .text-lg {
@@ -150,9 +121,8 @@
 
     #HeroImg {
         max-width: 100%;
-        height: auto;
-        border-radius: 0px;
-        margin-top: 7rem;
+        margin-top: 6.4rem;
+        border-radius: 15px;
     }
 
     .container {
@@ -165,7 +135,6 @@
     }
 }
 
-/* Larger screens adjustments */
 @media (min-width: 1025px) {
     .container {
         padding: 0 4rem;
@@ -184,27 +153,11 @@
     #HeroImg {
         max-width: 60%;
         height: auto;
-        border-radius: ;
-        margin-top: 3rem;
+        margin-top: 5rem;
+        border-radius: 15px;
     }
-}
-
-@keyframes sketch {
-    0% {
-      transform: scale(1) rotateY(0deg) perspective(500px);
-    }
-    50% {
-      transform: scale(1.02) rotateY(2deg) perspective(500px);
-    }
-    100% {
-      transform: scale(1) rotateY(-2deg) perspective(500px);
-    }
-}
-
-.sketch-animation {
-    animation: sketch 1s ease-in-out infinite alternate;
 }
 
 .bg-radial-gradient {
-    background: radial-gradient(circle, #111827 10%, rgba(0,0,0,0.9) 100%);
+    background: radial-gradient(circle, #111827 10%, rgba(0, 0, 0, 0.9) 100%);
 }

@@ -46,15 +46,15 @@ const Header = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen);
     };
 
-    const handleDownloadCV = () => {
-        const pdfFilePath = '/path/to/your/resume.pdf';
-        const link = document.createElement('a');
-        link.href = pdfFilePath;
-        link.setAttribute('download', 'DHIRAJ_BHAWSAR_Resume.pdf');
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-    };
+    // const handleDownloadCV = () => {
+    //     const pdfFilePath = '/path/to/your/resume.pdf';
+    //     const link = document.createElement('a');
+    //     link.href = pdfFilePath;
+    //     link.setAttribute('download', 'DHIRAJ_BHAWSAR_Resume.pdf');
+    //     document.body.appendChild(link);
+    //     link.click();
+    //     document.body.removeChild(link);
+    // };
 
     const handleProfileClick = () => {
         setShowSocialHandles(!showSocialHandles);
@@ -141,25 +141,25 @@ const Header = () => {
                 animate={{ opacity: 1, y: 0 }} // Animation on component mount
                 transition={{ duration: 0.5 }} // Transition duration
             >
-               <ul className="flex flex-col md:flex-row rounded-2xl p-3 ">
-                    <li className="p-3 font-extrabold">
+               <ul className="flex flex-col md:flex-row rounded-b-2xl p-2">
+                    <li className="p-3 font-extrabold m-4">
                         <a href="#" className="nav-link p-4 relative text-white hover:text-black hover:after:absolute hover:after:left-0 hover:after:w-full hover:after:h-0.5 hover:bg-white  hover:rounded-2xl hover:after:bottom-0 hover:after:content:'' hover:after:transition:width duration-300 hover:after:ease-in-out">Home</a>
                     </li>
-                    <li className="p-3 font-extrabold">
+                    <li className="p-3 font-extrabold m-4">
                         <a href="#" className="nav-link p-4 relative text-white hover:text-black hover:after:absolute hover:after:left-0 hover:after:w-full hover:after:h-0.5 hover:bg-white  hover:rounded-2xl hover:after:bottom-0 hover:after:content:'' hover:after:transition:width duration-300 hover:after:ease-in-out">Portfolio</a>
                     </li>
-                    <li className="p-3 font-extrabold">
+                    <li className="p-3 font-extrabold m-4">
                         <a href="#" className="nav-link p-4 relative text-white hover:text-black hover:after:absolute hover:after:left-0 hover:after:w-full hover:after:h-0.5 hover:bg-white  hover:rounded-2xl hover:after:bottom-0 hover:after:content:'' hover:after:transition:width duration-300 hover:after:ease-in-out">Projects</a>
                     </li>
-                    <li className="p-3 font-extrabold">
+                    <li className="p-3 font-extrabold m-4">
                         <a href="#" className="nav-link p-4 relative text-white hover:text-black hover:after:absolute hover:after:left-0 hover:after:w-full hover:after:h-0.5 hover:bg-white  hover:rounded-2xl hover:after:bottom-0 hover:after:content:'' hover:after:transition:width duration-300 hover:after:ease-in-out">About Me</a>
                     </li>
                     
-                    <div className='self-center' id='cv-btn'>
+                    {/* <div className='self-center' id='cv-btn'>
                         <button className="px-4 p-4 flex py-2 text-white bg-blue-600 rounded-[30px]  hover:bg-blue-500 " onClick={handleDownloadCV}>
                             <span>Download CV</span>
                         </button>
-                    </div>
+                    </div> */}
                 </ul>
             </motion.div>
         </motion.nav>
