@@ -93,7 +93,7 @@
     }
 
     #heading1 {
-        font-size: 30px;
+        font-size: 25px;
         line-height: 1.1;
         margin-top: 2rem;
         margin-bottom: 1rem;
@@ -101,11 +101,10 @@
     }
 
     #HeroImg {
-        width: 50%;
-
-        border-radius: 40%;
+        width: 70%;
+        border-radius: 10%;
         margin-top: 6rem;
-        margin-bottom: 2rem;
+        margin-bottom: 0rem;
     }
 
     .text-lg {

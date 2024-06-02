@@ -40,7 +40,7 @@ const HeroSection = () => {
   return (
     <section className="min-h-screen flex items-center bg-radial-gradient text-white">
       <div className="container mx-auto flex flex-col md:flex-row items-center">
-        <div className="md:w-1/2 mx-9 flex justify-center cursor-pointer">
+        <div className="md:w-1/2 mx-5 flex justify-center cursor-pointer">
           <motion.img
             id="HeroImg"
             src={ProfileImage}
@@ -52,7 +52,7 @@ const HeroSection = () => {
             transition={{ duration: 1, ease: 'easeInOut' }}
           />
         </div>
-        <div className="md:w-1/2 text-center md:text-left mb-8 md:mb-0 mx-9">
+        <div className="md:w-1/2 text-center md:text-left mb-8 md:mb-0 ">
           <motion.h1
             id="heading1"
             className="sm:text-5xl md:text-6xl leading-tight"
