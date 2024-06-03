@@ -1,0 +1,33 @@
+/* App.css */
+
+/* Light mode styles */
+.App {
+    background-color: #ffffff; /* Light background color */
+    color: #000000; /* Light text color */
+  }
+  
+  /* Dark mode styles */
+  .App.dark-mode {
+    background-color: #1f1f1f; /* Dark background color */
+    color: #ffffff; /* Dark text color */
+  }
+  
+  /* Toggle button styles */
+  .dark-mode-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #ffffff; /* Light background color */
+    color: #000000; /* Light text color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Dark mode styles for toggle button */
+  .dark-mode-toggle.dark-mode {
+    background-color: #1f1f1f; /* Dark background color */
+    color: #ffffff; /* Dark text color */
+  }
+  
