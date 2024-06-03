@@ -38,17 +38,17 @@ const HeroSection = () => {
   }, [displayedText, isDeleting, charIndex, currentTextIndex, texts]);
 
   const handleDownloadCV = () => {
-    const pdfFilePath = './../../assets/Img/Untitled-3.png';
+    const pdfFilePath = '/path/to/your/resume.pdf';
     const link = document.createElement('a');
     link.href = pdfFilePath;
-    link.setAttribute('download', 'Untitled-3.png');
+    link.setAttribute('download', 'DHIRAJ_BHAWSAR_Resume.pdf');
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
 ``};
   return (
     <section className="min-h-screen flex items-center bg-radial-gradient text-white">
-      <div className="container mt-20 mx-auto flex flex-col md:flex-row items-center">
+      <div className="container mx-auto flex flex-col md:flex-row items-center">
         <div className="md:w-1/2  flex justify-center cursor-pointer">
           <motion.img
             id="HeroImg"

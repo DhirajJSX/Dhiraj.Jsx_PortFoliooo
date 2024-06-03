@@ -56,15 +56,15 @@
     }
 
     #heading1 {
-        font-size: 24px;
+        font-size: 20px;
         line-height: 1.1;
         margin-top: 2rem;
         margin-bottom: 0rem;
-        padding: 0;
+        padding: 4px;
     }
 
     #HeroImg {
-        width: 70%;
+        width: 60%;
         border-radius: 100%; /* Change to 50% for a circle */
         margin-top: 0rem;
         margin-bottom: 0rem;
@@ -108,5 +108,5 @@
 
 
 #btn {
-
+    
 }
