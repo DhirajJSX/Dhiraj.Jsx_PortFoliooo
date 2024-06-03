@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import ProfileImage from './../../assets/Img/PROFILE.jpg';
+import ProfileImage from './../../assets/Img/laptop wave (1).png';
 import './../../Components/AboutSection/AboutSection.css';
 
 const AboutSection = () => {
@@ -24,8 +24,8 @@ const AboutSection = () => {
   }, []);
 
   return (
-    <section id="about-section" className="flex items-center bg-slate-400 text-white py-20">
-      <div id='Contain' className="container mx-auto flex flex-col md:flex-row items-center text-center md:text-left px-4 md:px-8 lg:px-16">
+    <section id="about-section" className="flex items-center bg-slate-300 text-white py-20">
+      <div id="Contain" className="container mx-auto flex flex-col md:flex-row items-center text-center md:text-left px-4 md:px-8 lg:px-16">
         <div className="md:w-1/2 flex flex-col items-center md:items-start">
           <motion.h1
             className="text-4xl sm:text-5xl md:text-6xl font-bold mb-8 text-black self-center"
@@ -47,7 +47,7 @@ const AboutSection = () => {
               &nbsp;Me
             </motion.span>
           </motion.h1>
-          <motion.p id='pTag'
+          <motion.p id="pTag"
             className="sm:text-xl self-center md:text-2xl max-w-2xl font-Josefin p-7 rounded-[30px] bg-white text-black shadow-md"
             initial={{ opacity: 0, y: 50, rotateX: -90, scale: 0.8 }}
             animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 50, rotateX: 0, scale: 1, transition: { duration: 1, delay: 0.6 } }}
@@ -59,7 +59,7 @@ const AboutSection = () => {
           <motion.img
             src={ProfileImage}
             alt="Profile"
-            className="rounded-full w-3/4 md:w-2/3 lg:w-1/2 shadow-lg"
+            className="w-3/4 md:w-2/3 lg:w-1/2 drop-shadow-2xl"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: isVisible ? 1 : 0, scale: isVisible ? 1 : 0.8, transition: { duration: 1, delay: 0.6 } }}
           />
