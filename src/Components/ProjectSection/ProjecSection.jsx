@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import ProjectOneImage from './../../assets/Img/aaaaaaaaaaaa.jpg';
 import ProjectTwoImage from './../../assets/Img/aaaaaaaaaaaa.jpg';
 import ProjectThreeImage from './../../assets/Img/aaaaaaaaaaaa.jpg';
+import "./ProjectSection.css"
 
 const ProjectSection = () => {
     const [isVisible, setIsVisible] = useState(false);
@@ -49,7 +50,7 @@ const ProjectSection = () => {
     ];
 
     return (
-        <div id="project-section" className="py-16 px-5 text-center bg-radial-gradient from-gray-200 to-gray-300">
+        <div id="project-section" className=" py-24 px-5 text-center bg-radial-gradient from-gray-200 to-gray-300">
             <h1 className="text-white text-4xl mb-10 mt-10 font-bold">Projects</h1>
             <div className="flex flex-wrap justify-center">
                 {projects.map((project, index) => (

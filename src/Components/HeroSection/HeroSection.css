@@ -35,11 +35,6 @@
     text-align: center;
 }
 
-@media (min-width: 768px) {
-    .text-left-md {
-        text-align: left;
-    }
-}
 
 .mb-8 {
     margin-bottom: 2rem;
@@ -85,7 +80,7 @@
     }
 
     #heading1 {
-        font-size: 4rem;
+        font-size: 3rem;
         margin-top: 0rem;
         margin-left: 0rem;
     }

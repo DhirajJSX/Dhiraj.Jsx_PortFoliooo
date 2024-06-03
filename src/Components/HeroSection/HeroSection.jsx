@@ -47,7 +47,7 @@ const HeroSection = () => {
     document.body.removeChild(link);
 ``};
   return (
-    <section className="h-[100vh] flex items-center bg-radial-gradient text-white">
+    <section className="h-[100vh] flex items-center bg-radial-gradient text-white ">
       <div className="container mx-auto flex flex-col md:flex-row items-center">
         <div className="md:w-1/2  flex justify-center cursor-pointer">
           <motion.img
@@ -66,7 +66,7 @@ const HeroSection = () => {
         <div className="md:w-1/2 text-center md:text-left  md:mb-0">
           <motion.h1
             id="heading1"
-            className="sm:text-5xl md:text-6xl leading-tight text-[40px] font-bold "
+            className="sm:text-5xl md:text-6xl leading-tight text-[30px] font-bold "
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: 'easeInOut' }}
