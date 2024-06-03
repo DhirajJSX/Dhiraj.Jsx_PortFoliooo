@@ -38,7 +38,7 @@ const HeroSection = () => {
   }, [displayedText, isDeleting, charIndex, currentTextIndex, texts]);
 
   const handleDownloadCV = () => {
-    const pdfFilePath = '/path/to/your/resume.pdf';
+    const pdfFilePath = './../../assets/Img/Untitled-3.png';
     const link = document.createElement('a');
     link.href = pdfFilePath;
     link.setAttribute('download', 'DHIRAJ_BHAWSAR_Resume.pdf');
@@ -48,8 +48,8 @@ const HeroSection = () => {
 ``};
   return (
     <section className="min-h-screen flex items-center bg-radial-gradient text-white">
-      <div className="container mx-auto flex flex-col md:flex-row items-center">
-        <div className="md:w-1/2 mx-2 flex justify-center cursor-pointer">
+      <div className="container mt-20 mx-auto flex flex-col md:flex-row items-center">
+        <div className="md:w-1/2  flex justify-center cursor-pointer">
           <motion.img
             id="HeroImg"
             src={ProfileImage}
@@ -66,14 +66,14 @@ const HeroSection = () => {
         <div className="md:w-1/2 text-center md:text-left mb-8 md:mb-0">
           <motion.h1
             id="heading1"
-            className="sm:text-5xl md:text-6xl leading-tight text-[30px] font-bold "
+            className="sm:text-5xl md:text-6xl leading-tight text-[40px] font-bold "
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: 'easeInOut' }}
           >
             <span className="font-FIra cursor-pointer">
               <span className="typing-effect">
-                Hey! <span className="text-red-600">(</span><span className="text-yellow-400">{displayedText}</span><span className="text-red-600">)</span>
+                Hey!<span className="text-red-600">(</span><span className="text-yellow-400">{displayedText}</span><span className="text-red-600">)</span>
               </span>
             </span>
           </motion.h1>
