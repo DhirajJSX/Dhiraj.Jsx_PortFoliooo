@@ -62,7 +62,7 @@ const Header = () => {
             animate={{ opacity: 1, y: 0 }} 
             transition={{ duration: 0.5 }} 
         >
-            <div className="flex items-center md:mb-0 m-1 px-5">
+            <div className="flex items-center md:mb-0 m-1 px-3">
                 <div id='pro' className="relative flex justify-center items-center bg-white rounded-[100%] mr-1 my-1" ref={profileRef}>
                     <motion.img 
                         src={Profile}
