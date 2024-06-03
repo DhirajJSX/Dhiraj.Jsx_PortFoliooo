@@ -54,7 +54,9 @@
     .md\:w-1 {
         width: 100%;
     }
-
+    .container {
+        margin-bottom: 1rem;
+    }
     #heading1 {
         font-size: 20px;
         line-height: 1.1;
@@ -70,7 +72,9 @@
         margin-bottom: 0rem;
         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     }
-    
+    #btnSection{
+        display: ;
+    }
 
 }
 
@@ -103,6 +107,3 @@
 }
 
 
-#btn {
-    
-}
