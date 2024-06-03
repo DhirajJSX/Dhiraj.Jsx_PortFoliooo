@@ -41,7 +41,7 @@ const HeroSection = () => {
     const pdfFilePath = './../../assets/Img/Untitled-3.png';
     const link = document.createElement('a');
     link.href = pdfFilePath;
-    link.setAttribute('download', 'DHIRAJ_BHAWSAR_Resume.pdf');
+    link.setAttribute('download', 'Untitled-3.png');
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
