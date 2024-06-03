@@ -63,6 +63,16 @@
     #socialHandle{
         z-index: 1;
     }
+    #pro{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    
+    .text-lg {
+        font-size: 1rem;
+        padding: 0px;
+    }
 }
 
 @media screen and (max-width: 576px) {
@@ -88,5 +98,8 @@
         overflow: hidden;
         animation: slideDown 0.9s ease forwards;
     }
-    
+    #pro{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
 }

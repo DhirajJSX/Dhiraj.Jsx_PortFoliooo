@@ -25,23 +25,8 @@ const AboutSection = () => {
 
   return (
     <section id="about-section" className="min-h-screen flex items-center bg-radial-gradient text-white">
-      <div id='Contain' className="container mx-auto flex flex-col md:flex-row items-center text-center md:text-left px-4 md:px-8 lg:px-16">
-        <AnimatePresence>
-          {isVisible && (
-            <motion.div
-              initial={{ opacity: 0, rotateY: 90, scale: 0.8 }}
-              animate={{ opacity: 1, rotateY: 0, scale: 1, transition: { duration: 1 } }}
-              exit={{ opacity: 0, rotateY: 90, scale: 0.8, transition: { duration: 1 } }}
-              className="md:w-1/2 flex justify-center mb-8 md:mb-0 cursor-pointer"
-            >
-              <img id='Image'
-                src={ProfileImage}
-                alt="Profile"
-                className="w-[200px] h-[200px] md:w-[300px] md:h-[300px] rounded-full shadow-md"
-              />
-            </motion.div>
-          )}
-        </AnimatePresence>
+      <div id='Contain' className="container mx-auto flex flex-col  items-center text-center md:text-left px-4 md:px-8 lg:px-16">
+        
         <div className="md:w-1/2 flex flex-col items-center md:items-start">
           <motion.h1
             className="text-4xl sm:text-5xl md:text-6xl font-bold mb-8 text-black"

@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-import { motion } from 'framer-motion'; // Import motion from Framer Motion
+import { motion } from 'framer-motion'; 
 import Profile from './../../assets/Img/20048676-103287613161_1-s5-v1.png';
 import './header.css';
 
@@ -62,13 +62,12 @@ const Header = () => {
             animate={{ opacity: 1, y: 0 }} 
             transition={{ duration: 0.5 }} 
         >
-            <div className="flex items-center md:mb-0 m-2 px-4">
-                <div className="relative my-1" ref={profileRef}>
-                    
-                     <motion.img 
+            <div className="flex items-center md:mb-0 m-1 px-5">
+                <div id='pro' className="relative flex justify-center items-center bg-white rounded-[100%] mr-1 my-1" ref={profileRef}>
+                    <motion.img 
                         src={Profile}
                         alt="Profile"
-                        className="w-[50px] rounded-full cursor-pointer mr-2 shadow-md"
+                        className="w-[60px] rounded-full cursor-pointer m-1  shadow-2xl"
                         onClick={handleProfileClick}
                         whileHover={{ scale: 1.1 }} 
                         whileTap={{ scale: 0.9, rotateZ: 500 }} // Add a 3D tap effect
@@ -105,7 +104,7 @@ const Header = () => {
                     )}
                 </div>
                 <motion.h1 
-                    className="text-sm font-bold hover:underline"
+                    className="text-lg font-bold hover:underline px-1"
                     initial={{ opacity: 0 }} 
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.2, duration: 0.5 }} 
