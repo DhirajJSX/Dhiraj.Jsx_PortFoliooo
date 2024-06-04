@@ -1,6 +1,6 @@
 import { useEffect, useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
-import './HeroSection.css';
+import './HeroSection.scss';
 import ProfileImage from './../../assets/Img/Untitled-3.png'; // Import your image here
 
 const HeroSection = () => {

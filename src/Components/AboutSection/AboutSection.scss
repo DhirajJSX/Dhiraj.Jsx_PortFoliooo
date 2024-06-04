@@ -1,0 +1,26 @@
+@media screen and (max-width: 768px) {
+  .grid-cols-1 {
+    grid-template-columns: 1fr;
+  }
+
+  #Aboutme {
+    font-size: 35px;
+    margin-bottom: 30px;
+  }
+
+  #aboutmeImag {
+    max-width: 80%;
+    margin-bottom: 30px;
+  }
+
+  #about-section {
+    padding-top: 5rem;
+    padding-bottom: 2rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .grid-cols-1 {
+    grid-template-columns: 1fr 1fr;
+  }
+}

@@ -1,5 +1,5 @@
 
-import './SkillSection.css';
+import './SkillSection.scss';
 
 const SkillSection = () => {
     return (

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import ProjectOneImage from './../../assets/Img/aaaaaaaaaaaa.jpg';
 import ProjectTwoImage from './../../assets/Img/aaaaaaaaaaaa.jpg';
 import ProjectThreeImage from './../../assets/Img/aaaaaaaaaaaa.jpg';
-import "./ProjectSection.css"
+import "./ProjectSection.scss"
 
 const ProjectSection = () => {
     const [isVisible, setIsVisible] = useState(false);

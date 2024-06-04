@@ -1,0 +1,90 @@
+/* General Styles for Hero Section */
+.hero-section {
+    background-color: #1f2937;
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    margin-top: 2.5rem;
+    padding: 2rem;
+  }
+  
+  .typing-effect::after {
+    content: '|';
+    animation: blink 1s infinite;
+    width: 0.2em; /* Adjust the width of the cursor here */
+  }
+  
+  @keyframes blink {
+    0% { opacity: 2; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  .container {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  .mb-8 {
+    margin-bottom: 2rem;
+  }
+  
+  @media (max-width: 768px) {
+    .md\:w-1 {
+      width: 100%;
+    }
+    .container {
+      margin-bottom: 1rem;
+    }
+    #heading1 {
+      font-size: 20px;
+      line-height: 1.1;
+      margin-top: 2rem;
+      margin-bottom: 0rem;
+      padding: 4px;
+    }
+  
+    #HeroImg {
+      width: 60%;
+      border-radius: 100%; /* Change to 50% for a circle */
+      margin-top: 0rem;
+      margin-bottom: 0rem;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+  }
+  
+  @media (min-width: 1025px) {
+    .container {
+      padding: 0rem;
+    }
+  
+    #heading1 {
+      font-size: 3rem;
+      margin-top: 0rem;
+      margin-left: 0rem;
+    }
+  
+    .text-lg {
+      font-size: 1.75rem;
+    }
+  
+    #HeroImg {
+      max-width: 60%;
+      height: auto;
+      margin-top: 0rem;
+      border-radius: 100%;
+    }
+  }
+  
+  .bg-radial-gradient {
+    background: radial-gradient(circle, #111827 10%, rgba(0, 0, 0, 0.9) 100%);
+  }
+  

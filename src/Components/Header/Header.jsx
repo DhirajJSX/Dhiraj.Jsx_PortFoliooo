@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion'; 
 import Profile from './../../assets/Img/20048676-103287613161_1-s5-v1.png';
-import './header.css';
+import './header.scss';
 
 const Header = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

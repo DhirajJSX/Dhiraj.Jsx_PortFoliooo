@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import './ScrollToTopButton.scss'
 
 const ScrollToTopButton = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -33,7 +34,7 @@ const ScrollToTopButton = () => {
       }
       hideTimeoutRef.current = setTimeout(() => {
         setIsVisible(false);
-      },900); // 4000ms = 4 seconds (assuming each section's worth of time is around 2 seconds)
+      }, 4000); // 4000ms = 4 seconds
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -70,7 +71,7 @@ const ScrollToTopButton = () => {
         isClicked ? 'hover:scale-105' : ''
       } ${
         isVisible || isHovered
-          ? 'opacity-100 translate-x-0'
+          ? 'opacity-100 translate-x-0 bounce' // Add bounce class when visible
           : 'opacity-0 translate-x-full pointer-events-none'
       }`}
       onClick={scrollToTop}

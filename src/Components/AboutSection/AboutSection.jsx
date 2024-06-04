@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import AboutMeImage from './../../assets/Img/laptop wave (1).png';
-import './../../Components/AboutSection/AboutSection.css';
-import './AboutSection.css'
+import './AboutSection.scss'
 const AboutSection = () => {
   const [isVisible, setIsVisible] = useState(false);
 
