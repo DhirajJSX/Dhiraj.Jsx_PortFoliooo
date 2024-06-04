@@ -4,8 +4,7 @@ import Profile from './../../assets/Img/20048676-103287613161_1-s5-v1.png';
 import './header.scss';
 import { HashLink as Link } from 'react-router-hash-link';
 import { BrowserRouter } from 'react-router-dom';
-
-
+import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll'; 
 
 // Material Ui Imports 
 import HomeIcon from '@mui/icons-material/Home';
@@ -19,8 +18,6 @@ const Header = () => {
     const [isNavbarHidden, setIsNavbarHidden] = useState(false);
     const profileRef = useRef(null);
 
-    
-    
     useEffect(() => {
         const handleScroll = () => {
             const scrollTop = window.scrollY;
@@ -56,14 +53,14 @@ const Header = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen);
     };
 
-    
+    const handleLinkClick = () => {
+        setIsMobileMenuOpen(false); // Close the mobile menu when a link is clicked
+    };
 
     const handleProfileClick = () => {
         setShowSocialHandles(!showSocialHandles);
     };
    
-    
-
     return (
         <motion.nav 
             id='nav'
@@ -91,7 +88,7 @@ const Header = () => {
                             animate={{ opacity: 1, y: 0 }} 
                             transition={{ duration: 0.5 }} 
                         >
-                            <div className=' p-2 flex item-center self-center-2xl hover:bg-[#111827]  rounded-lg '>
+                           <div className=' p-2 flex item-center self-center-2xl hover:bg-[#111827]  rounded-lg '>
                             <svg className='w-[22px]' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M100.3 448H7.4V148.9h92.9zM53.8 108.1C24.1 108.1 0 83.5 0 53.8a53.8 53.8 0 0 1 107.6 0c0 29.7-24.1 54.3-53.8 54.3zM447.9 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z"/></svg>
                                 <a className='text-center self-center ml-2 font-Pacifico p-1' href="https://www.linkedin.com/in/bhawsar-dhiraj/" target="_blank" rel="noopener noreferrer">Linkedin</a>
                             </div>
@@ -113,68 +110,49 @@ const Header = () => {
                         </motion.div>
                     )}
                 </div>
-                <motion.h1 
-                    className="text-lg font-bold hover:underline px-1"
-                    initial={{ opacity: 0 }} 
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.2, duration: 0.5 }} 
-                >
-                    DHIRAJ BHAWSAR
-                </motion.h1>
-                <motion.div 
-                    className={`md:hidden ml-auto ${isMobileMenuOpen ? 'active' : ''}`}
-                    onClick={handleToggleMobileMenu}
-                    whileHover={{ scale: 1.1 }} 
-                >
-                    <button className="group rounded-lg flex items-center justify-center focus:outline-none">
-                        <div className="grid justify-items-center gap-1.5">
-                            <span className={`h-[3px] w-6 rounded-full bg-white transition ${isMobileMenuOpen ? ' rotate-45 translate-y-2 ' : ''}`} style={{ transformOrigin: 'center', transition: 'transform 0.3s ease-in-out' }}></span>
-                            <span className={`h-[3px] w-6 rounded-full bg-white transition ${isMobileMenuOpen ? 'opacity-0' : ''}`} style={{ transition: 'opacity 0.3s ease-in-out' }}></span>
-                            <span className={`h-[3px] w-6  rounded-full bg-white transition ${isMobileMenuOpen ? '-rotate-45 -translate-y-2.5' : ''}`} style={{ transformOrigin: 'center', transition: 'transform 0.3s ease-in-out' }}></span>
-                        </div>
-                    </button>
+                <motion.h1 className="text-lg font-bold hover:underline px-1" initial={{ opacity: 0 }} animate={{ opacity: 1 }}transition={{ delay: 0.2, duration: 0.5 }}>DHIRAJ BHAWSAR</motion.h1>
+                <motion.div className={`md:hidden ml-auto ${isMobileMenuOpen ? 'active' : ''}`} onClick={handleToggleMobileMenu} whileHover={{ scale: 1.1 }}>
+                   <motion.div className={`md:hidden ml-auto ${isMobileMenuOpen ? 'active' : ''}`} onClick={handleToggleMobileMenu} whileHover={{ scale: 1.1 }}>
+                        <button className="group rounded-lg flex items-center justify-center focus:outline-none">
+                            <div className="grid justify-items-center gap-1.5">
+                                <span className={`h-[3px] w-6 rounded-full bg-white transition ${isMobileMenuOpen ? ' rotate-45 translate-y-2 ' : ''}`} style={{ transformOrigin: 'center', transition: 'transform 0.3s ease-in-out' }}></span>
+                                <span className={`h-[3px] w-6 rounded-full bg-white transition ${isMobileMenuOpen ? 'opacity-0' : ''}`} style={{ transition: 'opacity 0.3s ease-in-out' }}></span>
+                                <span className={`h-[3px] w-6  rounded-full bg-white transition ${isMobileMenuOpen ? '-rotate-45 -translate-y-2.5' : ''}`} style={{ transformOrigin: 'center', transition: 'transform 0.3s ease-in-out' }}></span>
+                            </div>
+                        </button>
+                    </motion.div>
+
                 </motion.div>
             </div>
-            <motion.div id='menu-div'className={`text-center font-Josefin md:flex md:items-center text-black ${isMobileMenuOpen ? 'block shadow-2xl bg-gray-900 rounded-b-[10px] text-white' : 'hidden'}`}initial={{ opacity: 0, y: -10 }}animate={{ opacity: 1, y: 0 }} 
-                transition={{ duration: 0.5 }} 
-            >
+            <motion.div id='menu-div'className={`text-center font-Josefin md:flex md:items-center text-black ${isMobileMenuOpen ? 'block shadow-2xl bg-gray-900 rounded-b-[10px] text-white' : 'hidden'}`} initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
                <ul className="flex flex-col md:flex-row rounded-b-2xl p-1 m-2 font-extrabold">
-                   <BrowserRouter>
-                        <li className="p-3 font-extrabold m-4 text-white hover:text-black hover:bg-white hover:rounded-2xl flex justify-center items-center group">
-                            <Link to="#home" className="nav-link relative">
-                                <span>Home</span>
-                                <HomeIcon className="ml-2 text-white group-hover:text-black transition duration-300"></HomeIcon>
-                            </Link>
-                           
-                        </li>
+               <BrowserRouter>
+                    <li className="p-3 font-extrabold m-4 text-white hover:text-black hover:bg-white hover:rounded-xl flex justify-center items-center cursor-pointer group ">
+                        <span>Home</span>
+                        <HomeIcon className="ml-2 text-white group-hover:text-black transition duration-300"></HomeIcon>
+                    </li>
 
-                        <li className="p-3 font-extrabold m-4 text-white hover:text-black hover:bg-white hover:rounded-2xl flex justify-center items-center group">
-                            <Link to="#about-section" className="nav-link relative">
-                                <span>About Me</span>
-                                <ContactSupportIcon className="ml-2 text-white group-hover:text-black transition duration-300"></ContactSupportIcon>
-                            </Link>
-                        </li>
+                    <li className="p-3 font-extrabold m-4 text-white hover:text-black hover:bg-white hover:rounded-2xl flex justify-center items-center cursor-pointer group">
+                        <ScrollLink to="about-section" smooth={true} duration={500} className="nav-link relative" onClick={handleLinkClick}>
+                            <span>About Me</span>
+                            <ContactSupportIcon className="ml-2 text-white group-hover:text-black transition duration-300"></ContactSupportIcon>
+                        </ScrollLink>
+                    </li>
 
-                        <li className="p-3 font-extrabold m-4 text-white hover:text-black hover:bg-white hover:rounded-2xl flex justify-center items-center group">
-                            <Link to="#skills" className="nav-link relative">
-                                <span>Skills</span>
-                                <BarChartIcon className="ml-2 text-white group-hover:text-black transition duration-300"></BarChartIcon>
-                            </Link>
-                        </li>
+                    <li className="p-3 font-extrabold m-4 text-white hover:text-black hover:bg-white hover:rounded-2xl flex justify-center items-center cursor-pointer group">
+                        <ScrollLink to="skills" smooth={true} duration={500} className="nav-link relative" onClick={handleLinkClick}>
+                            <span>Skills</span>
+                            <BarChartIcon className="ml-2 text-white group-hover:text-black transition duration-300"></BarChartIcon>
+                        </ScrollLink>
+                    </li>
 
-                        <li className="p-3 font-extrabold m-4 text-white hover:text-black hover:bg-white hover:rounded-2xl flex justify-center items-center group">
-                            <Link to="#project-section" className="nav-link relative">
-                                <span>Projects</span>
-                                <FormatPaintIcon className="ml-2 text-white group-hover:text-black transition duration-300"></FormatPaintIcon>
-                            </Link>                             
-                        </li>
-                   </BrowserRouter>
-                    
-                    {/* <div className='self-center' id='cv-btn'>
-                        <button className="px-4 p-4 flex py-2 text-white bg-blue-600 rounded-[30px]  hover:bg-blue-500 " onClick={handleDownloadCV}>
-                            <span>Download CV</span>
-                        </button>
-                    </div> */}
+                    <li className="p-3 font-extrabold m-4 text-white hover:text-black hover:bg-white hover:rounded-2xl flex justify-center items-center cursor-pointer group">
+                        <ScrollLink to="project-section" smooth={true} duration={500} className="nav-link relative" onClick={handleLinkClick}>
+                            <span>Projects</span>
+                            <FormatPaintIcon className="ml-2 text-white group-hover:text-black transition duration-300"></FormatPaintIcon>
+                        </ScrollLink>                             
+                    </li>
+                </BrowserRouter>
                 </ul>
             </motion.div>
         </motion.nav>
