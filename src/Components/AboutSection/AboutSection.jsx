@@ -21,7 +21,6 @@ const AboutSection = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-
   return (
     <section id="about-section" className="flex items-center bg-slate-300 text-white py-32">
       <div id="Contain" className="container mx-auto flex flex-col md:flex-row items-center text-center md:text-left px-4 md:px-8 lg:px-16">

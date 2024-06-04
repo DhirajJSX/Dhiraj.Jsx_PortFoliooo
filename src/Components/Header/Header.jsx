@@ -2,7 +2,8 @@ import { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion'; 
 import Profile from './../../assets/Img/20048676-103287613161_1-s5-v1.png';
 import './header.scss';
-
+import { HashLink as Link } from 'react-router-hash-link';
+import { BrowserRouter } from 'react-router-dom';
 const Header = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [showSocialHandles, setShowSocialHandles] = useState(false);
@@ -70,11 +71,11 @@ const Header = () => {
                         className="w-[60px] rounded-full cursor-pointer m-1  shadow-2xl"
                         onClick={handleProfileClick}
                         whileHover={{ scale: 1.1 }} 
-                        whileTap={{ scale: 0.9, rotateZ: 500 }} // Add a 3D tap effect
-                        animate={{ y: [0, -3, 0], transition: { duration: 1, repeat: Infinity } }} // Looping animation
+                        whileTap={{ scale: 0.9, rotateZ: 500 }}
+                        animate={{ y: [0, -3, 0], transition: { duration: 1, repeat: Infinity } }} 
                     />  
                     {showSocialHandles && (
-                        <motion.div // Use motion.div for social handles container
+                        <motion.div 
                             id='socialHandle'
                             className="absolute top-full left-0 bg-white text-black shadow-2xl rounded-lg mx-2 my-1 flex flex-col text-[13px]"
                             initial={{ opacity: 0, y: -10 }} 
@@ -114,7 +115,7 @@ const Header = () => {
                 <motion.div 
                     className={`md:hidden ml-auto ${isMobileMenuOpen ? 'active' : ''}`}
                     onClick={handleToggleMobileMenu}
-                    whileHover={{ scale: 1.1 }} // Scale effect on hover
+                    whileHover={{ scale: 1.1 }} 
                 >
                     <button className="group rounded-lg flex items-center justify-center focus:outline-none">
                         <div className="grid justify-items-center gap-1.5">
@@ -125,26 +126,24 @@ const Header = () => {
                     </button>
                 </motion.div>
             </div>
-            <motion.div // Use motion.div for menu div
-                id='menu-div'
-                className={`text-center font-Josefin md:flex md:items-center text-black ${isMobileMenuOpen ? 'block shadow-2xl bg-gray-900 rounded-b-[10px] text-white' : 'hidden'}`}
-                initial={{ opacity: 0, y: -10 }} // Initial animation properties
-                animate={{ opacity: 1, y: 0 }} // Animation on component mount
-                transition={{ duration: 0.5 }} // Transition duration
+            <motion.div id='menu-div'className={`text-center font-Josefin md:flex md:items-center text-black ${isMobileMenuOpen ? 'block shadow-2xl bg-gray-900 rounded-b-[10px] text-white' : 'hidden'}`}initial={{ opacity: 0, y: -10 }}animate={{ opacity: 1, y: 0 }} 
+                transition={{ duration: 0.5 }} 
             >
                <ul className="flex flex-col md:flex-row rounded-b-2xl p-2">
-                    <li className="p-3 font-extrabold m-4">
-                        <a href="#" className="nav-link p-4 relative text-white hover:text-black hover:after:absolute hover:after:left-0 hover:after:w-full hover:after:h-0.5 hover:bg-white  hover:rounded-2xl hover:after:bottom-0 hover:after:content:'' hover:after:transition:width duration-300 hover:after:ease-in-out">Home</a>
+                   <BrowserRouter>
+                   <li className="p-3 font-extrabold m-4">
+                        <Link to="/" className="nav-link p-4 relative text-white hover:text-black hover:after:absolute hover:after:left-0 hover:after:w-full hover:after:h-0.5 hover:bg-white  hover:rounded-2xl hover:after:bottom-0 hover:after:content:'' hover:after:transition:width duration-300 hover:after:ease-in-out">Home</Link>
                     </li>
                     <li className="p-3 font-extrabold m-4">
-                        <a href="#" className="nav-link p-4 relative text-white hover:text-black hover:after:absolute hover:after:left-0 hover:after:w-full hover:after:h-0.5 hover:bg-white  hover:rounded-2xl hover:after:bottom-0 hover:after:content:'' hover:after:transition:width duration-300 hover:after:ease-in-out">Portfolio</a>
+                        <Link to="#about-section" className="nav-link p-4 relative text-white hover:text-black hover:after:absolute hover:after:left-0 hover:after:w-full hover:after:h-0.5 hover:bg-white  hover:rounded-2xl hover:after:bottom-0 hover:after:content:'' hover:after:transition:width duration-300 hover:after:ease-in-out">AboutMe</Link>
                     </li>
                     <li className="p-3 font-extrabold m-4">
-                        <a href="#" className="nav-link p-4 relative text-white hover:text-black hover:after:absolute hover:after:left-0 hover:after:w-full hover:after:h-0.5 hover:bg-white  hover:rounded-2xl hover:after:bottom-0 hover:after:content:'' hover:after:transition:width duration-300 hover:after:ease-in-out">Projects</a>
+                        <Link to="#skills" className="nav-link p-4 relative text-white hover:text-black hover:after:absolute hover:after:left-0 hover:after:w-full hover:after:h-0.5 hover:bg-white  hover:rounded-2xl hover:after:bottom-0 hover:after:content:'' hover:after:transition:width duration-300 hover:after:ease-in-out">Skills</Link>
                     </li>
                     <li className="p-3 font-extrabold m-4">
-                        <a href="#" className="nav-link p-4 relative text-white hover:text-black hover:after:absolute hover:after:left-0 hover:after:w-full hover:after:h-0.5 hover:bg-white  hover:rounded-2xl hover:after:bottom-0 hover:after:content:'' hover:after:transition:width duration-300 hover:after:ease-in-out">About Me</a>
+                        <Link to="#project-section" className="nav-link p-4 relative text-white hover:text-black hover:after:absolute hover:after:left-0 hover:after:w-full hover:after:h-0.5 hover:bg-white  hover:rounded-2xl hover:after:bottom-0 hover:after:content:'' hover:after:transition:width duration-300 hover:after:ease-in-out">Projects</Link>
                     </li>
+                   </BrowserRouter>
                     
                     {/* <div className='self-center' id='cv-btn'>
                         <button className="px-4 p-4 flex py-2 text-white bg-blue-600 rounded-[30px]  hover:bg-blue-500 " onClick={handleDownloadCV}>

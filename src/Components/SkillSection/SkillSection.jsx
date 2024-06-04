@@ -3,8 +3,8 @@ import './SkillSection.scss';
 
 const SkillSection = () => {
     return (
-      <section className=' bg-radial-gradient'>
-        <h1 className=' text-white'> dhiraj </h1>
+      <section id='skills' className=' bg-radial-gradient'>
+        <h1 className=' text-white'> DHiraj </h1>
       </section>
     );
 };
