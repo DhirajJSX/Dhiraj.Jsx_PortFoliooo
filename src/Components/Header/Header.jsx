@@ -4,6 +4,15 @@ import Profile from './../../assets/Img/20048676-103287613161_1-s5-v1.png';
 import './header.scss';
 import { HashLink as Link } from 'react-router-hash-link';
 import { BrowserRouter } from 'react-router-dom';
+
+
+
+// Material Ui Imports 
+import HomeIcon from '@mui/icons-material/Home';
+import ContactSupportIcon from '@mui/icons-material/ContactSupport';
+import BarChartIcon from '@mui/icons-material/BarChart';
+import FormatPaintIcon from '@mui/icons-material/FormatPaint';
+
 const Header = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [showSocialHandles, setShowSocialHandles] = useState(false);
@@ -129,20 +138,36 @@ const Header = () => {
             <motion.div id='menu-div'className={`text-center font-Josefin md:flex md:items-center text-black ${isMobileMenuOpen ? 'block shadow-2xl bg-gray-900 rounded-b-[10px] text-white' : 'hidden'}`}initial={{ opacity: 0, y: -10 }}animate={{ opacity: 1, y: 0 }} 
                 transition={{ duration: 0.5 }} 
             >
-               <ul className="flex flex-col md:flex-row rounded-b-2xl p-2">
+               <ul className="flex flex-col md:flex-row rounded-b-2xl p-1 m-2 font-extrabold">
                    <BrowserRouter>
-                   <li className="p-3 font-extrabold m-4">
-                        <Link to="/" className="nav-link p-4 relative text-white hover:text-black hover:after:absolute hover:after:left-0 hover:after:w-full hover:after:h-0.5 hover:bg-white  hover:rounded-2xl hover:after:bottom-0 hover:after:content:'' hover:after:transition:width duration-300 hover:after:ease-in-out">Home</Link>
-                    </li>
-                    <li className="p-3 font-extrabold m-4">
-                        <Link to="#about-section" className="nav-link p-4 relative text-white hover:text-black hover:after:absolute hover:after:left-0 hover:after:w-full hover:after:h-0.5 hover:bg-white  hover:rounded-2xl hover:after:bottom-0 hover:after:content:'' hover:after:transition:width duration-300 hover:after:ease-in-out">AboutMe</Link>
-                    </li>
-                    <li className="p-3 font-extrabold m-4">
-                        <Link to="#skills" className="nav-link p-4 relative text-white hover:text-black hover:after:absolute hover:after:left-0 hover:after:w-full hover:after:h-0.5 hover:bg-white  hover:rounded-2xl hover:after:bottom-0 hover:after:content:'' hover:after:transition:width duration-300 hover:after:ease-in-out">Skills</Link>
-                    </li>
-                    <li className="p-3 font-extrabold m-4">
-                        <Link to="#project-section" className="nav-link p-4 relative text-white hover:text-black hover:after:absolute hover:after:left-0 hover:after:w-full hover:after:h-0.5 hover:bg-white  hover:rounded-2xl hover:after:bottom-0 hover:after:content:'' hover:after:transition:width duration-300 hover:after:ease-in-out">Projects</Link>
-                    </li>
+                        <li className="p-3 font-extrabold m-4 text-white hover:text-black hover:bg-white hover:rounded-2xl flex justify-center items-center group">
+                            <Link to="#home" className="nav-link relative">
+                                <span>Home</span>
+                                <HomeIcon className="ml-2 text-white group-hover:text-black transition duration-300"></HomeIcon>
+                            </Link>
+                           
+                        </li>
+
+                        <li className="p-3 font-extrabold m-4 text-white hover:text-black hover:bg-white hover:rounded-2xl flex justify-center items-center group">
+                            <Link to="#about-section" className="nav-link relative">
+                                <span>About Me</span>
+                                <ContactSupportIcon className="ml-2 text-white group-hover:text-black transition duration-300"></ContactSupportIcon>
+                            </Link>
+                        </li>
+
+                        <li className="p-3 font-extrabold m-4 text-white hover:text-black hover:bg-white hover:rounded-2xl flex justify-center items-center group">
+                            <Link to="#skills" className="nav-link relative">
+                                <span>Skills</span>
+                                <BarChartIcon className="ml-2 text-white group-hover:text-black transition duration-300"></BarChartIcon>
+                            </Link>
+                        </li>
+
+                        <li className="p-3 font-extrabold m-4 text-white hover:text-black hover:bg-white hover:rounded-2xl flex justify-center items-center group">
+                            <Link to="#project-section" className="nav-link relative">
+                                <span>Projects</span>
+                                <FormatPaintIcon className="ml-2 text-white group-hover:text-black transition duration-300"></FormatPaintIcon>
+                            </Link>                             
+                        </li>
                    </BrowserRouter>
                     
                     {/* <div className='self-center' id='cv-btn'>

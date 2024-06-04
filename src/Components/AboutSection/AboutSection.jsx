@@ -2,6 +2,9 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import AboutMeImage from './../../assets/Img/laptop wave (1).png';
 import './AboutSection.scss'
+
+// Material Ui imports
+
 const AboutSection = () => {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -31,7 +34,7 @@ const AboutSection = () => {
             initial={{ opacity: 0, translateY: 50 }} animate={{ opacity: 1, translateY: 0, transition: { duration: 1, delay: 0.8 } }}>&nbsp;Me</motion.span>
           </motion.h1>
           <motion.p id="pTag" className="sm:text-xl hover:bg-black  hover:text-white hover:transition-all hover:duration-700 hover:shadow-2xl shadow-xl self-center md:text-2xl max-w-2xl font-Josefin p-7 rounded-[30px] bg-white text-black " initial={{ opacity: 0, x: -50 }} animate={{ opacity: isVisible ? 1 : 0, x: isVisible ? 0 : -50,transition: { duration: 1, delay: 0.6 }}}>
-            A passionate developer with a knack for creating stunning web experiences. My journey in the tech world has been driven by curiosity and a constant desire to learn and innovate. From developing sleek user interfaces to architecting robust backend systems, I love every aspect of software development. Let's dive deeper into my story and explore what drives me to code.
+            A passionate developer with a knack for creating stunning web experiences. My journey in the tech world has been driven by curiosity and a constant desire to learn and innovate. From developing sleek user interfaces to architecting robust backend systems, I love every aspect of software development. Lets dive deeper into my story and explore what drives me to code.
           </motion.p>
         </div>
         <div className="md:w-1/2 flex justify-center mt-8 md:mt-0">
