@@ -59,6 +59,9 @@
       margin-bottom: 0rem;
       box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     }
+    #btns{
+      padding: 6px;
+    }
   }
   
   @media (min-width: 1025px) {
@@ -81,6 +84,9 @@
       height: auto;
       margin-top: 0rem;
       border-radius: 100%;
+    }
+    #btns{
+      padding: 12px;
     }
   }
   

@@ -2,9 +2,8 @@ import { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion'; 
 import Profile from './../../assets/Img/20048676-103287613161_1-s5-v1.png';
 import './header.scss';
-import { HashLink as Link } from 'react-router-hash-link';
 import { BrowserRouter } from 'react-router-dom';
-import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll'; 
+import { Link as ScrollLink} from 'react-scroll'; 
 
 // Material Ui Imports 
 import HomeIcon from '@mui/icons-material/Home';
@@ -64,7 +63,7 @@ const Header = () => {
     return (
         <motion.nav 
             id='nav'
-            className={`md:top-0 md:fixed fixed top-0 left-0 right-0 z-50 flex flex-col rounded-b-2xl md:flex-row self-center justify-between md:px-3  pb-1 text-white ${isNavbarHidden ? 'hidden' : ''} bg-blur`}
+            className={`md:top-0 md:fixed fixed top-0 left-0 right-0 z-50 flex flex-col rounded-b-2xl md:flex-row self-center justify-between md:px-14 pb-1 text-white ${isNavbarHidden ? 'hidden' : ''} bg-blur`}
             initial={{ opacity: 0, y: -50 }} 
             animate={{ opacity: 1, y: 0 }} 
             transition={{ duration: 0.5 }} 
@@ -126,33 +125,33 @@ const Header = () => {
             </div>
             <motion.div id='menu-div'className={`text-center font-Josefin md:flex md:items-center text-black ${isMobileMenuOpen ? 'block shadow-2xl bg-gray-900 rounded-b-[10px] text-white' : 'hidden'}`} initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
                <ul className="flex flex-col md:flex-row rounded-b-2xl p-1 m-2 font-extrabold">
-               <BrowserRouter>
-                    <li className="p-3 font-extrabold m-4 text-white hover:text-black hover:bg-white hover:rounded-xl flex justify-center items-center cursor-pointer group ">
-                        <span>Home</span>
-                        <HomeIcon className="ml-2 text-white group-hover:text-black transition duration-300"></HomeIcon>
-                    </li>
+                    <BrowserRouter>
+                        <li className="p-3 font-extrabold m-4 text-white hover:text-black hover:bg-white hover:rounded-xl flex justify-center items-center cursor-pointer group ">
+                            <span>Home</span>
+                            <HomeIcon className="ml-1.5 mb-0.5 text-white group-hover:text-black transition duration-300"></HomeIcon>
+                        </li>
 
-                    <li className="p-3 font-extrabold m-4 text-white hover:text-black hover:bg-white hover:rounded-2xl flex justify-center items-center cursor-pointer group">
-                        <ScrollLink to="about-section" smooth={true} duration={500} className="nav-link relative" onClick={handleLinkClick}>
-                            <span>About Me</span>
-                            <ContactSupportIcon className="ml-2 text-white group-hover:text-black transition duration-300"></ContactSupportIcon>
-                        </ScrollLink>
-                    </li>
+                        <li className="p-3 font-extrabold m-4 text-white hover:text-black hover:bg-white hover:rounded-2xl flex justify-center items-center cursor-pointer group">
+                            <ScrollLink to="about-section" smooth={true} duration={500} className="nav-link relative" onClick={handleLinkClick}>
+                                <span>About Me</span>
+                                <ContactSupportIcon className="ml-2 mb-0.5 self-center text-white group-hover:text-black transition duration-300"></ContactSupportIcon>
+                            </ScrollLink>
+                        </li>
 
-                    <li className="p-3 font-extrabold m-4 text-white hover:text-black hover:bg-white hover:rounded-2xl flex justify-center items-center cursor-pointer group">
-                        <ScrollLink to="skills" smooth={true} duration={500} className="nav-link relative" onClick={handleLinkClick}>
-                            <span>Skills</span>
-                            <BarChartIcon className="ml-2 text-white group-hover:text-black transition duration-300"></BarChartIcon>
-                        </ScrollLink>
-                    </li>
+                        <li className="p-3 font-extrabold m-4 text-white hover:text-black hover:bg-white hover:rounded-2xl flex justify-center items-center cursor-pointer group">
+                            <ScrollLink to="skills" smooth={true} duration={500} className="nav-link relative" onClick={handleLinkClick}>
+                                <span>Skills</span>
+                                <BarChartIcon className="ml-2 mb-1 text-white group-hover:text-black transition duration-300"></BarChartIcon>
+                            </ScrollLink>
+                        </li>
 
-                    <li className="p-3 font-extrabold m-4 text-white hover:text-black hover:bg-white hover:rounded-2xl flex justify-center items-center cursor-pointer group">
-                        <ScrollLink to="project-section" smooth={true} duration={500} className="nav-link relative" onClick={handleLinkClick}>
-                            <span>Projects</span>
-                            <FormatPaintIcon className="ml-2 text-white group-hover:text-black transition duration-300"></FormatPaintIcon>
-                        </ScrollLink>                             
-                    </li>
-                </BrowserRouter>
+                        <li className="p-3 font-extrabold m-4 text-white hover:text-black hover:bg-white hover:rounded-2xl flex justify-center items-center cursor-pointer group">
+                            <ScrollLink to="project-section" smooth={true} duration={500} className="nav-link relative" onClick={handleLinkClick}>
+                                <span>Projects</span>
+                                <FormatPaintIcon className="ml-2 mb-0.5 text-white group-hover:text-black transition duration-300"></FormatPaintIcon>
+                            </ScrollLink>                             
+                        </li>
+                    </BrowserRouter>
                 </ul>
             </motion.div>
         </motion.nav>

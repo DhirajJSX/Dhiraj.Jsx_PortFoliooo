@@ -50,8 +50,8 @@ const ProjectSection = () => {
     ];
 
     return (
-        <div id="project-section" className=" py-24 px-5 text-center bg-radial-gradient from-gray-200 to-gray-300">
-            <h1 className="text-white text-4xl mb-10 mt-10 font-bold">Projects</h1>
+        <div id="project-section" className=" py-24 px-5 text-center bg-slate-300 from-gray-200 to-gray-300">
+            <h1 className="text-black drop-shadow-lg text-[50px]  mb-10 mt-10 font-bold">Projects</h1>
             <div className="flex flex-wrap justify-center">
                 {projects.map((project, index) => (
                     <motion.div

@@ -1,4 +1,35 @@
 .bg-radial-gradient {
     background: radial-gradient(circle, #111827 10%, rgba(0, 0, 0, 0.9) 100%)
   }
-  
+  .neon-hover:hover {
+    box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.7);
+    transition: box-shadow 0.4s ease-in-out;
+}
+
+
+
+  #skills {
+
+    .drop-shadow-xl {
+        filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.5));
+    }
+
+    .shadow-white {
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+
+    .backdrop-blur-lg {
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px); /* For Safari support */
+    }
+
+    .skill-item {
+        width: 250px;
+        height: 150px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+}

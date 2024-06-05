@@ -79,13 +79,13 @@ const HeroSection = () => {
           </motion.h1>
 
           <motion.div className="mt-8 flex justify-center md:justify-start space-x-4 font-Josefin font-bold" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, ease: 'easeInOut', delay: 1 }}>
-            <motion.button className="bg-white text-black hover:bg-black hover:text-white p-3 rounded-2xl shadow-md   transition duration-300 ease-in-out transform hover:scale-105" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+            <motion.button id='btns' className="bg-white text-black hover:bg-black hover:text-white p-3 rounded-2xl shadow-md   transition duration-300 ease-in-out transform hover:scale-105" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
               <div id='btn' className='flex justify-center items-center fill-black hover:fill-white '   onClick={handleDownloadCV}  >
                 <span className='p-1  fill-black hover:fill-white'>Download CV</span>
                 <svg className='m-2 w-6' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M216 0h80c13.3 0 24 10.7 24 24v168h87.7c17.8 0 26.7 21.5 14.1 34.1L269.7 378.3c-7.5 7.5-19.8 7.5-27.3 0L90.1 226.1c-12.6-12.6-3.7-34.1 14.1-34.1H192V24c0-13.3 10.7-24 24-24zm296 376v112c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V376c0-13.3 10.7-24 24-24h146.7l49 49c20.1 20.1 52.5 20.1 72.6 0l49-49H488c13.3 0 24 10.7 24 24zm-124 88c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20zm64 0c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20z"/></svg>
               </div>
             </motion.button>
-            <motion.button  className=" border border-white text-white p-3 rounded-2xl shadow-md transition duration-300 ease-in-out transform hover:scale-105 hover:border-white " whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+            <motion.button id='btns'  className=" border border-white text-white p-3 rounded-2xl shadow-md transition duration-300 ease-in-out transform hover:scale-105 hover:border-white " whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
               <div id='btn' className='flex justify-center items-center'>
                 <span className='p-1  fill-white '>Contact Info</span>
                 <svg className='m-2 w-5 fill-white' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg>
