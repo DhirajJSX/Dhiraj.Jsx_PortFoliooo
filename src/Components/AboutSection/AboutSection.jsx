@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import AboutMeImage from './../../assets/Img/laptop wave (1).png';
 import './AboutSection.scss'
 
-// Material Ui imports
 
 const AboutSection = () => {
   const [isVisible, setIsVisible] = useState(false);
