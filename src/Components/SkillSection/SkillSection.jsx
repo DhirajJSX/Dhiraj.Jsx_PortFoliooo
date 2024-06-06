@@ -1,8 +1,10 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 
+import JavaImg from  './../../assets/Img/java.png'
+
 const skills = [
-    { name: 'Java' },
+    { name: 'Java',  },
     { name: 'JavaScript' },
     { name: 'React' },
     { name: 'Node.js' },
@@ -98,12 +100,8 @@ const SkillSection = () => {
 
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl'>
                 {skills.map((skill, index) => (
-                    <div
-                        key={index}
-                        className='p-6 md:p-8 rounded-lg shadow-md backdrop-blur-lg neon-hover flex flex-col justify-center items-cente bg-white '
-                        ref={el => skillItemsRef.current[index] = el}
-                    >
-                        <h2 className='text-lg md:text-3xl font-semibold text-black font-Josefin\'>{skill.name}</h2>
+                    <div key={index} className='p-6 md:p-8 rounded-lg shadow-lg bg-slate-300 neon-hover flex flex-col justify-center items-center' ref={el => skillItemsRef.current[index] = el}>
+                        <h2 className='text-lg md:text-3xl font-semibold text-black font-Josefin'>{skill.name}</h2>
                     </div>
                 ))}
             </div>

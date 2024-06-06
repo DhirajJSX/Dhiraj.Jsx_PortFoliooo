@@ -123,7 +123,7 @@ const Header = () => {
 
                 </motion.div>
             </div>
-            <motion.div id='menu-div'className={`text-center font-Josefin md:flex md:items-center text-black ${isMobileMenuOpen ? 'block shadow-2xl bg-gray-900 rounded-b-[10px] text-white' : 'hidden'}`} initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+            <motion.div id='menu-div'className={`text-center font-Josefin md:flex md:items-center text-black ${isMobileMenuOpen ? 'block shadow-2xl rounded-b-[10px] text-white' : 'hidden'}`} initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
                <ul className="flex flex-col md:flex-row rounded-b-2xl p-1 m-2 font-extrabold">
                     <BrowserRouter>
                         <li className="p-3 font-extrabold m-4 text-white hover:text-black hover:bg-white hover:rounded-xl flex justify-center items-center cursor-pointer group ">

@@ -88,7 +88,6 @@ const ProjectSection = () => {
                                 </motion.button>
                             </a>
                         </div>
-
                     </motion.div>
                 ))}
             </div>

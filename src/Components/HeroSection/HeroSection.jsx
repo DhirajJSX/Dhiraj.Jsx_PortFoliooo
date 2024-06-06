@@ -47,7 +47,7 @@ const HeroSection = () => {
     document.body.removeChild(link);
 ``};
   return (
-    <section id='home' className="h-[100vh] flex items-center bg-radial-gradient text-white">
+    <section id='home' className="h-[100%] py-[290px] flex items-center bg-radial-gradient text-white">
       <div className="container mx-auto flex flex-col md:flex-row items-center">
         <div className="md:w-1/2  flex justify-center cursor-pointer">
           <motion.img
