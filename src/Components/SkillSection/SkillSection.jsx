@@ -76,7 +76,7 @@ const SkillSection = () => {
             { opacity: 1, y: 0, duration: 1, delay: 0.5, ease: "power4.out" }
         );
 
-        // Animation for each skill item
+        
         skillItemsRef.current.forEach((el, index) => {
             gsap.fromTo(
                 el,
@@ -88,7 +88,7 @@ const SkillSection = () => {
                 rotationY: 10,
                 rotationX: -10,
                 ease: "power1.out",
-                paused: true
+                paused: true,
             });
 
             if (!('ontouchstart' in window)) {

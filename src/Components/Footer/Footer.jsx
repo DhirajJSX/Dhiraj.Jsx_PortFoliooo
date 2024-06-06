@@ -2,7 +2,7 @@ import React from 'react';
 import './Footer.scss'
 const Footer = () => {
     return (
-        <footer className="bg-gray-800 text-gray-300 py-12">
+        <footer className="bg-radial-gradient text-gray-300 py-12">
             <div className="container mx-auto flex flex-wrap justify-between">
                 <div className="w-full lg:w-1/2 xl:w-1/3 mb-8 lg:mb-0">
                     <h2 className="text-xl font-semibold mb-4">About Us</h2>
