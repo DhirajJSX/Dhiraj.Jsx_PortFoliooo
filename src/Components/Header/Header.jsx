@@ -111,16 +111,13 @@ const Header = () => {
                 </div>
                 <motion.h1 className="text-lg font-bold hover:underline px-1" initial={{ opacity: 0 }} animate={{ opacity: 1 }}transition={{ delay: 0.2, duration: 0.5 }}>DHIRAJ BHAWSAR</motion.h1>
                 <motion.div className={`md:hidden ml-auto ${isMobileMenuOpen ? 'active' : ''}`} onClick={handleToggleMobileMenu} whileHover={{ scale: 1.1 }}>
-                   <motion.div className={`md:hidden ml-auto ${isMobileMenuOpen ? 'active' : ''}`} onClick={handleToggleMobileMenu} whileHover={{ scale: 1.1 }}>
-                        <button className="group rounded-lg flex items-center justify-center focus:outline-none">
-                            <div className="grid justify-items-center gap-1.5">
-                                <span className={`h-[3px] w-6 rounded-full bg-white transition ${isMobileMenuOpen ? ' rotate-45 translate-y-2 ' : ''}`} style={{ transformOrigin: 'center', transition: 'transform 0.3s ease-in-out' }}></span>
-                                <span className={`h-[3px] w-6 rounded-full bg-white transition ${isMobileMenuOpen ? 'opacity-0' : ''}`} style={{ transition: 'opacity 0.3s ease-in-out' }}></span>
-                                <span className={`h-[3px] w-6  rounded-full bg-white transition ${isMobileMenuOpen ? '-rotate-45 -translate-y-2.5' : ''}`} style={{ transformOrigin: 'center', transition: 'transform 0.3s ease-in-out' }}></span>
-                            </div>
-                        </button>
-                    </motion.div>
-
+                    <button className="group rounded-lg flex items-center justify-center focus:outline-none">
+                        <div className="grid justify-items-center gap-1.5">
+                            <span className={`h-[3px] w-6 rounded-full bg-white transition ${isMobileMenuOpen ? ' rotate-45 translate-y-2 ' : ''}`} style={{ transformOrigin: 'center', transition: 'transform 0.3s ease-in-out' }}></span>
+                            <span className={`h-[3px] w-6 rounded-full bg-white transition ${isMobileMenuOpen ? 'opacity-0' : ''}`} style={{ transition: 'opacity 0.3s ease-in-out' }}></span>
+                            <span className={`h-[3px] w-6  rounded-full bg-white transition ${isMobileMenuOpen ? '-rotate-45 -translate-y-2.5' : ''}`} style={{ transformOrigin: 'center', transition: 'transform 0.3s ease-in-out' }}></span>
+                        </div>
+                    </button>
                 </motion.div>
             </div>
             <motion.div id='menu-div'className={`text-center font-Josefin md:flex md:items-center text-black ${isMobileMenuOpen ? 'block  text-white' : 'hidden'}`} initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
