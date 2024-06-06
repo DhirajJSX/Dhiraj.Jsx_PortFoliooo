@@ -63,7 +63,7 @@ const Header = () => {
     return (
         <motion.nav 
             id='nav'
-            className={`md:top-0 md:fixed fixed top-0 left-0 right-0 z-50 flex flex-col rounded-b-2xl md:flex-row self-center justify-between md:px-14 pb-1 text-white ${isNavbarHidden ? 'hidden' : ''} bg-blur`}
+            className={`md:top-0 md:fixed fixed top-0 left-0 right-0 z-50 flex flex-col md:flex-row self-center justify-between md:px-14 pb-1 text-white ${isNavbarHidden ? 'hidden' : ''}`}
             initial={{ opacity: 0, y: -50 }} 
             animate={{ opacity: 1, y: 0 }} 
             transition={{ duration: 0.5 }} 
@@ -123,8 +123,8 @@ const Header = () => {
 
                 </motion.div>
             </div>
-            <motion.div id='menu-div'className={`text-center font-Josefin md:flex md:items-center text-black ${isMobileMenuOpen ? 'block shadow-2xl rounded-b-[10px] text-white' : 'hidden'}`} initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-               <ul className="flex flex-col md:flex-row rounded-b-2xl p-1 m-2 font-extrabold">
+            <motion.div id='menu-div'className={`text-center font-Josefin md:flex md:items-center text-black ${isMobileMenuOpen ? 'block  text-white' : 'hidden'}`} initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+               <ul className="flex flex-col md:flex-row rounded-b-2xl p-1 m-2 font-extrabold ">
                     <BrowserRouter>
                         <li className="p-3 font-extrabold m-4 text-white hover:text-black hover:bg-white hover:rounded-xl flex justify-center items-center cursor-pointer group ">
                             <span>Home</span>

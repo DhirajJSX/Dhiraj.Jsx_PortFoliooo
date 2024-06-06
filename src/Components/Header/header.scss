@@ -44,17 +44,18 @@
   }
   #nav {
     /* background-color: ; */
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(25px);
     color: #ffff;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
   }
+  
   @keyframes slideDown {
     0% {
       max-height: 0;
     }
     100% {
-      max-height: 500px;
+      max-height: 1000px;
     }
   }
 
@@ -63,6 +64,7 @@
     animation: slideDown 0.9s ease forwards;
     height: 100vh;
     padding-top: 100px;
+    font-size: 23px;
   }
 
   #socialHandle {
@@ -85,7 +87,7 @@
   }
   #nav {
     /* background-color: #111827; */
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(25px);
     color: #ffff;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
@@ -95,7 +97,7 @@
       max-height: 0;
     }
     100% {
-      max-height: 500px;
+      max-height: 1000px;
     }
   }
 
