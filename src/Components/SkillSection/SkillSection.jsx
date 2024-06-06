@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-import JavaImg from  './../../assets/Img/java.png';
+import JavaImg from './../../assets/Img/java.png';
 import Html from './../../assets/Img/Html.png';
 import Css from './../../assets/Img/Css.png';
 import Sass from './../../assets/Img/Sass.png';
@@ -12,13 +12,13 @@ import Github from './../../assets/Img/Github.png';
 
 const skills = [
     { name: 'Java', image: JavaImg },
-    { name: 'Html', image: Html},
-    { name: 'Css', image: Css},
+    { name: 'Html', image: Html },
+    { name: 'Css', image: Css },
     { name: 'Sass', image: Sass },
-    { name: 'Tailwindcss' , image: Tailwind },
+    { name: 'Tailwindcss', image: Tailwind },
     { name: 'JavaScript', image: Javascript },
-    { name: 'React.js' , image: ReactImg    },
-    { name: 'Git' , image: Git},
+    { name: 'React.js', image: ReactImg },
+    { name: 'Git', image: Git },
     { name: 'GitHub', image: Github },
 ];
 
@@ -38,66 +38,60 @@ const hoverStyles = `
 `;
 
 const SkillSection = () => {
-    
+
     const sectionRef = useRef(null);
     const skillItemsRef = useRef([]);
     const titleRef = useRef(null);
 
     useEffect(() => {
         const section = sectionRef.current;
-        const options = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.5 
+
+        // Trigger animation when skills section comes into view on mobile
+        const handleScroll = () => {
+            const rect = section.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+            if (rect.top <= windowHeight) {
+                animateSkills();
+                window.removeEventListener('scroll', handleScroll);
+            }
         };
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animateSkills();
-                    observer.unobserve(section);
-                }
-            });
-        }, options);
-
-        observer.observe(section);
+        window.addEventListener('scroll', handleScroll);
 
         return () => {
-            if (observer) observer.disconnect();
+            window.removeEventListener('scroll', handleScroll);
         };
     }, []);
 
     const animateSkills = () => {
-        // Animation for skills section
         gsap.fromTo(
             sectionRef.current.children,
             { opacity: 0 },
-            { opacity: 1, duration: 2, ease: "power4.out" } // Adjusted easing function
+            { opacity: 1, duration: 2, ease: "power4.out" }
         );
-    
+
         gsap.fromTo(
             titleRef.current,
             { opacity: 0, y: 20 },
-            { opacity: 1, y: 0, duration: 1, delay: 0.5, ease: "power4.out" } // Adjusted easing function
+            { opacity: 1, y: 0, duration: 1, delay: 0.5, ease: "power4.out" }
         );
-    
+
         // Animation for each skill item
         skillItemsRef.current.forEach((el, index) => {
             gsap.fromTo(
                 el,
                 { y: 50, opacity: 0 },
-                { y: 0, opacity: 1, duration: 1, stagger: 0.2, delay: 1 + (index * 0.1), ease: "power4.out" } // Adjusted delay and easing function
+                { y: 0, opacity: 1, duration: 1, stagger: 0.2, delay: 1 + (index * 0.1), ease: "power4.out" }
             );
-    
+
             gsap.to(el, {
                 rotationY: 10,
                 rotationX: -10,
                 ease: "power1.out",
                 paused: true
             });
-    
-            // Hover animation
-            if (!('ontouchstart' in window)) { // Check if it's not a touch device
+
+            if (!('ontouchstart' in window)) {
                 el.addEventListener("mouseenter", () => {
                     gsap.to(el, {
                         rotationY: 0,
@@ -105,24 +99,24 @@ const SkillSection = () => {
                         scale: 1.05,
                         zIndex: 1,
                         duration: 0.5,
-                        ease: "power4.out" // Adjusted easing function
+                        ease: "power4.out"
                     });
                 });
-        
+
                 el.addEventListener("mouseleave", () => {
                     gsap.to(el, {
                         rotationY: 10,
                         rotationX: -10,
-                        scale: 1, 
+                        scale: 1,
                         zIndex: 0,
                         duration: 0.5,
-                        ease: "power4.out" // Adjusted easing function
+                        ease: "power4.out"
                     });
                 });
             }
         });
     };
-    
+
     return (
         <>
             <style>{hoverStyles}</style>
@@ -134,7 +128,7 @@ const SkillSection = () => {
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl'>
                     {skills.map((skill, index) => (
                         <div key={index} className='p-6 md:p-8 rounded-lg drop-shadow-xl cursor-pointer bg-[#DCB604] neon-hover flex flex-col justify-center items-center ' ref={el => skillItemsRef.current[index] = el}>
-                            <img src={skill.image} alt=""  className=' w-32 mb-4  drop-shadow-lg'/>
+                            <img src={skill.image} alt="" className=' w-32 mb-4  drop-shadow-lg' />
                             <h2 className='text-lg md:text-4xl font-semibold text-black drop-shadow-xl font-Josefin'>{skill.name}</h2>
                         </div>
                     ))}
