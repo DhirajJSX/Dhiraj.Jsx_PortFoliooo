@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 
 
-
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import ProjectOneImage from "./../../assets/Img/Gmail Project.png";
 import ProjectTwoImage from "./../../assets/Img//gym.png";
@@ -17,6 +18,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import AttachmentIcon from '@mui/icons-material/Attachment';
 
 const ProjectSection = () => {
+  
   const projects = [
     {
       title: "Gmail Clone",
@@ -86,14 +88,14 @@ const ProjectSection = () => {
       <div className="flex flex-wrap justify-center">
         {projects.map((project, index) => (
             <motion.div
-                key={index}
-                className="relative m-3 cursor-pointer flex flex-col text-gray-700 bg-black shadow-md bg-clip-border rounded-xl w-96"
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }} // Delay added for stagger effect
-                whileHover={{ scale: 1.03, boxShadow: "0px 10px 30px rgba(0, 0, 0, 0.2)" }} // Scale up and add shadow on hover
-                whileTap={{ scale: 0.97 }} // Scale down slightly on tap
-            >
+            key={index}
+            className="relative m-3 cursor-pointer flex flex-col text-gray-700 bg-black shadow-md bg-clip-border rounded-xl w-96 project-card"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: index * 0.1 }}
+            whileHover={{ scale: 1.03, boxShadow: "0px 10px 30px rgba(0, 0, 0, 0.2)" }}
+            whileTap={{ scale: 0.97 }}
+          >
                 <motion.div
                 className="relative h-56 mx-4 mt-5 overflow-hidden rounded-xl bg-blue-gray-500 shadow-blue-gray-500/40"
                 whileHover={{ opacity: 0.9 }} // Reduce opacity on hover
