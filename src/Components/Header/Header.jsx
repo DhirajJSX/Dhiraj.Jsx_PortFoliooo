@@ -62,22 +62,26 @@ const Header = () => {
    
     return (
         <motion.nav 
-            id='nav'
-            className={`md:top-0 md:fixed fixed top-0 left-0 right-0 z-50 flex flex-col md:flex-row self-center justify-between md:px-14 pb-1 text-white drop-shadow-xl`}
-            initial={{ opacity: 0, y: -50 }} 
-            animate={{ opacity: 1, y: 0 }} 
-            transition={{ duration: 0.5 }} 
-        >
+        id='nav'
+        className={`md:top-0 md:fixed fixed top-0 left-0 right-0 z-50 flex flex-col md:flex-row self-center justify-between md:px-14 pb-1 text-white shadow-xl`}
+        initial={{ opacity: 0, y: -50 }} 
+        animate={{ opacity: 1, y: 0 }} 
+        transition={{ duration: 0.5 }} 
+        style={{ 
+         
+            background: 'radial-gradient(circle, #111827 10%, rgba(0, 0, 0, 0.9) 100%)'
+        }} 
+    >
             <div className="flex items-center md:mb-0 m-1 px-3">
                 <div id='pro' className="relative flex justify-center items-center bg-white  rounded-[100%] mr-1 my-1" ref={profileRef}>
                     <motion.img 
                         src={Profile}
                         alt="Profile"
-                        className="w-[65px] rounded-full cursor-pointer m-1  shadow-2xl"
+                        className="w-[65px] rounded-full cursor-pointer m-1 shadow-2xl"
                         onClick={handleProfileClick}
                         whileHover={{ scale: 1.2 }} 
                         whileTap={{ scale: 1.1, rotateZ: 360 }}
-                        animate={{ y: [0, -3, 0], transition: { duration: 1, repeat: Infinity } }} 
+                        animate={{ y: [0, -2, 0], transition: { duration: 1, repeat: Infinity } }} 
                     />  
                     {showSocialHandles && (
                         <motion.div 
@@ -125,8 +129,10 @@ const Header = () => {
                     <BrowserRouter>
                         
                         <li className="p-3 font-extrabold m-4 text-white  hover:text-black hover:bg-white hover:rounded-xl flex justify-center items-center cursor-pointer group ">
+                        <ScrollLink to="home" smooth={true} duration={500} className="nav-link relative" onClick={handleLinkClick}>
                             <span>Home</span>
                             <HomeIcon className="ml-1.5 mb-0.5 text-white group-hover:text-black transition duration-300"></HomeIcon>
+                        </ ScrollLink>
                         </li>
 
                         <li className="p-3 font-extrabold m-4 text-white hover:text-black hover:bg-white hover:rounded-2xl flex justify-center items-center cursor-pointer group">

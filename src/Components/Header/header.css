@@ -10,8 +10,8 @@
   /* background-color: ; */
   backdrop-filter: blur(50px);
   color: #ffff;
-  border-bottom-left-radius: 50px;
-  border-bottom-right-radius: 50px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
 #socialHandle .flex:hover svg,
