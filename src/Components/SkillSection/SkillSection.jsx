@@ -117,6 +117,20 @@ const SkillSection = () => {
         });
     };
 
+    const getRandomColor = () => {
+        const letters = '0123456789ABCDEF';
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    };
+
+    const getTextColor = (bgColor) => {
+        const luminance = (0.2126 * parseInt(bgColor.substr(1, 2), 16)) + (0.7152 * parseInt(bgColor.substr(3, 2), 16)) + (0.0722 * parseInt(bgColor.substr(5, 2), 16));
+        return luminance > 150 ? '#000000' : '#FFFFFF';
+    };
+
     return (
         <>
             <style>{hoverStyles}</style>
@@ -127,9 +141,9 @@ const SkillSection = () => {
 
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl'>
                     {skills.map((skill, index) => (
-                        <div key={index} className='p-6 md:p-8 rounded-lg drop-shadow-xl cursor-pointer bg-[#DCB604] neon-hover flex flex-col justify-center items-center ' ref={el => skillItemsRef.current[index] = el}>
+                        <div key={index} className='p-6 md:p-8 rounded-lg drop-shadow-xl cursor-pointer neon-hover flex flex-col justify-center items-center ' ref={el => skillItemsRef.current[index] = el} style={{ backgroundColor: getRandomColor() }}>
                             <img src={skill.image} alt="" className=' w-32 mb-4  drop-shadow-lg' />
-                            <h2 className='text-lg md:text-4xl font-semibold text-black drop-shadow-xl font-Josefin'>{skill.name}</h2>
+                            <h2 className='text-lg md:text-4xl font-semibold drop-shadow-xl font-Josefin' style={{ color: getTextColor(getRandomColor()) }}>{skill.name}</h2>
                         </div>
                     ))}
                 </div>
