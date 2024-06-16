@@ -65,10 +65,10 @@ const Header = () => {
       initial={{ opacity: 0, y: -50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-    //   style={{
-    //     background:
-    //       "radial-gradient(circle, #111827 10%, rgba(0, 0, 0, 0.9) 100%)",
-    //   }}
+      //   style={{
+      //     background:
+      //       "radial-gradient(circle, #111827 10%, rgba(0, 0, 0, 0.9) 100%)",
+      //   }}
     >
       <div className="flex items-center md:mb-0 m-1 px-3">
         <div
@@ -222,60 +222,86 @@ const Header = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-          <ul className="flex flex-col md:flex-row rounded-full items-center p-1 bg-white bg-opacity-50 font-extrabold">
+        <ul
+          className={`flex flex-col md:flex-row items-center p-1 font-extrabold 
+  ${isMobileMenuOpen ? "m-10" : "rounded-full bg-black bg-opacity-50 "}`}
+        >
           <BrowserRouter>
             <ScrollLink
-                to="home"
-                smooth={true}
-                duration={500}
-                className={`nav-link relative ${isMobileMenuOpen ? "block" : "inline-block"}`}
-                onClick={handleLinkClick}
-                >
-                <li className={`p-3.5 font-extrabold text-white hover:text-black hover:bg-white transition-all duration-200 hover:rounded-full flex justify-center items-center cursor-pointer group ${isMobileMenuOpen ? "w-full text-center" : ""}`}>
-                    <span>Home</span>
-                    <HomeIcon className="ml-1.5 mb-0.5 text-white group-hover:text-black transition duration-300" />
-                </li>
-                </ScrollLink>
-
-                <ScrollLink
-                to="about-section"
-                smooth={true}
-                duration={500}
-                className={`nav-link relative ${isMobileMenuOpen ? "block" : "inline-block"}`}
-                onClick={handleLinkClick}
-                >
-                <li className={`p-3.5 font-extrabold text-white hover:text-black hover:bg-white transition-all duration-200 hover:rounded-full flex justify-center items-center cursor-pointer group ${isMobileMenuOpen ? "w-full text-center" : ""}`}>
-                    <span>About Me</span>
-                    <ContactSupportIcon className="ml-2 mb-0.5 self-center text-white group-hover:text-black transition duration-300" />
-                </li>
-                </ScrollLink>
-
-                <ScrollLink
-                to="skills"
-                smooth={true}
-                duration={500}
-                className={`nav-link relative ${isMobileMenuOpen ? "block" : "inline-block"}`}
-                onClick={handleLinkClick}
-                >
-                <li className={`p-3.5 font-extrabold text-white hover:text-black hover:bg-white transition-all duration-200 hover:rounded-full flex justify-center items-center cursor-pointer group ${isMobileMenuOpen ? "w-full text-center" : ""}`}>
-                    <span>Skills</span>
-                    <BarChartIcon className="ml-2 mb-1 text-white group-hover:text-black transition duration-300" />
-                </li>
-                </ScrollLink>
-
-                <ScrollLink
-                to="project-section"
-                smooth={true}
-                duration={500}
-                className={`nav-link relative ${isMobileMenuOpen ? "block" : "inline-block"}`}
-                onClick={handleLinkClick}
-                >
-                <li className={`p-3.5 font-extrabold text-white hover:text-black hover:bg-white transition-all duration-200 hover:rounded-full flex justify-center items-center cursor-pointer group ${isMobileMenuOpen ? "w-full text-center" : ""}`}>
-                    <span>Projects</span>
-                    <FormatPaintIcon className="ml-2 mb-0.5 text-white group-hover:text-black transition duration-300" />
-                </li>
+              to="home"
+              smooth={true}
+              duration={500}
+              className={`nav-link relative ${
+                isMobileMenuOpen ? "block" : "inline-block"
+              }`}
+              onClick={handleLinkClick}
+            >
+              <li
+                className={`p-3.5 font-extrabold text-white hover:text-black hover:bg-yellow-400 transition-all duration-200 hover:rounded-full flex justify-center items-center cursor-pointer group ${
+                  isMobileMenuOpen ? "w-full text-center m-2" : ""
+                }`}
+              >
+                <span>Home</span>
+                <HomeIcon className="ml-1.5 mb-0.5 text-white group-hover:text-black transition duration-300" />
+              </li>
             </ScrollLink>
 
+            <ScrollLink
+              to="about-section"
+              smooth={true}
+              duration={500}
+              className={`nav-link relative ${
+                isMobileMenuOpen ? "block" : "inline-block"
+              }`}
+              onClick={handleLinkClick}
+            >
+              <li
+                className={`p-3.5 font-extrabold text-white hover:text-black hover:bg-pink-400 transition-all duration-200 hover:rounded-full flex justify-center items-center cursor-pointer group ${
+                  isMobileMenuOpen ? "w-full text-center m-2" : ""
+                }`}
+              >
+                <span>About Me</span>
+                <ContactSupportIcon className="ml-2 mb-0.5 self-center text-white group-hover:text-black transition duration-300" />
+              </li>
+            </ScrollLink>
+
+            <ScrollLink
+              to="skills"
+              smooth={true}
+              duration={500}
+              className={`nav-link relative ${
+                isMobileMenuOpen ? "block" : "inline-block"
+              }`}
+              onClick={handleLinkClick}
+            >
+              <li
+                className={`p-3.5 font-extrabold text-white hover:text-black hover:bg-blue-400 transition-all duration-200 hover:rounded-full flex justify-center items-center cursor-pointer group ${
+                  isMobileMenuOpen ? "w-full text-center m-2" : ""
+                }`}
+              >
+                <span>Skills</span>
+                <BarChartIcon className="ml-2 mb-1 text-white group-hover:text-black transition duration-300" />
+              </li>
+            </ScrollLink>
+
+            <ScrollLink
+              to="project-section"
+              smooth={true}
+              duration={500}
+              className={`nav-link relative ${
+                isMobileMenuOpen ? "block" : "inline-block"
+              }`}
+              onClick={handleLinkClick}
+            >
+              <li
+                className={`p-3.5 font-extrabold text-white hover:text-black hover:bg-green-400 transition-all duration-300 hover:rounded-full flex justify-center items-center cursor-pointer group ${
+                  isMobileMenuOpen ? "w-full text-center m-2" : ""
+                }`}
+              >
+                <span>Projects</span>
+                <FormatPaintIcon className="ml-2 mb-0.5 text-white group-hover:text-black transition duration-300" />
+              </li>
+            </ScrollLink>
           </BrowserRouter>
         </ul>
       </motion.div>
