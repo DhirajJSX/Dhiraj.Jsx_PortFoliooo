@@ -6,6 +6,13 @@
 #socialHandle {
   background-color: #e6bf14;
 }
+#nav {
+  /* background-color: ; */
+  backdrop-filter: blur(50px);
+  color: #ffff;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
 
 #socialHandle .flex:hover svg,
 #socialHandle .flex:hover a {
@@ -44,8 +51,10 @@
   }
   #nav {
     /* background-color: ; */
-    backdrop-filter: blur(25px);
+    backdrop-filter: blur(50px);
     color: #ffff;
+    border-bottom-left-radius: 36px;
+    border-bottom-right-radius: 36px;
     padding-left: 1.1rem;
     padding-right: 1.1rem;
     padding-top: 0.5rem;

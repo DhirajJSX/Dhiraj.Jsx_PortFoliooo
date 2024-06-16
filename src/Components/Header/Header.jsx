@@ -14,24 +14,24 @@ import FormatPaintIcon from '@mui/icons-material/FormatPaint';
 const Header = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [showSocialHandles, setShowSocialHandles] = useState(false);
-    const [isNavbarHidden, setIsNavbarHidden] = useState(false);
+    // const [isNavbarHidden, setIsNavbarHidden] = useState(false);
     const profileRef = useRef(null);
 
     useEffect(() => {
-        const handleScroll = () => {
-            const scrollTop = window.scrollY;
-            if (scrollTop > 0) {
-                setIsNavbarHidden(true);
-            } else {
-                setIsNavbarHidden(false);
-            }
-        };
+        // const handleScroll = () => {
+        //     const scrollTop = window.scrollY;
+        //     if (scrollTop > 0) {
+        //         setIsNavbarHidden(true);
+        //     } else {
+        //         setIsNavbarHidden(false);
+        //     }
+        // };
 
-        window.addEventListener('scroll', handleScroll);
+        // window.addEventListener('scroll', handleScroll);
 
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
+        // return () => {
+        //     window.removeEventListener('scroll', handleScroll);
+        // };
     }, []);
 
     useEffect(() => {
@@ -63,7 +63,7 @@ const Header = () => {
     return (
         <motion.nav 
             id='nav'
-            className={`md:top-0 md:fixed fixed top-0 left-0 right-0 z-50 flex flex-col md:flex-row self-center justify-between md:px-14 pb-1 text-white ${isNavbarHidden ? 'hidden' : ''}`}
+            className={`md:top-0 md:fixed fixed top-0 left-0 right-0 z-50 flex flex-col md:flex-row self-center justify-between md:px-14 pb-1 text-white drop-shadow-xl`}
             initial={{ opacity: 0, y: -50 }} 
             animate={{ opacity: 1, y: 0 }} 
             transition={{ duration: 0.5 }} 
@@ -121,7 +121,7 @@ const Header = () => {
                 </motion.div>
             </div>
             <motion.div id='menu-div'className={`text-center font-Josefin md:flex md:items-center text-black ${isMobileMenuOpen ? 'block  text-white' : 'hidden'}`} initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-               <ul className="flex flex-col md:flex-row rounded-b-2xl p-1 m-2 font-extrabold ">
+               <ul className="flex flex-col md:flex-row rounded-b-2xl  font-extrabold ">
                     <BrowserRouter>
                         <li className="p-3 font-extrabold m-4 text-white  hover:text-black hover:bg-white hover:rounded-xl flex justify-center items-center cursor-pointer group ">
                             <span>Home</span>
