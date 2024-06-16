@@ -7,8 +7,8 @@
   background-color: #e6bf14;
 }
 #nav {
-  /* background-color: ; */
-  backdrop-filter: blur(50px);
+
+  backdrop-filter: blur(30px);
   color: #ffff;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
