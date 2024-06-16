@@ -73,7 +73,7 @@ const Header = () => {
                     <motion.img 
                         src={Profile}
                         alt="Profile"
-                        className="w-[70px] rounded-full cursor-pointer m-1  shadow-2xl"
+                        className="w-[65px] rounded-full cursor-pointer m-1  shadow-2xl"
                         onClick={handleProfileClick}
                         whileHover={{ scale: 1.2 }} 
                         whileTap={{ scale: 1.1, rotateZ: 360 }}
