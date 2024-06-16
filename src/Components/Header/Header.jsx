@@ -224,7 +224,7 @@ const Header = () => {
       >
         <ul
           className={`flex flex-col md:flex-row items-center p-1 font-extrabold 
-  ${isMobileMenuOpen ? "m-10" : "rounded-full bg-black bg-opacity-50 "}`}
+  ${isMobileMenuOpen ? "m-10 " : "rounded-full bg-black bg-opacity-50 "}`}
         >
           <BrowserRouter>
             <ScrollLink
@@ -256,7 +256,7 @@ const Header = () => {
               onClick={handleLinkClick}
             >
               <li
-                className={`p-3.5 font-extrabold text-white hover:text-black hover:bg-pink-400 transition-all duration-200 hover:rounded-full flex justify-center items-center cursor-pointer group ${
+                className={`p-3.5 font-extrabold text-white hover:text-black hover:bg-cyan-500 transition-all duration-200 hover:rounded-full flex justify-center items-center cursor-pointer group ${
                   isMobileMenuOpen ? "w-full text-center m-2" : ""
                 }`}
               >
@@ -275,7 +275,7 @@ const Header = () => {
               onClick={handleLinkClick}
             >
               <li
-                className={`p-3.5 font-extrabold text-white hover:text-black hover:bg-blue-400 transition-all duration-200 hover:rounded-full flex justify-center items-center cursor-pointer group ${
+                className={`p-3.5 font-extrabold text-white hover:text-black hover:bg-fuchsia-500 transition-all duration-200 hover:rounded-full flex justify-center items-center cursor-pointer group ${
                   isMobileMenuOpen ? "w-full text-center m-2" : ""
                 }`}
               >
@@ -304,7 +304,7 @@ const Header = () => {
             </ScrollLink>
           </BrowserRouter>
         </ul>
-      </motion.div>
+      </motion.div> 
     </motion.nav>
   );
 };
