@@ -1,6 +1,6 @@
 import { useEffect, useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
-import './HeroSection.scss';
+import './HeroSection.css';
 import ProfileImage from './../../assets/Img/Untitled-3.png'; 
 
 const HeroSection = () => {
@@ -38,7 +38,7 @@ const HeroSection = () => {
   }, [displayedText, isDeleting, charIndex, currentTextIndex, texts]);
 
   const handleDownloadCV = () => {
-    const pdfFilePath = '/path/to/your/resume.pdf';
+    const pdfFilePath = './../../assets/pdf/DhirajBhawsarResume.pdf';
     const link = document.createElement('a');
     link.href = pdfFilePath;
     link.setAttribute('download', 'DHIRAJ_BHAWSAR_Resume.pdf');
@@ -54,11 +54,11 @@ const HeroSection = () => {
             id="HeroImg"
             src={ProfileImage}
             alt="Profile"
-            className="w-full shadow-md"
+            className="w-full"
             initial={{ opacity: 0, rotateY: -90 }}
             animate={{ opacity: 1, rotateY: 0 }}
             exit={{ opacity: 0, rotateY: 90 }}
-            whileHover={{ scale: 1.05, boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)' }}
+            whileHover={{ scale: 1.05, boxShadow: '' }}
             transition={{ duration: 0.5, ease: 'easeInOut' }}
           />
         </div>

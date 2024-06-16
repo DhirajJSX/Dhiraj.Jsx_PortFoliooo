@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import AboutMeImage from './../../assets/Img/laptop wave (1).png';
-import './AboutSection.scss'
+import AboutMeImage from './../../assets/Img/Hero Section memo.png';
+import './AboutSection.css'
 
 
 const AboutSection = () => {
@@ -52,7 +52,7 @@ const AboutSection = () => {
           </motion.p>
         </div>
         <div className="md:w-1/2 flex justify-center mt-8 md:mt-0 cursor-pointer hover:scale-105 transition duration-300 ease-in-out">
-          <motion.img src={AboutMeImage} alt="Profile" className="w-[70%] md:[65%] lg:[50%] drop-shadow-2xl shadow-red-500 " initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: isVisible ? 1 : 0, scale: isVisible ? 1 : 0.8, transition: { duration: 1, delay: 0.6 } }}
+          <motion.img src={AboutMeImage} alt="Profile" className="w-[70%] md:[65%] lg:[50%] drop-shadow-2xl rounded-b shadow-red-500 " initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: isVisible ? 1 : 0, scale: isVisible ? 1 : 0.8, transition: { duration: 1, delay: 0.6 } }}
           />
         </div>
       </div>

@@ -11,7 +11,7 @@ import ProjectFourImage from "./../../assets/Img/AgeCal.png";
 import ProjectSixImage from "./../../assets/Img/PassGen.png";
 import ProjectFiveImage from "./../../assets/Img/emoji.png";
 import ProjectSevenImage from "./../../assets/Img/githubFinder.png"
-import "./ProjectSection.scss";
+import "./ProjectSection.css";
 
 // Material ui
 import GitHubIcon from "@mui/icons-material/GitHub";
