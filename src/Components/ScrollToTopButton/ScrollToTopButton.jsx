@@ -10,7 +10,7 @@ const ScrollToTopButton = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 100) {
+      if (window.scrollY > 600) {
         setIsVisible(true);
         resetHideTimeout();
       } else {
@@ -51,7 +51,7 @@ const ScrollToTopButton = () => {
   }, [isVisible]);
   const scrollToTop = () => {
     setIsClicked(true);
-    const scrollStep = -window.scrollY / (500 / 15);
+    const scrollStep = -window.scrollY / (500 / 20);
     const easeOutQuad = t => t * (2 - t);
   
   

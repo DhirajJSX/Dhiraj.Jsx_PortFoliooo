@@ -1,9 +1,4 @@
 import { motion } from "framer-motion";
-
-
-import { gsap } from "gsap";
-// import { ScrollTrigger } from "gsap/ScrollTrigger";
-
 import ProjectOneImage from "./../../assets/Img/Gmail Project.png";
 import ProjectTwoImage from "./../../assets/Img//gym.png";
 import ProjectThreeImage from "./../../assets/Img/phone.png";
@@ -93,7 +88,14 @@ const ProjectSection = () => {
       id="project-section"
       className="py-24 px-5 text-center bg-slate-300 from-gray-200 to-gray-300"
     >
-      <h2 className="text-5xl mb-14 font-bold">Projects</h2>
+       <motion.h2
+      className="text-5xl mb-14 font-bold"
+      initial={{ opacity: 0, y: -50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, ease: "easeInOut" }}
+    >
+      Projects
+    </motion.h2>
       <div className="flex flex-wrap justify-center">
         {projects.map((project, index) => (
             <motion.div
