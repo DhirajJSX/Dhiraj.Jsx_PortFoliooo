@@ -2,6 +2,7 @@ import { useEffect, useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import './HeroSection.css';
 import ProfileImage from './../../assets/Img/Untitled-3.png'; 
+import Pdf from "./../../assets/pdf/DhirajBhawsarResume.pdf"
 
 const HeroSection = () => {
   const texts = useMemo(() => ["I'm Frontend Developer" , "I'm Dhiraj", "How are you?", "Welcome to My Portfolio"], []);
@@ -38,14 +39,14 @@ const HeroSection = () => {
   }, [displayedText, isDeleting, charIndex, currentTextIndex, texts]);
 
   const handleDownloadCV = () => {
-    const pdfFilePath = './../../assets/pdf/DhirajBhawsarResume.pdf';
     const link = document.createElement('a');
-    link.href = pdfFilePath;
+    link.href = Pdf;
     link.setAttribute('download', 'DhirajBhawsarResume.pdf');
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-``};
+};
+
   return (
     <section id='home' className="h-[100%] py-[290px] flex items-center bg-radial-gradient text-white">
       <div className="container mx-auto flex flex-col md:flex-row items-center">
