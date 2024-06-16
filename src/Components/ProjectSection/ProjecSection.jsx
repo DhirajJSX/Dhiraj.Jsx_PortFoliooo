@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import ProjectOneImage from "./../../assets/Img/Gmail Project.png";
 import ProjectTwoImage from "./../../assets/Img//gym.png";
@@ -11,6 +11,7 @@ import ProjectFourImage from "./../../assets/Img/AgeCal.png";
 import ProjectSixImage from "./../../assets/Img/PassGen.png";
 import ProjectFiveImage from "./../../assets/Img/emoji.png";
 import ProjectSevenImage from "./../../assets/Img/githubFinder.png"
+import Project from "./../../assets/Img/amazonwebsite.png"
 import "./ProjectSection.css";
 
 // Material ui
@@ -20,6 +21,14 @@ import AttachmentIcon from '@mui/icons-material/Attachment';
 const ProjectSection = () => {
   
   const projects = [
+    {
+      title: "Amazone Clone",
+      description:
+        "The Amazon Clone project is a dynamic web application that replicates the core functionalities and design aesthetics of the renowned e-commerce platform, Amazon. Developed using React.js for frontend, Vite for efficient build process, Tailwind CSS for styling, and Firebase for authentication, the Amazon Clone is a testament to modern web development technologies.",
+      link: "https://github.com/Dhirajbhavsar9900/Geekthone_GmailClone  ",
+      image: Project,
+      goLive: "https://geekthone-gmail-clone.vercel.app/",
+    },
     {
       title: "Gmail Clone",
       description:
@@ -32,9 +41,9 @@ const ProjectSection = () => {
         title: "GitHub Finder",
         description:
           "This Gmail clone project demonstrates my ability to develop a web application with modern technologies, focusing on user authentication and email functionality. It showcases my skills in front-end development with HTML, CSS, and JavaScript, as well as my ability to integrate third-party APIs for extended functionality.",
-        link: "https://github.com/Dhirajbhavsar9900/Geekthone_GmailClone  ",
+        link: "https://github.com/Dhirajbhavsar9900/Github_Finder",
         image: ProjectSevenImage,
-        goLive: "https://geekthone-gmail-clone.vercel.app/",
+        goLive: "https://github-finder-xi-lac.vercel.app/",
       },
     {
       title: "Gym Website ",
@@ -72,9 +81,9 @@ const ProjectSection = () => {
       title: "PassWord Generator",
       description:
         "I developed a Password Generator website using React and Vite, aiming to provide users with a secure and convenient way to generate strong, random passwords. This project highlights my skills in modern frontend development, including state management, user interface design, and performance optimization with Vite.",
-      link: "https://weakly-test-01.vercel.app/",
+      link: "https://github.com/Dhirajbhavsar9900/Weakly-Test-01",
       image: ProjectSixImage,
-      goLive: "https://github.com/Dhirajbhavsar9900/Weakly-Test-01",
+      goLive: "https://weakly-test-01.vercel.app/  ",
     },
   ];
   
