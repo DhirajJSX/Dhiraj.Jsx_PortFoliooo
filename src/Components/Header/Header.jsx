@@ -123,6 +123,7 @@ const Header = () => {
             <motion.div id='menu-div'className={`text-center font-Josefin md:flex md:items-center text-black ${isMobileMenuOpen ? 'block  text-white' : 'hidden'}`} initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
                <ul className="flex flex-col md:flex-row rounded-b-2xl  font-extrabold ">
                     <BrowserRouter>
+                        
                         <li className="p-3 font-extrabold m-4 text-white  hover:text-black hover:bg-white hover:rounded-xl flex justify-center items-center cursor-pointer group ">
                             <span>Home</span>
                             <HomeIcon className="ml-1.5 mb-0.5 text-white group-hover:text-black transition duration-300"></HomeIcon>
