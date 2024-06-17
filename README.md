@@ -33,7 +33,8 @@ This portfolio showcases my skills and projects as a developer. It includes inte
 
 ## Demo
 
-Check out the live demo of the portfolio [here](https://your-portfolio-demo-link.com).
+Check out the live demo of the portfolio (Vercel Link) [here](https://dhirajbhawsarportfolio.netlify.app/)
+(Netlify Link) [here](https://dhirajbhawsarportfolio.netlify.app/)
 
 ## Installation
 
