@@ -51,10 +51,12 @@ To run this project locally, follow these steps:
     ```bash
     cd your-repo-name
 
+    
 3. **Install Dependencies:**  
   ```bash
   npm install or npm i 
 
+  
 4. **Start the development server:**
   ```bash
   npm run dev
