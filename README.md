@@ -1,8 +1,35 @@
-# React + Vite
+# My Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to my portfolio! This project is built with React and Vite, styled with Tailwind CSS, and features animations powered by GSAP and Framer Motion.
 
-Currently, two official plugins are available:
+## Table of Contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Introduction](#introduction)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Technologies](#technologies)
+- [Credits](#credits)
+- [License](#license)
+
+## Introduction
+
+This portfolio showcases my skills and projects as a developer. It includes interactive and dynamic elements to engage visitors and highlight my abilities in front-end development.
+
+## Features
+
+- **React & Vite**: Fast and efficient front-end framework and build tool.
+- **Tailwind CSS**: Utility-first CSS framework for rapid UI development.
+- **GSAP**: Powerful animation library for high-performance animations.
+- **Framer Motion**: Declarative animations and gestures for React.
+- **Responsive Design**: Ensures compatibility across various devices and screen sizes.
+- **Interactive Elements**: Engaging animations and transitions to enhance user experience.
+
+## Installation
+
+To run this project locally, follow these steps:
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/your-username/your-repo-name.git

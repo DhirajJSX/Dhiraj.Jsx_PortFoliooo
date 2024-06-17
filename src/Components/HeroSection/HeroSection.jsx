@@ -53,6 +53,7 @@ const HeroSection = () => {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+    console.log(link);
   };
 
   const handleContactInfo = () => {
