@@ -57,7 +57,7 @@
     border-bottom-right-radius: 15px;
     padding-left: 1.1rem;
     padding-right: 1.1rem;
-    padding-top: 0.5rem;
+
   }
   
   @keyframes slideDown {
@@ -100,7 +100,7 @@
     backdrop-filter: blur(70px);
     color: #ffff;
     padding-right: 1.1rem;
-    padding-top: 0.5rem;
+   
   }
   @keyframes slideDown {
     0% {
