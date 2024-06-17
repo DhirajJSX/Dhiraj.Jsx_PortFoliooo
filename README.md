@@ -51,4 +51,5 @@ To run this project locally, follow these steps:
   ```bash
   cd your-repo-name
   
+    ```bash
   npm install or npm i 
