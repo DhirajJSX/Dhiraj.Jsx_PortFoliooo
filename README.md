@@ -47,24 +47,17 @@ To run this project locally, follow these steps:
    git clone https://github.com/your-username/your-repo-name.git
 
 2. **Navigate to the project directory:**
-  ```bash
-    cd your-repo-name
-  
- 3. **Install Dependencies:**  
+
     ```bash
-    npm install or npm i 
+    cd your-repo-name
+
+3. **Install Dependencies:**  
+  ```bash
+  npm install or npm i 
 
 4. **Start the development server:**
-    ```bash
-    npm run dev
+  ```bash
+  npm run dev
 
-## Usage
 
-To use this project, follow the instructions provided in the Installation section. Once the development server is running, you can view the project by navigating to http://localhost:3000 in your web browser.
-
-## Configuration
-
-This project can be configured by modifying the files in the src directory. Key files include:
-
-- src/App.jsx: Main application component.
-- src/index.css: Global CSS file for styling.
+## Usage 
