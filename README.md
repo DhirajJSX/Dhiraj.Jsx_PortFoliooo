@@ -6,9 +6,15 @@ Welcome to my portfolio! This project is built with React and Vite, styled with 
 
 - [Introduction](#introduction)
 - [Features](#features)
+- [Demo](#demo)
 - [Installation](#installation)
 - [Usage](#usage)
+- [Configuration](#configuration)
+- [Environment Variables](#environment-variables)
 - [Technologies](#technologies)
+- [Project Structure](#project-structure)
+- [Contributing](#contributing)
+- [Acknowledgments](#acknowledgments)
 - [Credits](#credits)
 - [License](#license)
 
@@ -24,6 +30,10 @@ This portfolio showcases my skills and projects as a developer. It includes inte
 - **Framer Motion**: Declarative animations and gestures for React.
 - **Responsive Design**: Ensures compatibility across various devices and screen sizes.
 - **Interactive Elements**: Engaging animations and transitions to enhance user experience.
+
+## Demo
+
+Check out the live demo of the portfolio [here](https://your-portfolio-demo-link.com).
 
 ## Installation
 
