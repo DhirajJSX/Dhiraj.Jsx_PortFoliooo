@@ -33,8 +33,9 @@ This portfolio showcases my skills and projects as a developer. It includes inte
 
 ## Demo
 
-Check out the live demo of the portfolio (Vercel Link) [here](https://dhirajbhawsarportfolio.netlify.app/)
-(Netlify Link) [here](https://dhirajbhawsarportfolio.netlify.app/)
+Check out the live demo of the portfolio:
+- [Vercel Link](https://dhirajbhawsarportfolio.netlify.app/)
+- [Netlify Link](https://dhirajbhawsarportfolio.netlify.app/)
 
 ## Installation
 
@@ -44,3 +45,9 @@ To run this project locally, follow these steps:
 
    ```bash
    git clone https://github.com/your-username/your-repo-name.git
+
+2. **Navigate to the project directory:**
+
+  ```bash
+  cd your-repo-name
+  
