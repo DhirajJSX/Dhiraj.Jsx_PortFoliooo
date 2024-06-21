@@ -6,6 +6,7 @@ import AboutSection from './../AboutSection/AboutSection';
 import SkillSection from './../SkillSection/SkillSection';
 import ProjectSection from './../ProjectSection/ProjecSection';
 import Footer from '../Footer/Footer';
+import ScrollToTopButton from './../ScrollToTopButton/ScrollToTopButton'
 import './curosr.css';
 
 function CursorEffect() {
@@ -50,6 +51,7 @@ function CursorEffect() {
     <>
       <div className="cursor" style={{ left: cursorPosition.x, top: cursorPosition.y }}></div>
       <Header />
+      <ScrollToTopButton />
       <HeroSection />
       <AboutSection />
       <SkillSection />
