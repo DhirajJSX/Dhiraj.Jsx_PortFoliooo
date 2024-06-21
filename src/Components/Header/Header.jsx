@@ -59,6 +59,7 @@ const Header = () => {
   };
 
   return (
+    
     <motion.nav
       id="nav"
       className={`md:top-0 md:fixed fixed top-0 left-0 right-0 z-50 flex flex-col md:flex-row self-center justify-between md:px-14 pb-1  `}
