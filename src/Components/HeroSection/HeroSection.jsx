@@ -145,10 +145,9 @@ const HeroSection = () => {
             </div>
           </motion.button>
         </motion.div>
-
-
-
-        
+        <div>
+          dhiraj
+        </div>
         </div>
       </div>
     </section>
