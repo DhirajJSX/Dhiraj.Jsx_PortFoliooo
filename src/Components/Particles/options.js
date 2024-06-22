@@ -9,7 +9,7 @@ const options = {
       color: {
         value: "#ffff",
       },
-      opacity: 1,
+      opacity: 100,
     },
     enable: false,
   },
@@ -53,7 +53,7 @@ const options = {
       },
     },
     color: {
-      value: "#000",
+      value: "#FACC15",
       animation: {
         h: {
           count: 0,
@@ -161,8 +161,8 @@ const options = {
     },
     opacity: {
       value: {
-        min: 0.1,
-        max: 0.2,
+        min: 0.9,
+        max: 0.4,
       },
       animation: {
         count: 0,
@@ -189,7 +189,7 @@ const options = {
       },
     },
     shape: {
-      type: "square", // Change the shape type to "square"
+      type: "circle", // Change the shape type to "square"
       options: {},    // You may define specific options for the shape here if needed
       fill: true,     // Whether to fill the shape
       close: true     // Whether to close the shape
