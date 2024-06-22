@@ -35,7 +35,7 @@ const Header = () => {
 
 
 
-  
+
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (profileRef.current && !profileRef.current.contains(event.target)) {
@@ -233,7 +233,7 @@ const Header = () => {
               <ScrollLink
                 to="home"
                 smooth={true}
-                duration={1000}
+                duration={700}
                 className={`nav-link relative ${isMobileMenuOpen ? "block" : "inline-block"}`}
                 onClick={handleLinkClick}
               >
