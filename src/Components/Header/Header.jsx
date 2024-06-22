@@ -237,7 +237,7 @@ const Header = () => {
           <ScrollLink
             to="home"
             smooth={true}
-            duration={500}
+            duration={400}
             className={`nav-link relative ${
               isMobileMenuOpen ? "block" : "inline-block"
             }`}
@@ -263,7 +263,7 @@ const Header = () => {
           <ScrollLink
             to="about-section"
             smooth={true}
-            duration={500}
+            duration={400}
             className={`nav-link relative ${
               isMobileMenuOpen ? "block" : "inline-block"
             }`}
@@ -289,7 +289,7 @@ const Header = () => {
           <ScrollLink
             to="skills"
             smooth={true}
-            duration={500}
+            duration={400}
             className={`nav-link relative ${
               isMobileMenuOpen ? "block" : "inline-block"
             }`}
@@ -315,7 +315,7 @@ const Header = () => {
           <ScrollLink
             to="project-section"
             smooth={true}
-            duration={500}
+            duration={400}
             className={`nav-link relative ${
               isMobileMenuOpen ? "block" : "inline-block"
             }`}
