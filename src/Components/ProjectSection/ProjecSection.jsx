@@ -19,6 +19,7 @@ import tailwind from "../../assets/Img/Tailwind.png"
 import js from "../../assets/Img/JavaScript.png"
 import firebase from "./../../assets/Img/firebase1.png"
 const ProjectSection = () => {
+
   const projects = [
     {
       title: "Amazon Clone",
@@ -84,7 +85,7 @@ const ProjectSection = () => {
       tech: [html, css,js]
     },
     {
-      title: "Password Generator",
+      title: "PassGenerator",
       description:
         "I developed a Password Generator website using React and Vite, aiming to provide users with a secure and convenient way to generate strong, random passwords. This project highlights my skills in modern frontend development, including state management, user interface design, and performance optimization with Vite.",
       link: "https://github.com/Dhirajbhavsar9900/Weakly-Test-01",
@@ -163,9 +164,12 @@ const ProjectSection = () => {
                   ))}
                 </div>
               </div>
-              <p className="block font-sans text-base text-gray-300 leading-relaxed">
-                {project.description}
-              </p>
+              <div className="flex items-start">
+                <p className="block font-sans text-base text-gray-300 leading-relaxed text-left">
+                  {project.description}
+                </p>
+              </div>
+
             </div>
           </motion.div>
         ))}
