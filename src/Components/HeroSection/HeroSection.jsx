@@ -71,7 +71,7 @@ const HeroSection = () => {
         id="HeroImg"
         src={ProfileImage}
         alt="Profile"
-        className="w-full"
+        className="w-full z-20"
         initial={{ opacity: 0, rotateY: -90 }}
         animate={{ opacity: 1, rotateY: 0 }}
         exit={{ opacity: 0, rotateY: 90 }}

@@ -1,5 +1,6 @@
 import './App.css'
 import CursorEffect from './Components/CursorEffect/CursorEffect';
+import ParticlesBG from './Components/Particles/Particles';
 
 
 function App() {
@@ -7,7 +8,8 @@ function App() {
 
   return (
     <>
-    <CursorEffect />
+    <ParticlesBG />
+      <CursorEffect />
     </>
   )
 }

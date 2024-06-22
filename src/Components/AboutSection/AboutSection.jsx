@@ -48,7 +48,7 @@ const AboutSection = () => {
             &nbsp;Me
           </motion.span>
         </motion.h1>
-          <motion.p id="pTag" className="sm:text-xl hover:transition-all hover:duration-700 hover:shadow-2xl shadow-xl self-center md:text-2xl max-w-2xl font-Josefin p-7 rounded-[30px] bg-black text-white " initial={{ opacity: 0, x: -50 }} animate={{ opacity: isVisible ? 1 : 0, x: isVisible ? 0 : -50,transition: { duration: 1, delay: 0.6 }}}>
+          <motion.p id="pTag" className=" z-30 sm:text-xl hover:transition-all hover:duration-700 hover:shadow-2xl shadow-xl self-center md:text-2xl max-w-2xl font-Josefin p-7 rounded-[30px] bg-black text-white " initial={{ opacity: 0, x: -50 }} animate={{ opacity: isVisible ? 1 : 0, x: isVisible ? 0 : -50,transition: { duration: 1, delay: 0.6 }}}>
             A passionate developer with a knack for creating stunning web experiences. My journey in the tech world has been driven by curiosity and a constant desire to learn and innovate. From developing sleek user interfaces to architecting robust backend systems, I love every aspect of software development. Lets dive deeper into my story and explore what drives me to code.
           </motion.p>
         </div>

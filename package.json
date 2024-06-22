@@ -14,6 +14,8 @@
     "@emotion/styled": "^11.11.5",
     "@mui/icons-material": "^5.15.19",
     "@mui/material": "^5.15.19",
+    "@tsparticles/react": "^3.0.0",
+    "@tsparticles/slim": "^3.4.0",
     "framer-motion": "^11.2.10",
     "gsap": "^3.12.5",
     "react": "^18.3.1",
