@@ -134,7 +134,7 @@ const HeroSection = () => {
             onClick={handleContactInfo}
           >
             <div id="btn" className="flex justify-center items-center">
-              <span className="p-2 fill-white">Contact</span>
+              <span className="px-4 fill-white">Email Me </span>
               <svg
                 className="m-2 w-5 fill-white"
                 xmlns="http://www.w3.org/2000/svg"
