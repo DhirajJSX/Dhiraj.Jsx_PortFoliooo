@@ -45,8 +45,7 @@ const SkillSection = () => {
 
     useEffect(() => {
         const section = sectionRef.current;
-
-        // Trigger animation when skills section comes into view on mobile
+        
         const handleScroll = () => {
             const rect = section.getBoundingClientRect();
             const windowHeight = window.innerHeight;
@@ -126,10 +125,6 @@ const SkillSection = () => {
         return color;
     };
 
-    const getTextColor = (bgColor) => {
-        const luminance = (0.2126 * parseInt(bgColor.substr(1, 2), 16)) + (0.7152 * parseInt(bgColor.substr(3, 2), 16)) + (0.0722 * parseInt(bgColor.substr(5, 2), 16));
-        return luminance > 150 ? '#000000' : '#FFFFFF';
-    };
 
     return (
         <>
@@ -141,9 +136,9 @@ const SkillSection = () => {
 
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl'>
                     {skills.map((skill, index) => (
-                        <div key={index} className='p-6 md:p-8 rounded-lg drop-shadow-xl cursor-pointer neon-hover flex flex-col justify-center items-center ' ref={el => skillItemsRef.current[index] = el} style={{ backgroundColor: getRandomColor() }}>
+                        <div key={index} className='p-6 md:p-8 rounded-lg drop-shadow-xl cursor-pointer neon-hover flex flex-col justify-center items-center transition-all  duration-500 ' ref={el => skillItemsRef.current[index] = el} style={{ backgroundColor: getRandomColor() }}>
                             <img src={skill.image} alt="" className=' w-32 mb-4  drop-shadow-lg' />
-                            <h2 className='text-lg md:text-4xl font-semibold drop-shadow-xl font-Josefin' style={{ color: getTextColor(getRandomColor()) }}>{skill.name}</h2>
+                            <h2 className='text-lg md:text-4xl font-semibold drop-shadow-2xl font-Josefin text-white '>{skill.name}</h2>
                         </div>
                     ))}
                 </div>
