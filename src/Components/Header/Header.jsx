@@ -5,7 +5,7 @@ import "./header.css";
 import { BrowserRouter } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll";
 
-// Material Ui Imports
+// Material UI Imports
 import HomeIcon from "@mui/icons-material/Home";
 import ContactSupportIcon from "@mui/icons-material/ContactSupport";
 import BarChartIcon from "@mui/icons-material/BarChart";
@@ -14,27 +14,9 @@ import FormatPaintIcon from "@mui/icons-material/FormatPaint";
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [showSocialHandles, setShowSocialHandles] = useState(false);
-  // const [isNavbarHidden, setIsNavbarHidden] = useState(false);
+  const [activeSection, setActiveSection] = useState("home"); // State to track active section
+
   const profileRef = useRef(null);
-
-  
-  useEffect(() => {
-    // const handleScroll = () => {
-    //     const scrollTop = window.scrollY;
-    //     if (scrollTop > 0) {
-    //         setIsNavbarHidden(true);
-    //     } else {
-    //         setIsNavbarHidden(false);
-    //     }
-    // };
-    // window.addEventListener('scroll', handleScroll);
-    // return () => {
-    //     window.removeEventListener('scroll', handleScroll);
-    // };
-  }, []);
-
-
-
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -54,7 +36,8 @@ const Header = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  const handleLinkClick = () => {
+  const handleLinkClick = (section) => {
+    setActiveSection(section);
     setIsMobileMenuOpen(false); // Close the mobile menu when a link is clicked
   };
 
@@ -63,17 +46,12 @@ const Header = () => {
   };
 
   return (
-    
     <motion.nav
       id="nav"
-      className={`md:top-0 md:fixed fixed top-0 left-0 right-0 z-50 flex flex-col md:flex-row self-center justify-between md:px-14 pb-1  `}
+      className={`md:top-0 md:fixed fixed top-0 left-0 right-0 z-50 flex flex-col md:flex-row self-center justify-between md:px-14 pb-1`}
       initial={{ opacity: 0, y: -50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      //   style={{
-      //     background:
-      //       "radial-gradient(circle, #111827 10%, rgba(0, 0, 0, 0.9) 100%)",
-      //   }}
     >
       <div className="flex items-center md:mb-0 m-1 px-3">
         <div
@@ -184,13 +162,15 @@ const Header = () => {
           DHIRAJ BHAWSAR
         </motion.h1>
         <motion.div
-          className={`md:hidden ml-auto ${isMobileMenuOpen ? "active" : ""}`}
+          className={`md:hidden ml-auto ${
+            isMobileMenuOpen ? "active" : ""
+          }`}
           onClick={handleToggleMobileMenu}
           whileHover={{ scale: 1.1 }}
         >
           <button className="group rounded-lg flex items-center justify-center focus:outline-none">
             <div className="grid justify-items-center gap-1.5">
-              <span
+            <span
                 className={`h-[3px] w-6 rounded-full bg-white transition ${
                   isMobileMenuOpen ? " rotate-45 translate-y-2 " : ""
                 }`}
@@ -218,102 +198,115 @@ const Header = () => {
           </button>
         </motion.div>
       </div>
-      
       <motion.div
         id="menu-div"
         className={`text-center font-Josefin md:flex md:items-center text-black ${
-          isMobileMenuOpen ? "block  text-white" : "hidden"
+          isMobileMenuOpen ? "block text-white" : "hidden"
         }`}
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <ul className={`flex flex-col md:flex-row items-center p-1 font-extrabold ${isMobileMenuOpen ? "m-10 " : "rounded-full bg-black bg-opacity-50 "}`}>
-            <BrowserRouter>
-              <ScrollLink
-                to="home"
-                smooth={true}
-                duration={700}
-                className={`nav-link relative ${isMobileMenuOpen ? "block" : "inline-block"}`}
-                onClick={handleLinkClick}
+        <ul
+          className={`flex flex-col md:flex-row items-center p-1 font-extrabold ${
+            isMobileMenuOpen ? "m-10" : "rounded-full bg-black bg-opacity-50"
+          }`}
+        >
+          <BrowserRouter>
+            <ScrollLink
+              to="home"
+              smooth={true}
+              duration={500}
+              className={`nav-link relative ${
+                isMobileMenuOpen ? "block" : "inline-block"
+              }`}
+              onClick={() => handleLinkClick("home")}
+            >
+              <li
+                className={`p-3.5 font-extrabold text-white transition-all duration-200 flex justify-center items-center cursor-pointer group ${
+                  activeSection === "home"
+                    ? "text-black bg-yellow-400 rounded-full"
+                    : "hover:text-black hover:bg-yellow-400 hover:rounded-full"
+                } ${
+                  isMobileMenuOpen ? "w-full text-center m-2" : ""
+                }`}
               >
-                <li
-                  className={`p-3.5 font-extrabold text-white hover:text-black hover:bg-yellow-400 transition-all duration-200 hover:rounded-full flex justify-center items-center cursor-pointer group ${
-                    isMobileMenuOpen ? "w-full text-center m-2" : ""
-                  }`}
-                >
-                  <span>Home</span>
-                  <HomeIcon className="ml-1.5 mb-0.5 text-white group-hover:text-black transition duration-300" />
-                </li>
-              </ScrollLink>
+                <span>Home</span>
+                <HomeIcon className="ml-1.5 mb-0.5 text-white group-hover:text-black transition duration-300" />
+              </li>
+            </ScrollLink>
 
-              <ScrollLink
-                to="about-section"
-                smooth={true}
-                duration={500}
-                className={`nav-link relative ${isMobileMenuOpen ? "block" : "inline-block"}`}
-                onClick={handleLinkClick}
+            <ScrollLink
+              to="about-section"
+              smooth={true}
+              duration={500}
+              className={`nav-link relative ${
+                isMobileMenuOpen ? "block" : "inline-block"
+              }`}
+              onClick={() => handleLinkClick("about")}
+            >
+              <li
+                className={`p-3.5 font-extrabold text-white transition-all duration-200 flex justify-center items-center cursor-pointer group ${
+                  activeSection === "about"
+                    ? "text-black bg-cyan-500 rounded-full"
+                    : "hover:text-black hover:bg-cyan-500 hover:rounded-full"
+                } ${
+                  isMobileMenuOpen ? "w-full text-center m-2" : ""
+                }`}
               >
-                <li
-                  className={`p-3.5 font-extrabold text-white hover:text-black hover:bg-cyan-500 transition-all duration-200 hover:rounded-full flex justify-center items-center cursor-pointer group ${
-                    isMobileMenuOpen ? "w-full text-center m-2" : ""
-                  }`}
-                >
-                  <span>About Me</span>
-                  <ContactSupportIcon className="ml-2 mb-0.5 self-center text-white group-hover:text-black transition duration-300" />
-                </li>
-              </ScrollLink>
+                <span>About Me</span>
+                <ContactSupportIcon className="ml-2 mb-0.5 self-center text-white group-hover:text-black transition duration-300" />
+              </li>
+            </ScrollLink>
 
-              <ScrollLink
-                to="skills"
-                smooth={true}
-                duration={500}
-                className={`nav-link relative ${isMobileMenuOpen ? "block" : "inline-block"}`}
-                onClick={handleLinkClick}
+            <ScrollLink
+              to="skills"
+              smooth={true}
+              duration={500}
+              className={`nav-link relative ${
+                isMobileMenuOpen ? "block" : "inline-block"
+              }`}
+              onClick={() => handleLinkClick("skills")}
+            >
+              <li
+                className={`p-3.5 font-extrabold text-white transition-all duration-200 flex justify-center items-center cursor-pointer group ${
+                  activeSection === "skills"
+                    ? "text-black bg-fuchsia-500 rounded-full"
+                    : "hover:text-black hover:bg-fuchsia-500 hover:rounded-full"
+                } ${
+                  isMobileMenuOpen ? "w-full text-center m-2" : ""
+                }`}
               >
-                <li
-                  className={`p-3.5 font-extrabold text-white hover:text-black hover:bg-fuchsia-500 transition-all duration-200 hover:rounded-full flex justify-center items-center cursor-pointer group ${
-                    isMobileMenuOpen ? "w-full text-center m-2" : ""
-                  }`}
-                >
-                  <span>Skills</span>
-                  <BarChartIcon className="ml-2 mb-1 text-white group-hover:text-black transition duration-300" />
-                </li>
-              </ScrollLink>
+                <span>Skills</span>
+                <BarChartIcon className="ml-2 mb-1 text-white group-hover:text-black transition duration-300" />
+              </li>
+            </ScrollLink>
 
-              <ScrollLink
-                to="project-section"
-                smooth={true}
-                duration={500}
-                className={`nav-link relative ${isMobileMenuOpen ? "block" : "inline-block"}`}
-                onClick={handleLinkClick}
+            <ScrollLink
+              to="project-section"
+              smooth={true}
+              duration={500}
+              className={`nav-link relative ${
+                isMobileMenuOpen ? "block" : "inline-block"
+              }`}
+              onClick={() => handleLinkClick("projects")}
+            >
+              <li
+                className={`p-3.5 font-extrabold text-white transition-all duration-300 flex justify-center items-center cursor-pointer group ${
+                  activeSection === "projects"
+                    ? "text-black bg-green-400 rounded-full"
+                    : "hover:text-black hover:bg-green-400 hover:rounded-full"
+                } ${
+                  isMobileMenuOpen ? "w-full text-center m-2" : ""
+                }`}
               >
-                <li
-                  className={`p-3.5 font-extrabold text-white hover:text-black hover:bg-green-400 transition-all duration-300 hover:rounded-full flex justify-center items-center cursor-pointer group ${
-                    isMobileMenuOpen ? "w-full text-center m-2" : ""
-                  }`}
-                >
-                  <span>Projects</span>
-                  <FormatPaintIcon className="ml-2 mb-0.5 text-white group-hover:text-black transition duration-300" />
-                </li>
-              </ScrollLink>
-            </BrowserRouter>
+                <span>Projects</span>
+                <FormatPaintIcon className="ml-2 mb-0.5 text-white group-hover:text-black transition duration-300" />
+              </li>
+            </ScrollLink>
+          </BrowserRouter>
         </ul>
       </motion.div>
-
-
-{/* 
-      <motion.div
-        id="menu-div"
-        className={`text-center font-Josefin md:flex md:items-center text-black ${
-          isMobileMenuOpen ? "block  text-white" : "hidden"
-        }`}
-        initial={{ opacity: 0, y: -10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-      dhiraj
-      </motion.div> */}
     </motion.nav>
   );
 };
