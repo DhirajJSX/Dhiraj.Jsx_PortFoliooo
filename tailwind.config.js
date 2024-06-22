@@ -15,6 +15,7 @@ export default {
         Caveat: ["Caveat", "cursive"],
         FIra: ["Fira Code", "monospace"],
         signature: ['"Great Vibes"', "cursive"],
+        cursive: ['"Playwrite US Trad", cursive;']
       },
     },
   },

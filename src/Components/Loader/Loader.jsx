@@ -1,32 +1,53 @@
 import { useEffect } from 'react';
 import { gsap } from 'gsap';
+import { SplitText } from 'gsap/SplitText'; // Import SplitText for animating individual letters
+import Particles from "./../Particles/Particles"; // Adjust the import path as needed
 
 const Loader = () => {
   useEffect(() => {
-    gsap.timeline({ repeat: -1, repeatDelay: 0.5 })
-      .to(".cube", {
-        y: -20,
-        scale: 1.5,
+    gsap.registerPlugin(SplitText); // Register SplitText plugin
+
+    const loaderTimeline = gsap.timeline({ repeat: -1, repeatDelay: 0.5 })
+      .to(".text", {
+        opacity: 0.5,
+        scale: 1.2,
         duration: 0.5,
-        stagger: 0.1,
         ease: "power1.inOut"
       })
-      .to(".cube", {
-        y: 0,
+      .to(".text", {
+        opacity: 1,
         scale: 1,
         duration: 0.5,
-        stagger: 0.1,
         ease: "power1.inOut"
       });
+
+    // Add writing animation after loader is finished
+    loaderTimeline.eventCallback("onComplete", () => {
+      const split = new SplitText(".text", { type: "chars, words" }); // Split text into characters
+      gsap.from(split.chars, {
+        opacity: 0,
+        y: 50,
+        duration: 0.8,
+        ease: "power4.out",
+        stagger: 0.05 // Stagger each letter animation
+      });
+
+      gsap.to(".loader-container", {
+        y: "-100%",
+        duration: 0.5,
+        ease: "power1.inOut",
+        onComplete: () => {
+          document.querySelector(".loader-container").style.display = "none";
+        }
+      });
+    });
+
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-dark-purple">
-      <div className="flex space-x-4">
-        <div className="cube bg-white w-10 h-10"></div>
-        <div className="cube bg-white w-10 h-10"></div>
-        <div className="cube bg-white w-10 h-10"></div>
-      </div>
+    <div className="loader-container relative flex flex-col items-center justify-center h-screen bg-white">
+      <Particles />
+      <h1 className="text-black text-4xl font-cursive font-bold relative z-10">Welcome to portfolioooo</h1>
     </div>
   );
 };
