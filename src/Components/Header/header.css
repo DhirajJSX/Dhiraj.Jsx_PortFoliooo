@@ -14,10 +14,6 @@
   border-bottom-right-radius: 20px;
 }
 
-.nav-link.active{
-  background-color: blue;
-}
-
 #socialHandle .flex:hover svg,
 #socialHandle .flex:hover a {
   color: white;

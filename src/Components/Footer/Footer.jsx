@@ -1,9 +1,6 @@
 import React from "react";
 import "./Footer.css";
 
-
-
-
 const Footer = () => {
   return (
     <footer className="bg-radial-gradient text-gray-300 py-12 p-4">

@@ -1,44 +1,63 @@
-import { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
-import Profile from "./../../assets/Img/Wink Emoji GIF - Wink Emoji Apple - Discover & Share GIFs.gif";
-import "./header.css";
-import { BrowserRouter } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll";
-
-// Material UI Imports
 import HomeIcon from "@mui/icons-material/Home";
 import ContactSupportIcon from "@mui/icons-material/ContactSupport";
 import BarChartIcon from "@mui/icons-material/BarChart";
 import FormatPaintIcon from "@mui/icons-material/FormatPaint";
+import Profile from "./../../assets/Img/Wink Emoji GIF - Wink Emoji Apple - Discover & Share GIFs.gif";
+import "./header.css";
 
 const Header = () => {
+  const [activeSection, setActiveSection] = useState("home");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [showSocialHandles, setShowSocialHandles] = useState(false);
-  const [activeSection, setActiveSection] = useState("home"); // State to track active section
 
   const profileRef = useRef(null);
 
+  const handleMobileMenuClick = () => {
+    if (isMobileMenuOpen) {
+      setIsMobileMenuOpen(false);
+    }
+  };
+
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (profileRef.current && !profileRef.current.contains(event.target)) {
-        setShowSocialHandles(false);
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+
+      // Determine which section is currently in view
+      const homeOffset = document.getElementById("home").offsetTop;
+      const aboutOffset = document.getElementById("about-section").offsetTop;
+      const skillsOffset = document.getElementById("skills").offsetTop;
+      const projectsOffset =
+        document.getElementById("project-section").offsetTop;
+
+      if (scrollPosition >= homeOffset && scrollPosition < aboutOffset) {
+        setActiveSection("home");
+      } else if (
+        scrollPosition >= aboutOffset &&
+        scrollPosition < skillsOffset
+      ) {
+        setActiveSection("about");
+      } else if (
+        scrollPosition >= skillsOffset &&
+        scrollPosition < projectsOffset
+      ) {
+        setActiveSection("skills");
+      } else if (scrollPosition >= projectsOffset) {
+        setActiveSection("projects");
       }
     };
 
-    document.addEventListener("click", handleClickOutside);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      document.removeEventListener("click", handleClickOutside);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   const handleToggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
-
-  const handleLinkClick = (section) => {
-    setActiveSection(section);
-    setIsMobileMenuOpen(false); // Close the mobile menu when a link is clicked
   };
 
   const handleProfileClick = () => {
@@ -162,15 +181,13 @@ const Header = () => {
           DHIRAJ BHAWSAR
         </motion.h1>
         <motion.div
-          className={`md:hidden ml-auto ${
-            isMobileMenuOpen ? "active" : ""
-          }`}
+          className={`md:hidden ml-auto ${isMobileMenuOpen ? "active" : ""}`}
           onClick={handleToggleMobileMenu}
           whileHover={{ scale: 1.1 }}
         >
           <button className="group rounded-lg flex items-center justify-center focus:outline-none">
             <div className="grid justify-items-center gap-1.5">
-            <span
+              <span
                 className={`h-[3px] w-6 rounded-full bg-white transition ${
                   isMobileMenuOpen ? " rotate-45 translate-y-2 " : ""
                 }`}
@@ -212,99 +229,109 @@ const Header = () => {
             isMobileMenuOpen ? "m-10" : "rounded-full bg-black bg-opacity-50"
           }`}
         >
-          <BrowserRouter>
-            <ScrollLink
-              to="home"
-              smooth={true}
-              duration={500}
-              className={`nav-link relative ${
-                isMobileMenuOpen ? "block" : "inline-block"
-              }`}
-              onClick={() => handleLinkClick("home")}
+          <ScrollLink
+            to="home"
+            smooth={true}
+            duration={500}
+            className={`nav-link relative ${
+              isMobileMenuOpen ? "block" : "inline-block"
+            }`}
+            spy={true}
+            activeClass="active"
+            onClick={() => {
+              setActiveSection("home");
+              handleMobileMenuClick(); // Close the mobile menu
+            }}
+          >
+            <li
+              className={`p-3.5 font-extrabold text-white transition-all duration-200 flex justify-center items-center cursor-pointer group ${
+                activeSection === "home"
+                  ? "text-black bg-yellow-400 rounded-full"
+                  : "hover:text-black hover:bg-yellow-400 hover:rounded-full"
+              } ${isMobileMenuOpen ? "w-full text-center m-2" : ""}`}
             >
-              <li
-                className={`p-3.5 font-extrabold text-white transition-all duration-200 flex justify-center items-center cursor-pointer group ${
-                  activeSection === "home"
-                    ? "text-black bg-yellow-400 rounded-full"
-                    : "hover:text-black hover:bg-yellow-400 hover:rounded-full"
-                } ${
-                  isMobileMenuOpen ? "w-full text-center m-2" : ""
-                }`}
-              >
-                <span>Home</span>
-                <HomeIcon className="ml-1.5 mb-0.5 text-white group-hover:text-black transition duration-300" />
-              </li>
-            </ScrollLink>
+              <span>Home</span>
+              <HomeIcon className="ml-1.5 mb-0.5 text-white group-hover:text-black transition duration-300" />
+            </li>
+          </ScrollLink>
 
-            <ScrollLink
-              to="about-section"
-              smooth={true}
-              duration={500}
-              className={`nav-link relative ${
-                isMobileMenuOpen ? "block" : "inline-block"
-              }`}
-              onClick={() => handleLinkClick("about")}
+          <ScrollLink
+            to="about-section"
+            smooth={true}
+            duration={500}
+            className={`nav-link relative ${
+              isMobileMenuOpen ? "block" : "inline-block"
+            }`}
+            spy={true}
+            activeClass="active"
+            onClick={() => {
+              setActiveSection("about");
+              handleMobileMenuClick(); // Close the mobile menu
+            }}
+          >
+            <li
+              className={`p-3.5 font-extrabold text-white transition-all duration-200 flex justify-center items-center cursor-pointer group ${
+                activeSection === "about"
+                  ? "text-black bg-cyan-500 rounded-full"
+                  : "hover:text-black hover:bg-cyan-500 hover:rounded-full"
+              } ${isMobileMenuOpen ? "w-full text-center m-2" : ""}`}
             >
-              <li
-                className={`p-3.5 font-extrabold text-white transition-all duration-200 flex justify-center items-center cursor-pointer group ${
-                  activeSection === "about"
-                    ? "text-black bg-cyan-500 rounded-full"
-                    : "hover:text-black hover:bg-cyan-500 hover:rounded-full"
-                } ${
-                  isMobileMenuOpen ? "w-full text-center m-2" : ""
-                }`}
-              >
-                <span>About Me</span>
-                <ContactSupportIcon className="ml-2 mb-0.5 self-center text-white group-hover:text-black transition duration-300" />
-              </li>
-            </ScrollLink>
+              <span>About Me</span>
+              <ContactSupportIcon className="ml-2 mb-0.5 self-center text-white group-hover:text-black transition duration-300" />
+            </li>
+          </ScrollLink>
 
-            <ScrollLink
-              to="skills"
-              smooth={true}
-              duration={500}
-              className={`nav-link relative ${
-                isMobileMenuOpen ? "block" : "inline-block"
-              }`}
-              onClick={() => handleLinkClick("skills")}
+          <ScrollLink
+            to="skills"
+            smooth={true}
+            duration={500}
+            className={`nav-link relative ${
+              isMobileMenuOpen ? "block" : "inline-block"
+            }`}
+            spy={true}
+            activeClass="active"
+            onClick={() => {
+              setActiveSection("skills");
+              handleMobileMenuClick(); // Close the mobile menu
+            }}
+          >
+            <li
+              className={`p-3.5 font-extrabold text-white transition-all duration-200 flex justify-center items-center cursor-pointer group ${
+                activeSection === "skills"
+                  ? "text-black bg-fuchsia-500 rounded-full"
+                  : "hover:text-black hover:bg-fuchsia-500 hover:rounded-full"
+              } ${isMobileMenuOpen ? "w-full text-center m-2" : ""}`}
             >
-              <li
-                className={`p-3.5 font-extrabold text-white transition-all duration-200 flex justify-center items-center cursor-pointer group ${
-                  activeSection === "skills"
-                    ? "text-black bg-fuchsia-500 rounded-full"
-                    : "hover:text-black hover:bg-fuchsia-500 hover:rounded-full"
-                } ${
-                  isMobileMenuOpen ? "w-full text-center m-2" : ""
-                }`}
-              >
-                <span>Skills</span>
-                <BarChartIcon className="ml-2 mb-1 text-white group-hover:text-black transition duration-300" />
-              </li>
-            </ScrollLink>
+              <span>Skills</span>
+              <BarChartIcon className="ml-2 mb-1 text-white group-hover:text-black transition duration-300" />
+            </li>
+          </ScrollLink>
 
-            <ScrollLink
-              to="project-section"
-              smooth={true}
-              duration={500}
-              className={`nav-link relative ${
-                isMobileMenuOpen ? "block" : "inline-block"
-              }`}
-              onClick={() => handleLinkClick("projects")}
+          <ScrollLink
+            to="project-section"
+            smooth={true}
+            duration={500}
+            className={`nav-link relative ${
+              isMobileMenuOpen ? "block" : "inline-block"
+            }`}
+            spy={true}
+            activeClass="active"
+            onClick={() => {
+              setActiveSection("projects");
+              handleMobileMenuClick(); // Close the mobile menu
+            }}
+          >
+            <li
+              className={`p-3.5 font-extrabold text-white transition-all duration-300 flex justify-center items-center cursor-pointer group ${
+                activeSection === "projects"
+                  ? "text-black bg-green-400 rounded-full"
+                  : "hover:text-black hover:bg-green-400 hover:rounded-full"
+              } ${isMobileMenuOpen ? "w-full text-center m-2" : ""}`}
             >
-              <li
-                className={`p-3.5 font-extrabold text-white transition-all duration-300 flex justify-center items-center cursor-pointer group ${
-                  activeSection === "projects"
-                    ? "text-black bg-green-400 rounded-full"
-                    : "hover:text-black hover:bg-green-400 hover:rounded-full"
-                } ${
-                  isMobileMenuOpen ? "w-full text-center m-2" : ""
-                }`}
-              >
-                <span>Projects</span>
-                <FormatPaintIcon className="ml-2 mb-0.5 text-white group-hover:text-black transition duration-300" />
-              </li>
-            </ScrollLink>
-          </BrowserRouter>
+              <span>Projects</span>
+              <FormatPaintIcon className="ml-2 mb-0.5 text-white group-hover:text-black transition duration-300" />
+            </li>
+          </ScrollLink>
         </ul>
       </motion.div>
     </motion.nav>

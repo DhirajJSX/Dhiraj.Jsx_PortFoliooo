@@ -11,15 +11,14 @@ import ProjectSixImage from "./../../assets/Img/PassGen.png";
 import ProjectSevenImage from "./../../assets/Img/githubFinder.png";
 import ProjectImage from "./../../assets/Img/amazonwebsite.png";
 
-// tech icons 
+// tech icons
 import html from "./../../assets/Img/Html.png";
 import css from "../../assets/Img/Css.png";
-import react from "../../assets/Img/reactBasic.png"
-import tailwind from "../../assets/Img/Tailwind.png"
-import js from "../../assets/Img/JavaScript.png"
-import firebase from "./../../assets/Img/firebase1.png"
+import react from "../../assets/Img/reactBasic.png";
+import tailwind from "../../assets/Img/Tailwind.png";
+import js from "../../assets/Img/JavaScript.png";
+import firebase from "./../../assets/Img/firebase1.png";
 const ProjectSection = () => {
-
   const projects = [
     {
       title: "Amazon Clone",
@@ -28,7 +27,7 @@ const ProjectSection = () => {
       link: "https://github.com/Dhirajbhavsar9900/Geekthone_GmailClone",
       image: ProjectImage,
       goLive: "https://geekthone-gmail-clone.vercel.app/",
-      tech: [react,tailwind,firebase]
+      tech: [react, tailwind, firebase],
     },
     {
       title: "Gmail Clone",
@@ -37,7 +36,7 @@ const ProjectSection = () => {
       link: "https://github.com/Dhirajbhavsar9900/Geekthone_GmailClone",
       image: ProjectOneImage,
       goLive: "https://geekthone-gmail-clone.vercel.app/",
-      tech: [html, tailwind ,js]
+      tech: [html, tailwind, js],
     },
     {
       title: "GitHub Finder",
@@ -46,7 +45,7 @@ const ProjectSection = () => {
       link: "https://github.com/Dhirajbhavsar9900/Github_Finder",
       image: ProjectSevenImage,
       goLive: "https://github-finder-xi-lac.vercel.app/",
-      tech: [html, tailwind,js]
+      tech: [html, tailwind, js],
     },
     {
       title: "Gym Website",
@@ -55,7 +54,7 @@ const ProjectSection = () => {
       link: "https://github.com/Dhirajbhavsar9900/GYMFIT-REACT",
       image: ProjectTwoImage,
       goLive: "https://gymfit-opal.vercel.app/",
-      tech: [html, tailwind,js]
+      tech: [html, tailwind, js],
     },
     {
       title: "Phone Search",
@@ -64,7 +63,7 @@ const ProjectSection = () => {
       link: "https://github.com/Dhirajbhavsar9900/Iphone-web-Weakly-test-4-",
       image: ProjectThreeImage,
       goLive: "https://iphone-web-weakly-test-4.vercel.app/",
-      tech: [html, tailwind,js]
+      tech: [html, tailwind, js],
     },
     {
       title: "Age Calculator",
@@ -73,7 +72,7 @@ const ProjectSection = () => {
       link: "https://github.com/Dhirajbhavsar9900/Age_Calculator",
       image: ProjectFourImage,
       goLive: "https://dhirajbhavsar9900.github.io/Age_Calculator/",
-      tech: [html, css,js]
+      tech: [html, css, js],
     },
     {
       title: "Emoji Search",
@@ -82,7 +81,7 @@ const ProjectSection = () => {
       link: "https://github.com/Dhirajbhavsar9900/Emojis_Searching_Project",
       image: ProjectFiveImage,
       goLive: "https://emojis-searching-project.vercel.app/",
-      tech: [html, css,js]
+      tech: [html, css, js],
     },
     {
       title: "PassGenerator",
@@ -91,8 +90,8 @@ const ProjectSection = () => {
       link: "https://github.com/Dhirajbhavsar9900/Weakly-Test-01",
       image: ProjectSixImage,
       goLive: "https://weakly-test-01.vercel.app/",
-      tech: [html, tailwind,js]
-    }
+      tech: [html, tailwind, js],
+    },
   ];
 
   return (
@@ -116,7 +115,10 @@ const ProjectSection = () => {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: index * 0.1 }}
-            whileHover={{ scale: 1.03, boxShadow: "0px 10px 30px rgba(0, 0, 0, 0.2)" }}
+            whileHover={{
+              scale: 1.03,
+              boxShadow: "0px 10px 30px rgba(0, 0, 0, 0.2)",
+            }}
             whileTap={{ scale: 0.97 }}
           >
             <motion.div
@@ -160,7 +162,12 @@ const ProjectSection = () => {
                 </h5>
                 <div className="flex gap-2 mb-3">
                   {project.tech.map((item, idx) => (
-                    <img src={item} key={idx} className="w-10 h-10" alt="tech-icon" />
+                    <img
+                      src={item}
+                      key={idx}
+                      className="w-10 h-10"
+                      alt="tech-icon"
+                    />
                   ))}
                 </div>
               </div>
@@ -169,7 +176,6 @@ const ProjectSection = () => {
                   {project.description}
                 </p>
               </div>
-
             </div>
           </motion.div>
         ))}
