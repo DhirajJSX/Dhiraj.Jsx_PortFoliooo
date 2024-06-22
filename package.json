@@ -27,6 +27,8 @@
     "react-router-hash-link": "^2.4.3",
     "react-scroll": "^1.9.0",
     "react-spinners": "^0.13.8",
+    "react-switch": "^7.0.0",
+    "react-toggle-dark-mode": "^1.1.1",
     "router-dom": "^2.2.11"
   },
   "devDependencies": {
