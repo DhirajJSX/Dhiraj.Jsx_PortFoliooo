@@ -49,8 +49,6 @@ const ScrollToTopButton = () => {
       }
     };
   }, [isVisible]);
-
-  
   const scrollToTop = () => {
     setIsClicked(true);
     const scrollStep = -window.scrollY / (500 / 20);
