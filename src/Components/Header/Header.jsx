@@ -180,6 +180,8 @@ const Header = () => {
         >
           DHIRAJ BHAWSAR
         </motion.h1>
+
+        {/* Humburger  */}
         <motion.div
           className={`md:hidden ml-auto ${isMobileMenuOpen ? "active" : ""}`}
           onClick={handleToggleMobileMenu}
@@ -214,7 +216,10 @@ const Header = () => {
             </div>
           </button>
         </motion.div>
+        {/* humburger End  */}
       </div>
+
+      {/* desktop li list  */}
       <motion.div
         id="menu-div"
         className={`text-center font-Josefin md:flex md:items-center text-black ${
@@ -246,12 +251,12 @@ const Header = () => {
             <li
               className={`p-3.5 font-extrabold text-white transition-all duration-200 flex justify-center items-center cursor-pointer group ${
                 activeSection === "home"
-                  ? "text-black bg-yellow-400 rounded-full"
-                  : "hover:text-black hover:bg-yellow-400 hover:rounded-full"
+                  ? " bg-yellow-400 rounded-full"
+                  : " hover:bg-yellow-400 hover:rounded-full"
               } ${isMobileMenuOpen ? "w-full text-center m-2" : ""}`}
             >
-              <span>Home</span>
-              <HomeIcon className="ml-1.5 mb-0.5 text-white group-hover:text-black transition duration-300" />
+              <span className="">Home</span>
+              <HomeIcon className="ml-1.5 mb-0.5 text-white  transition duration-300" />
             </li>
           </ScrollLink>
 
@@ -272,12 +277,12 @@ const Header = () => {
             <li
               className={`p-3.5 font-extrabold text-white transition-all duration-200 flex justify-center items-center cursor-pointer group ${
                 activeSection === "about"
-                  ? "text-black bg-cyan-500 rounded-full"
-                  : "hover:text-black hover:bg-cyan-500 hover:rounded-full"
+                  ? " bg-cyan-500 rounded-full"
+                  : " hover:bg-cyan-500 hover:rounded-full"
               } ${isMobileMenuOpen ? "w-full text-center m-2" : ""}`}
             >
               <span>About Me</span>
-              <ContactSupportIcon className="ml-2 mb-0.5 self-center text-white group-hover:text-black transition duration-300" />
+              <ContactSupportIcon className="ml-2 mb-0.5 self-center text-white  transition duration-300" />
             </li>
           </ScrollLink>
 
@@ -298,12 +303,12 @@ const Header = () => {
             <li
               className={`p-3.5 font-extrabold text-white transition-all duration-200 flex justify-center items-center cursor-pointer group ${
                 activeSection === "skills"
-                  ? "text-black bg-fuchsia-500 rounded-full"
-                  : "hover:text-black hover:bg-fuchsia-500 hover:rounded-full"
+                  ? " bg-fuchsia-500 rounded-full"
+                  : " hover:bg-fuchsia-500 hover:rounded-full"
               } ${isMobileMenuOpen ? "w-full text-center m-2" : ""}`}
             >
               <span>Skills</span>
-              <BarChartIcon className="ml-2 mb-1 text-white group-hover:text-black transition duration-300" />
+              <BarChartIcon className="ml-2 mb-1 text-white transition duration-300" />
             </li>
           </ScrollLink>
 
@@ -324,16 +329,17 @@ const Header = () => {
             <li
               className={`p-3.5 font-extrabold text-white transition-all duration-300 flex justify-center items-center cursor-pointer group ${
                 activeSection === "projects"
-                  ? "text-black bg-green-400 rounded-full"
-                  : "hover:text-black hover:bg-green-400 hover:rounded-full"
+                  ? " bg-green-400 rounded-full"
+                  : " hover:bg-green-400 hover:rounded-full"
               } ${isMobileMenuOpen ? "w-full text-center m-2" : ""}`}
             >
               <span>Projects</span>
-              <FormatPaintIcon className="ml-2 mb-0.5 text-white group-hover:text-black transition duration-300" />
+              <FormatPaintIcon className="ml-2 mb-0.5 text-white transition duration-300" />
             </li>
           </ScrollLink>
         </ul>
       </motion.div>
+      {/* desktop li list end*/}
     </motion.nav>
   );
 };
