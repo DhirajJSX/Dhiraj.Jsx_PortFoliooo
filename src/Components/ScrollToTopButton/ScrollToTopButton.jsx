@@ -53,8 +53,6 @@ const ScrollToTopButton = () => {
     setIsClicked(true);
     const scrollStep = -window.scrollY / (500 / 20);
     const easeOutQuad = t => t * (2 - t);
-  
-  
     const animateScroll = (timeStamp) => {
       const elapsed = timeStamp - startTime;
       const progress = easeOutQuad(Math.min(1, elapsed / duration));

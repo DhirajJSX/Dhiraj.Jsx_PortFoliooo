@@ -22,6 +22,8 @@ function CursorEffect() {
       <ProjectSection />
       <Footer />
      
+
+     
     </>
   );
 }

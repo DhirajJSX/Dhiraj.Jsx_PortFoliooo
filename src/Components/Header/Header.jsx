@@ -33,6 +33,9 @@ const Header = () => {
     // };
   }, []);
 
+
+
+  
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (profileRef.current && !profileRef.current.contains(event.target)) {
