@@ -1,12 +1,9 @@
 import { useEffect } from 'react';
 import { gsap } from 'gsap';
-import { SplitText } from 'gsap/SplitText'; // Import SplitText for animating individual letters
 import Particles from "./../Particles/Particles"; // Adjust the import path as needed
 
 const Loader = () => {
   useEffect(() => {
-    gsap.registerPlugin(SplitText); // Register SplitText plugin
-
     const loaderTimeline = gsap.timeline({ repeat: -1, repeatDelay: 0.5 })
       .to(".text", {
         opacity: 0.5,
@@ -21,17 +18,8 @@ const Loader = () => {
         ease: "power1.inOut"
       });
 
-    // Add writing animation after loader is finished
+    // Add slide up animation after loader is finished
     loaderTimeline.eventCallback("onComplete", () => {
-      const split = new SplitText(".text", { type: "chars, words" }); // Split text into characters
-      gsap.from(split.chars, {
-        opacity: 0,
-        y: 50,
-        duration: 0.8,
-        ease: "power4.out",
-        stagger: 0.05 // Stagger each letter animation
-      });
-
       gsap.to(".loader-container", {
         y: "-100%",
         duration: 0.5,
