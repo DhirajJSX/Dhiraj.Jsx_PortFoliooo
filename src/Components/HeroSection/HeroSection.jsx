@@ -136,7 +136,7 @@ const HeroSection = () => {
             >
               <div
                 id="btn"
-                className="flex justify-center p-1.5 items-center rounded-lg cursor-pointer transition-colors duration-200"
+                className="flex justify-center px-3 py-1 items-center rounded-lg cursor-pointer transition-colors duration-200"
                 role="button"
                 aria-label="Email Me"
               >
