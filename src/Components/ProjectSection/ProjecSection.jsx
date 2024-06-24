@@ -24,9 +24,9 @@ const ProjectSection = () => {
       title: "Amazon Clone",
       description:
         "The Amazon Clone project is a dynamic web application that replicates the core functionalities and design aesthetics of the renowned e-commerce platform, Amazon. Developed using React.js for frontend, Vite for efficient build process, Tailwind CSS for styling, and Firebase for authentication, the Amazon Clone is a testament to modern web development technologies.",
-      link: "https://github.com/Dhirajbhavsar9900/Geekthone_GmailClone",
+      link: "https://github.com/Dhirajbhavsar9900/AmazonClone_React-MCT-",
       image: ProjectImage,
-      goLive: "https://geekthone-gmail-clone.vercel.app/",
+      goLive: "https://amazon-clone-react-mct.vercel.app/",
       tech: [react, tailwind, firebase],
     },
     {
