@@ -60,5 +60,8 @@ To run this project locally, follow these steps:
     ```bash
     npm run dev
 
+4. **Start the development server:**
+    ```bash
+    npm run dev
 
 ## Usage 
