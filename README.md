@@ -62,7 +62,4 @@ To run this project locally, follow these steps:
 
 ## Usage 
 
-4. **Start the development server:**
-    ```bash
-    npm run dev
 
