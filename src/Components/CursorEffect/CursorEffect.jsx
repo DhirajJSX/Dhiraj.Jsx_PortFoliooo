@@ -10,6 +10,7 @@ import ScrollToTopButton from './../ScrollToTopButton/ScrollToTopButton'
 // import { useEffect, useState } from 'react';
 // import { gsap } from 'gsap';
 import './CursorEffect';
+import FooterForm from '../FooterForm/FooterForm'
 
 
 function CursorEffect() {
@@ -21,6 +22,7 @@ function CursorEffect() {
       <AboutSection />
       <SkillSection />
       <ProjectSection />
+      <FooterForm />
       <Footer />
     </>
   );
