@@ -22,7 +22,7 @@ function CursorEffect() {
       <AboutSection />
       <SkillSection />
       <ProjectSection />
-      <FooterForm />
+      {/* <FooterForm /> */}
       <Footer />
     </>
   );

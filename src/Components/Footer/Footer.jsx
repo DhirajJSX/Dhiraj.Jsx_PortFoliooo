@@ -3,7 +3,13 @@ import "./Footer.css";
 
 const Footer = () => {
   return (
-    <footer className="bg-slate-300 text-gray-300 py-12 p-4">
+    <footer className="bg-radial-gradient text-gray-300 py-12 p-4">
+      
+      <div className="text-center mt-3">
+        <p className=" text-2xl text-white font-Josefin font-semibold ">
+          🙏...Thanks for visiting...🙏
+        </p>
+      </div>
       <div className="container mx-auto flex flex-wrap justify-between text-center">
         <div className="w-full h-auto py-8 flex items-center justify-center gap-6 flex-wrap z-40">
           <a
@@ -96,11 +102,6 @@ const Footer = () => {
                 </div> */}
       </div>
 
-      <div className="text-center mt-3">
-        <p className="mb-5 text-2xl font-Josefin font-semibold">
-          Thanks for visiting!
-        </p>
-      </div>
     </footer>
   );
 };
