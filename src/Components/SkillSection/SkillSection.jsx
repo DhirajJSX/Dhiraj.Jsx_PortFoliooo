@@ -9,6 +9,7 @@ import Javascript from './../../assets/Img/JavaScript.png';
 import ReactImg from './../../assets/Img/React.png';
 import Git from './../../assets/Img/git.png';
 import Github from './../../assets/Img/Github.png';
+import Redux from './../../assets/Img/redux,js.png';
 
 const skills = [
     { name: 'Java', image: JavaImg },
@@ -20,6 +21,7 @@ const skills = [
     { name: 'React.js', image: ReactImg },
     { name: 'Git', image: Git },
     { name: 'GitHub', image: Github },
+    { name: 'Redux', image: Redux}
 ];
 
 const hoverStyles = `
@@ -117,7 +119,6 @@ const SkillSection = () => {
     };
 
 
-    
     const getRandomColor = () => {
         const letters = '0123456789ABCDEF';
         let color = '#';
