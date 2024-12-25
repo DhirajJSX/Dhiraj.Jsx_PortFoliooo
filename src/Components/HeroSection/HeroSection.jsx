@@ -49,7 +49,7 @@ const HeroSection = () => {
   const handleDownloadCV = () => {
     const link = document.createElement("a");
     link.href = Pdf;
-    link.setAttribute("download", "DhirajBhawsarResume.pdf");
+    link.setAttribute("download", "Dhiraj Bhawsasr Resume(Updated).pdf");
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
