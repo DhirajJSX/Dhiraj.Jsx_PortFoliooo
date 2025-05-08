@@ -7,7 +7,7 @@ import Pdf from "./../../assets/pdf/Dhiraj Bhawsasr Resume(Updated).pdf";
 const HeroSection = () => {
   const texts = useMemo(
     () => [
-      "I'm Frontend Developer",
+      "I'm Full Stack Developer",
       "I'm Dhiraj",
       "How are you?",
       "Welcome to My Portfolio",
