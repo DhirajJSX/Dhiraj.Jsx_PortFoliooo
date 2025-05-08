@@ -1,24 +1,22 @@
-// import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
+import Loader from './Components/Loader/Loader';
 import CursorEffect from './Components/CursorEffect/CursorEffect';
 import ParticlesBG from './Components/Particles/Particles';
-// import Loader from './Components/Loader/Loader'; // Adjust the import path as needed
 
 function App() {
-  // const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
 
-  // useEffect(() => {
-  //   // Simulate a loading delay
-  //   const timer = setTimeout(() => {
-  //     setLoading(false);
-  //   }, 3000); // Adjust the delay time as needed
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 4000);
+    return () => clearTimeout(timer);
+  }, []);
 
-  //   return () => clearTimeout(timer); // Clean up the timer on component unmount
-  // }, []);
-
-  // if (loading) {
-  //   // return <Loader />;
-  // }
+  if (loading) {
+    return <Loader />;
+  }
 
   return (
     <>

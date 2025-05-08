@@ -1,45 +1,41 @@
-import { useEffect } from 'react';
-import { gsap } from 'gsap';
-import Particles from "./../Particles/Particles";
-import "./spinner.css";
+import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import gif from "../../assets/Img/Wink Emoji GIF - Wink Emoji Apple - Discover & Share GIFs.gif";
 
 const Loader = () => {
-  useEffect(() => {
-    const loaderTimeline = gsap.timeline({ repeat: -1, repeatDelay: 0.5 })
-      .to(".loader-icon", {
-        rotation: 360,
-        duration: 1.5,
-        ease: "power2.inOut",
-        transformOrigin: "center"
-      });
+  const [scale, setScale] = useState(1);
 
-    loaderTimeline.eventCallback("onComplete", () => {
-      gsap.to(".loader-container", {
-        y: "-100%",
-        duration: 0.5,
-        ease: "power1.inOut",
-        onComplete: () => {
-          document.querySelector(".loader-container").style.display = "none";
-          
-          gsap.from(".loader-content > *", {
-            opacity: 0,
-            y: 20,
-            duration: 0.5,
-            ease: "power1.inOut",
-            stagger: 0.2
-          });
-        }
-      });
-    });
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setScale((prev) => (prev === 1 ? 1.05 : 1));
+    }, 900);
+    return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className="loader-container flex items-center justify-center min-h-screen bg-radial-gradient">
-      <div className="loader-content text-center">
-      
-      </div>
-      <Particles />
-    </div>
+    <motion.div
+      className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-gradient-to-br from-black via-gray-900 to-black z-[9999]"
+      initial={{ scale: 2, opacity: 0 }}
+      animate={{ scale: 1, opacity: 1 }}
+      transition={{ duration: 1.5, ease: "easeInOut" }}
+    >
+      {/* Central Core with a fixed shape */}
+      <motion.div
+        className="w-48 h-48 relative z-10 rounded-full overflow-hidden"
+        transition={{
+          duration: 3,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      >
+        {/* Image placed in the center */}
+        <img
+          src={gif} // Replace this with your image URL
+          alt="Loader Image"
+          className="w-full h-full object-cover"
+        />
+      </motion.div>
+    </motion.div>
   );
 };
 
