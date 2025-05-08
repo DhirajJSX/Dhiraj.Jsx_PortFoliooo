@@ -314,7 +314,7 @@ const Header = () => {
               } ${isMobileMenuOpen ? "w-full text-center m-2" : ""}`}
             >
               <span>Projects</span>
-              <BarChartIcon className="ml-2 mb-1 text-white transition duration-300" />
+              <FormatPaintIcon className="ml-2 mb-1 text-white transition duration-300" />
             </li>
           </ScrollLink>
          
