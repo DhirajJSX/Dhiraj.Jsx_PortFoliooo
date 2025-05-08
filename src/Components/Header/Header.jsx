@@ -28,7 +28,7 @@ const Header = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      const buffer = 100; // Adjust this to control when a section is considered active
+      const buffer = 100; 
     
       const getOffset = (id) => {
         const el = document.getElementById(id);
