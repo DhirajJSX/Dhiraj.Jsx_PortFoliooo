@@ -24,28 +24,23 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-
-     
-      const homeOffset = document.getElementById("home").offsetTop;
-      const aboutOffset = document.getElementById("about-section").offsetTop;
-      const skillsOffset = document.getElementById("skills").offsetTop;
-      const projectsOffset =
-        document.getElementById("project-section").offsetTop;
-
-      if (scrollPosition >= homeOffset && scrollPosition < aboutOffset) {
+      const scrollY = window.scrollY;
+    
+      const getOffset = (id) =>
+        document.getElementById(id)?.getBoundingClientRect().top + window.scrollY || 0;
+    
+      const homeOffset = getOffset("home");
+      const aboutOffset = getOffset("about-section");
+      const skillsOffset = getOffset("skills");
+      const projectsOffset = getOffset("project-section");
+    
+      if (scrollY >= homeOffset && scrollY < aboutOffset) {
         setActiveSection("home");
-      } else if (
-        scrollPosition >= aboutOffset &&
-        scrollPosition < skillsOffset
-      ) {
+      } else if (scrollY >= aboutOffset && scrollY < skillsOffset) {
         setActiveSection("about");
-      } else if (
-        scrollPosition >= skillsOffset &&
-        scrollPosition < projectsOffset
-      ) {
+      } else if (scrollY >= skillsOffset && scrollY < projectsOffset) {
         setActiveSection("skills");
-      } else if (scrollPosition >= projectsOffset) {
+      } else if (scrollY >= projectsOffset) {
         setActiveSection("projects");
       }
     };
