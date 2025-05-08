@@ -3,7 +3,7 @@ import "./Footer.css";
 
 const Footer = () => {
   return (
-    <footer className="bg-radial-gradient text-gray-300 py-12 p-4">
+    <footer className=" bg-gradient-to-br from-black via-gray-900 to-black text-gray-300 py-12 p-4">
       
       <div className="text-center mt-3">
         <p className=" text-2xl text-white font-Josefin font-semibold ">

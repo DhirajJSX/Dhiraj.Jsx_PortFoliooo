@@ -63,7 +63,7 @@ const HeroSection = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center bg-radial-gradient text-white "
+      className="min-h-screen flex items-center  bg-gradient-to-br from-black via-gray-900 to-black text-white "
     >
       <div className="container mx-auto flex flex-col md:flex-row items-center">
         <div className="md:w-1/2 flex justify-center cursor-pointer">
