@@ -13,6 +13,7 @@ const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [showSocialHandles, setShowSocialHandles] = useState(false);
 
+
   const profileRef = useRef(null);
 
   const handleMobileMenuClick = () => {
@@ -25,7 +26,7 @@ const Header = () => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
 
-      // Determine which section is currently in view
+     
       const homeOffset = document.getElementById("home").offsetTop;
       const aboutOffset = document.getElementById("about-section").offsetTop;
       const skillsOffset = document.getElementById("skills").offsetTop;
@@ -297,7 +298,7 @@ const Header = () => {
             activeClass="active"
             onClick={() => {
               setActiveSection("skills");
-              handleMobileMenuClick(); // Close the mobile menu
+              handleMobileMenuClick(); 
             }}
           >
             <li
@@ -323,20 +324,21 @@ const Header = () => {
             activeClass="active"
             onClick={() => {
               setActiveSection("projects");
-              handleMobileMenuClick(); // Close the mobile menu
+              handleMobileMenuClick(); 
             }}
           >
             <li
-              className={`p-3.5 font-extrabold text-white transition-all duration-300 flex justify-center items-center cursor-pointer group ${
+              className={`p-3.5 font-extrabold text-white transition-all duration-200 flex justify-center items-center cursor-pointer group ${
                 activeSection === "projects"
                   ? " bg-green-400 rounded-full"
                   : " hover:bg-green-400 hover:rounded-full"
               } ${isMobileMenuOpen ? "w-full text-center m-2" : ""}`}
             >
               <span>Projects</span>
-              <FormatPaintIcon className="ml-2 mb-0.5 text-white transition duration-300" />
+              <BarChartIcon className="ml-2 mb-1 text-white transition duration-300" />
             </li>
           </ScrollLink>
+         
         </ul>
       </motion.div>
       {/* desktop li list end*/}
