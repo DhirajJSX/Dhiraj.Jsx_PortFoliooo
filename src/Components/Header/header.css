@@ -35,7 +35,7 @@
 
 #socialHandle svg {
   padding-right: 2px;
-  padding-left: 2px;
+  padding-left: 5px;
 }
 
 #socialHandle {
@@ -57,8 +57,8 @@
     color: #ffff;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
-    padding-left: 1.1rem;
-    padding-right: 1.1rem;
+    /* padding-left: 1.1rem; */
+    /* padding-right: 1.1rem; */
 
   }
   
@@ -75,7 +75,7 @@
     overflow: hidden;
     animation: slideDown 0.9s ease forwards;
     height: 100vh;
-    padding-top: 100px;
+    padding-top: 200px;
     font-size: 23px;
   }
 
@@ -85,6 +85,7 @@
   #pro {
     margin-left: 10px;
     margin-right: 10px;
+   
   }
 
   .text-lg {
@@ -101,7 +102,7 @@
     /* background-color: #111827; */
     backdrop-filter: blur(70px);
     color: #ffff;
-    padding-right: 1.1rem;
+    /* padding-right: 1.1rem; */
    
   }
   @keyframes slideDown {

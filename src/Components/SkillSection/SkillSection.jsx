@@ -18,8 +18,7 @@ import Express from "../../assets/Img/BackendIcons/expressJs.png";
 import MongoDB from "../../assets/Img/BackendIcons/db.png";
 import Firebase from "../../assets/Img/BackendIcons/Firebase.png";
 import JwtImage from "../../assets/Img/BackendIcons/jwt.png";
-
-// Skill Data
+import Figma from "../../assets/Img/figma.png"
 const frontendSkills = [
   { name: "HTML", image: Html },
   { name: "CSS", image: Css },
@@ -32,6 +31,7 @@ const frontendSkills = [
   { name: "Framer Motion", image: FramerMotion },
   { name: "Git", image: Git },
   { name: "GitHub", image: Github },
+  { name: "Figma", image: Figma}
 ];
 
 const backendSkills = [

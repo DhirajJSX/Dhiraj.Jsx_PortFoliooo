@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { BrowserRouter } from 'react-router-dom'; // Import BrowserRouter
 import './App.css';
 import Loader from './Components/Loader/Loader';
 import CursorEffect from './Components/CursorEffect/CursorEffect';
@@ -19,10 +20,10 @@ function App() {
   }
 
   return (
-    <>
+    <BrowserRouter> {/* Wrap the app in BrowserRouter */}
       <ParticlesBG />
       <CursorEffect />
-    </>
+    </BrowserRouter>
   );
 }
 
