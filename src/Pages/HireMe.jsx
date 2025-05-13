@@ -5,7 +5,6 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ImageFooter from "../assets/Img/FormfooterImage.png";
 
 function HireMe() {
-  const [selectedService, setSelectedService] = useState(null);
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -22,8 +21,8 @@ function HireMe() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!selectedService || !formData.firstName || !formData.email || !formData.message) {
-      alert("Please fill in all required fields and select a service type.");
+    if (!formData.firstName || !formData.email || !formData.message) {
+      alert("Please fill in all required fields.");
       return;
     }
 
@@ -32,7 +31,6 @@ function HireMe() {
 
     // Reset the form after submission
     setFormData({ firstName: "", lastName: "", email: "", message: "" });
-    setSelectedService(null);
     alert("Your message has been sent successfully!");
   };
 
@@ -87,23 +85,6 @@ function HireMe() {
             transition={{ delay: 0.4, duration: 0.8 }}
             style={{ willChange: "opacity, transform" }}
           >
-            <Typography variant="small" className="mb-3 font-semibold">
-              Select Service Type
-            </Typography>
-            <div className="flex flex-wrap gap-4 mb-6">
-              {["Freelance", "Full-time"].map((type) => (
-                <motion.button
-                  key={type}
-                  type="button"
-                  whileTap={{ scale: 0.95 }}
-                  onClick={() => setSelectedService(type)}
-                  className={`px-4 py-2 rounded-md border font-semibold transition-all duration-300 ${selectedService === type ? "bg-green-600 text-white border-green-600" : "text-green-400 border-green-400 hover:bg-green-600 hover:text-white"}`}
-                >
-                  {type}
-                </motion.button>
-              ))}
-            </div>
-
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label htmlFor="firstName" className="text-sm mb-1 block">
