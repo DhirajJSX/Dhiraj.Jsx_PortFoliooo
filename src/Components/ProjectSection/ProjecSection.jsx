@@ -97,7 +97,7 @@ const ProjectSection = () => {
   return (
     <div
       id="project-section"
-      className="py-24 px-5 text-center bg-slate-300 from-gray-200 to-gray-300"
+      className="py-24 px-5  relative text-center bg-slate-300 from-gray-200 to-gray-300"
     >
       <motion.h2
         className="text-5xl mb-14 font-bold"

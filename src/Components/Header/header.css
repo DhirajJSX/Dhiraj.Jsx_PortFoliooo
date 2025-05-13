@@ -73,9 +73,9 @@
 
   #menu-div {
     overflow: hidden;
-    animation: slideDown 0.9s ease forwards;
-    height: 100vh;
-    padding-top: 200px;
+    animation: slideDown 1s ease forwards;
+    height: 100vh; 
+    margin-top: 200px;
     font-size: 23px;
   }
 

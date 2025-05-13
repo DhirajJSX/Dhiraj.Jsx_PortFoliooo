@@ -25,7 +25,7 @@ const AboutSection = () => {
   }, []);
   return (
     
-    <section id="about-section" className="min-h-screen flex items-center bg-slate-300 text-white py-[230px]">
+    <section id="about-section" className="min-h-screen flex items-center bg-slate-300 relative e text-white py-[230px]">
       <div id="Contain" className="container mx-auto flex flex-col md:flex-row items-center text-center md:text-left px-4 md:px-8 lg:px-16">
         <div className="md:w-1/2 flex flex-col items-center md:items-start">
         <motion.h1 

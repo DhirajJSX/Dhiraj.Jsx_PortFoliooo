@@ -5,13 +5,14 @@ import HomeIcon from "@mui/icons-material/Home";
 import ContactSupportIcon from "@mui/icons-material/ContactSupport";
 import BarChartIcon from "@mui/icons-material/BarChart";
 import FormatPaintIcon from "@mui/icons-material/FormatPaint";
-import Profile from "./../../assets/Img/Wink Emoji GIF - Wink Emoji Apple - Discover & Share GIFs.gif";
-import "./header.css";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import WorkIcon from "@mui/icons-material/Work";
+import Profile from "./../../assets/Img/Wink Emoji GIF - Wink Emoji Apple - Discover & Share GIFs.gif";
+import "./header.css";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
   const [activeSection, setActiveSection] = useState("home");
@@ -19,46 +20,46 @@ const Header = () => {
   const [showSocialHandles, setShowSocialHandles] = useState(false);
   const profileRef = useRef(null);
 
+  const sectionOffsets = useRef({});
+  const navigate = useNavigate();
 
-  const hireMe = ()=>{
-    console.log("Hello");
-    
-  }
-  const handleMobileMenuClick = () => {
-    setIsMobileMenuOpen((prev) => !prev);
+  const hireMe = () => {
+    console.log(navigate("./hireme"));
   };
 
-  const handleProfileClick = () => {
-    setShowSocialHandles((prev) => !prev);
-  };
+  const handleMobileMenuClick = () => setIsMobileMenuOpen((prev) => !prev);
+  const handleProfileClick = () => setShowSocialHandles((prev) => !prev);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const buffer = 100;
-
-      const getOffset = (id) => {
-        const el = document.getElementById(id);
-        return el ? el.offsetTop : Infinity;
+    const updateOffsets = () => {
+      sectionOffsets.current = {
+        home: document.getElementById("home")?.offsetTop || 0,
+        about: document.getElementById("about-section")?.offsetTop || 0,
+        skills: document.getElementById("skills")?.offsetTop || 0,
+        projects: document.getElementById("project-section")?.offsetTop || 0,
       };
+    };
 
-      const homeOffset = getOffset("home");
-      const aboutOffset = getOffset("about-section");
-      const skillsOffset = getOffset("skills");
-      const projectsOffset = getOffset("project-section");
-      const currentPosition = scrollY + buffer;
+    updateOffsets();
+    window.addEventListener("resize", updateOffsets);
 
-      if (currentPosition < aboutOffset) setActiveSection("home");
-      else if (currentPosition < skillsOffset) setActiveSection("about");
-      else if (currentPosition < projectsOffset) setActiveSection("skills");
+    const handleScroll = () => {
+      const scrollY = window.scrollY + 100;
+      const { home, about, skills, projects } = sectionOffsets.current;
+
+      if (scrollY < about) setActiveSection("home");
+      else if (scrollY < skills) setActiveSection("about");
+      else if (scrollY < projects) setActiveSection("skills");
       else setActiveSection("projects");
     };
 
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", updateOffsets);
+    };
   }, []);
 
-  // Close social handle dropdown on outside click
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (profileRef.current && !profileRef.current.contains(event.target)) {
@@ -69,6 +70,51 @@ const Header = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  const navItems = [
+    { id: "home", label: "Home", icon: <HomeIcon />, bg: "bg-yellow-400" },
+    {
+      id: "about",
+      label: "About Me",
+      icon: <ContactSupportIcon />,
+      bg: "bg-cyan-500",
+    },
+    {
+      id: "skills",
+      label: "Skills",
+      icon: <BarChartIcon />,
+      bg: "bg-fuchsia-500",
+    },
+    {
+      id: "projects",
+      label: "Projects",
+      icon: <FormatPaintIcon />,
+      bg: "bg-green-400",
+    },
+  ];
+
+  const socialLinks = [
+    {
+      icon: <LinkedInIcon fontSize="large" />,
+      label: "Linkedin",
+      href: "https://www.linkedin.com/in/bhawsar-dhiraj/",
+    },
+    {
+      icon: <InstagramIcon fontSize="large" />,
+      label: "Instagram",
+      href: "https://www.instagram.com/dhiraj.bhawsar_/",
+    },
+    {
+      icon: <GitHubIcon fontSize="large" />,
+      label: "Github",
+      href: "https://github.com/Dhirajbhavsar9900",
+    },
+    {
+      icon: <WhatsAppIcon fontSize="large" />,
+      label: "Whatsapp",
+      href: "https://wa.me/+918999509230",
+    },
+  ];
+
   return (
     <motion.nav
       id="nav"
@@ -78,12 +124,11 @@ const Header = () => {
       transition={{ duration: 0.5 }}
     >
       <div className="max-w-7xl mx-auto px-4 md:px-10 flex flex-col md:flex-row items-center justify-between py-3">
-        {/* Left: Profile */}
         <div className="flex gap-[120px] items-center">
           <motion.div
             id="pro"
-            className="relative flex items-center pr-3 bg-white rounded-full shadow-xl cursor-pointer mr-2"
             ref={profileRef}
+            className="relative flex items-center pr-3 bg-white/90 rounded-full shadow-xl cursor-pointer mr-2"
             initial={{ x: -100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 1, ease: "easeOut" }}
@@ -95,7 +140,6 @@ const Header = () => {
               onClick={handleProfileClick}
               whileTap={{ scale: 1.1, rotateZ: 360 }}
             />
-
             {showSocialHandles && (
               <motion.div
                 id="socialHandle"
@@ -104,48 +148,22 @@ const Header = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
               >
-                {[
-                  {
-                    icon: <LinkedInIcon fontSize="large" />,
-                    label: "Linkedin",
-                    href: "https://www.linkedin.com/in/bhawsar-dhiraj/",
-                  },
-                  {
-                    icon: <InstagramIcon fontSize="large" />,
-                    label: "Instagram",
-                    href: "https://www.instagram.com/dhiraj.bhawsar_/",
-                  },
-                  {
-                    icon: <GitHubIcon fontSize="large" />,
-                    label: "Github",
-                    href: "https://github.com/Dhirajbhavsar9900",
-                  },
-                  {
-                    icon: <WhatsAppIcon fontSize="large" />,
-                    label: "Whatsapp",
-                    href: "https://wa.me/+918999509230",
-                  },
-                ].map(({ icon, label, href }, idx) => (
-                  <div
+                {socialLinks.map(({ icon, label, href }, idx) => (
+                  <a
                     key={idx}
-                    className="p-2 flex items-center hover:bg-[#111827] hover:text-white rounded-lg"
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 flex items-center hover:bg-[#111827] hover:text-white rounded-lg font-Pacifico"
                   >
                     {icon}
-                    <a
-                      className="ml-2 font-Pacifico"
-                      href={href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {label}
-                    </a>
-                  </div>
+                    <span className="ml-2">{label}</span>
+                  </a>
                 ))}
               </motion.div>
             )}
-
             <motion.h1
-              className="text-[15px] font-bold hover:underline text-black whitespace-nowrap"
+              className="text-[15px] font-bold hover:underline pl-1 text-black whitespace-nowrap"
               initial={{ x: -30, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ delay: 0.5, duration: 0.6 }}
@@ -154,7 +172,7 @@ const Header = () => {
             </motion.h1>
           </motion.div>
 
-          {/* Mobile Toggle */}
+          {/* Mobile Menu Button */}
           <motion.div
             className={`md:hidden ml-auto ${isMobileMenuOpen ? "active" : ""}`}
             onClick={handleMobileMenuClick}
@@ -169,61 +187,32 @@ const Header = () => {
                   className={`h-[3px] w-6 bg-white rounded-full transition ${
                     isMobileMenuOpen ? "rotate-45 translate-y-2" : ""
                   }`}
-                ></span>
+                />
                 <span
                   className={`h-[3px] w-6 bg-white rounded-full transition ${
                     isMobileMenuOpen ? "opacity-0" : ""
                   }`}
-                ></span>
+                />
                 <span
                   className={`h-[3px] w-6 bg-white rounded-full transition ${
                     isMobileMenuOpen ? "-rotate-45 -translate-y-2.5" : ""
                   }`}
-                ></span>
+                />
               </div>
             </button>
           </motion.div>
         </div>
-
-        {/* Navigation Menu */}
         <motion.div
           id="menu-div"
           className={`w-full md:w-auto rounded-full mt-2 md:mt-0 text-center md:flex md:items-center font-Josefin ${
             isMobileMenuOpen ? "block text-white" : "hidden"
           }`}
-          initial={{ opacity: 0, scale: 0.8 }} // initial state with scale reduced
-          animate={{ opacity: 1, scale: 1 }} // animate to full size with normal opacity
-          transition={{ duration: 0.5 }} // duration for smooth transition
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
         >
-          <ul
-            className={`flex flex-col md:bg-black/90 md:p-1 rounded-full md:flex-row items-center gap-3`}
-          >
-            {[
-              {
-                id: "home",
-                label: "Home",
-                icon: <HomeIcon className="ml-1.5" />,
-                bg: "bg-yellow-400",
-              },
-              {
-                id: "about",
-                label: "About Me",
-                icon: <ContactSupportIcon className="ml-2" />,
-                bg: "bg-cyan-500",
-              },
-              {
-                id: "skills",
-                label: "Skills",
-                icon: <BarChartIcon className="ml-2" />,
-                bg: "bg-fuchsia-500",
-              },
-              {
-                id: "projects",
-                label: "Projects",
-                icon: <FormatPaintIcon className="ml-2" />,
-                bg: "bg-green-400",
-              },
-            ].map(({ id, label, icon, bg }) => (
+          <ul className="flex flex-col md:bg-black/50 md:p-1 rounded-full md:flex-row items-center gap-3">
+            {navItems.map(({ id, label, icon, bg }) => (
               <ScrollLink
                 key={id}
                 to={
@@ -235,15 +224,13 @@ const Header = () => {
                 }
                 smooth={true}
                 duration={400}
-                className={`nav-link relative ${
-                  isMobileMenuOpen ? "block" : "inline-block"
-                }`}
                 spy={true}
                 activeClass="active"
                 onClick={() => {
                   setActiveSection(id);
                   handleMobileMenuClick();
                 }}
+                className="nav-link"
               >
                 <li
                   className={`p-3.5 text-white flex justify-center items-center transition-all duration-200 cursor-pointer group ${
@@ -252,19 +239,16 @@ const Header = () => {
                       : `hover:${bg} hover:rounded-full`
                   } w-full md:w-auto`}
                 >
-                  <span className="text-[17px]">{label}</span>
-                  {icon}
+                  <span className="text-[17px] flex items-center">{label}</span>
+                  <span className="ml-1.5 flex items-center">{icon}</span>
                 </li>
               </ScrollLink>
             ))}
 
-            {/* Hire Me Button - Hidden on Desktop */}
+            {/* Mobile Hire Me */}
             <li className="text-white flex justify-center items-center transition-all duration-200 cursor-pointer group md:hidden">
-              <button className="relative inline-flex items-center justify-center px-4 py-3 overflow-hidden font-medium border border-gray-200 bg-white rounded-[12px] shadow-md group hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out w-full md:w-auto">
-                {/* Subtle blue glow effect on hover */}
+              <button onClick={hireMe} className="relative inline-flex items-center justify-center px-4 py-3 overflow-hidden font-medium border border-gray-200 bg-white rounded-[12px] shadow-md group hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out w-full md:w-auto">
                 <span className="absolute inset-0 bg-gradient-to-r from-blue-100 via-transparent to-blue-100 opacity-0 group-hover:opacity-60 transition-all duration-300 rounded-[12px] blur-sm"></span>
-
-                {/* Inner content */}
                 <span className="relative z-10 flex items-center font-Josefin text-black text-base tracking-wide">
                   <span className="mr-2">Hire Me</span>
                   <WorkIcon className="text-black transition-transform duration-300 group-hover:rotate-[6deg] group-hover:scale-110" />
@@ -274,8 +258,12 @@ const Header = () => {
           </ul>
         </motion.div>
 
-        <div className="hidden md:flex items-center justify-center ml-4">
-          <button onClick={hireMe}  className="relative inline-flex items-center justify-center px-4 py-3 overflow-hidden font-medium border border-gray-200 bg-white rounded-[10px] shadow-md group hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out">
+        {/* Desktop Hire Me */}
+        <div className="hidden md:flex items-center justify-center">
+          <button
+            onClick={hireMe}
+            className="relative inline-flex items-center justify-center px-4 py-3 overflow-hidden font-medium border border-gray-200 bg-white rounded-[10px] shadow-md group hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out"
+          >
             <span className="absolute inset-0 bg-gradient-to-r from-blue-100 via-transparent to-blue-100 opacity-0 group-hover:opacity-60 transition-all duration-300 rounded-[12px] blur-sm"></span>
             <span className="relative z-10 flex items-center font-Josefin text-black text-base tracking-wide">
               <span className="mr-2">Hire Me</span>

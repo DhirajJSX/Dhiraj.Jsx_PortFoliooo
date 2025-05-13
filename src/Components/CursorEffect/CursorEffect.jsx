@@ -1,5 +1,3 @@
-
-
 import Footer from './../Footer/Footer'
 import Header from './../Header/Header'
 import HeroSection from './../HeroSection/HeroSection'
@@ -11,6 +9,7 @@ import ScrollToTopButton from './../ScrollToTopButton/ScrollToTopButton'
 // import { gsap } from 'gsap';
 import './CursorEffect';
 import FooterForm from '../FooterForm/FooterForm'
+import HireMe from '../../Pages/HireMe'
 
 
 function CursorEffect() {
@@ -23,6 +22,7 @@ function CursorEffect() {
       <SkillSection />
       <ProjectSection />
       {/* <FooterForm /> */}
+      {/* <HireMe /> */}
       <Footer />
     </>
   );
