@@ -1,75 +1,73 @@
 const options = {
   autoPlay: true,
   background: {
-    opacity: 0,
-    color: {
-      value: "#000000", // Black background for space theme
-    },
+    opacity: 1,
   },
   fullScreen: {
     enable: true,
-    zIndex: -10,
+    zIndex: 0,
   },
   detectRetina: true,
-  fpsLimit: 120,
+  fpsLimit: 144,
   particles: {
     number: {
-      value: 200, // Increase the number of particles for a starry effect
+      value: 100,
       density: {
         enable: true,
-        width: 1920,
-        height: 1080,
+        area: 900,
       },
     },
     color: {
-      value: "#ffffff", // White stars
+      value: "#ffffff", // White color for stars
     },
     shape: {
-      type: "circle", // Circle shape for dot stars
+      type: "circle", // Star-shaped particles
+      stroke: {
+        width: 0,
+        color: "#ffffff", // White stroke for stars (optional)
+      },
     },
     size: {
-      value: {
-        min: 1,
-        max: 3, // Smaller stars for a more subtle effect
-      },
+      value: { min: 1, max: 3.5 }, // Star size range
       animation: {
         enable: true,
-        speed: 1,
+        speed: 10, // Faster animations for star movement
+        sync: true,
+      },
+    },
+    opacity: {
+      value: { min: 0.5, max: 0.8 },
+      animation: {
+        enable: true, 
+        speed: 10,
         sync: false,
-        mode: "random",
       },
     },
     move: {
       enable: true,
-      speed: 0.5, // Slow movement to simulate a distant starfield
-      direction: "none",
-      random: true, // Randomize movement direction
+      speed: 0.9, // Faster movement for space effect
+      direction: "none", // Random movement direction
       outModes: {
-        default: "out", // Particles will disappear when they reach the edges
+        default: "out",
       },
     },
-    opacity: {
-      value: {
-        min: 0.2,
-        max: 1,
-      },
-      animation: {
-        enable: true,
-        speed: 0.5,
-        sync: false,
-      },
+    links: {
+      enable: false,
     },
-    life: {
-      duration: {
-        value: 5, // Particles will live for 5 seconds
-      },
+    rotate: {
+      random: true, // Random rotation for stars
+      value: 45, // Slight rotation angle
+    },
+    tilt: {
+      random: true, // Random tilt for a more dynamic effect
+      value: 10, // Tilt value for rotation effect
+    },
+    shadow: {
+      enable: false, // No shadow effect
     },
   },
   pauseOnBlur: true,
   pauseOnOutsideViewport: true,
-  smooth: false,
-  zLayers: 100,
-  name: "Space Starfield",
 };
 
 export default options;
