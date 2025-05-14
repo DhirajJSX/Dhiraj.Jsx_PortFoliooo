@@ -1,5 +1,5 @@
 import { useEffect, useRef, useMemo } from "react";
-import { gsap } from "gsap";
+import { motion } from "framer-motion";
 
 // Image Imports
 import Html from "../../assets/Img/Html.png";
@@ -18,7 +18,10 @@ import Express from "../../assets/Img/BackendIcons/expressJs.png";
 import MongoDB from "../../assets/Img/BackendIcons/db.png";
 import Firebase from "../../assets/Img/BackendIcons/Firebase.png";
 import JwtImage from "../../assets/Img/BackendIcons/jwt.png";
-import Figma from "../../assets/Img/figma.png"
+import Figma from "../../assets/Img/figma.png";
+import PostMan from "../../assets/Img/BackendIcons/ThunderClient.png";
+import MaterialUi from "../../assets/Img/Material Ui.png";
+
 const frontendSkills = [
   { name: "HTML", image: Html },
   { name: "CSS", image: Css },
@@ -31,15 +34,17 @@ const frontendSkills = [
   { name: "Framer Motion", image: FramerMotion },
   { name: "Git", image: Git },
   { name: "GitHub", image: Github },
-  { name: "Figma", image: Figma}
+  { name: "Figma", image: Figma },
+  { name: "Material UI", image: MaterialUi }
 ];
 
 const backendSkills = [
   { name: "Node.js", image: NodeJS },
   { name: "Express.js", image: Express },
   { name: "MongoDB", image: MongoDB },
+  { name: "PostMan", image: PostMan },
   { name: "Firebase", image: Firebase },
-  { name: "JWT", image: JwtImage },
+  { name: "JWT", image: JwtImage }
 ];
 
 const generateRandomColors = (length) => {
@@ -50,9 +55,8 @@ const generateRandomColors = (length) => {
   return Array.from({ length }, getRandomHex);
 };
 
-const SkillCard = ({ skill, color, innerRef }) => (
+const SkillCard = ({ skill, color }) => (
   <div
-    ref={innerRef}
     className="flex flex-col items-center bg-white/10 border border-white/10 backdrop-blur-lg rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-3"
     style={{ borderTop: `4px solid ${color}` }}
   >
@@ -63,86 +67,63 @@ const SkillCard = ({ skill, color, innerRef }) => (
   </div>
 );
 
-const SkillGrid = ({ skills, colors, refs }) => (
-  <div>
-    <div className="grid grid-cols-2 sm:grid-cols-3 gap-8">
-      {skills.map((skill, index) => (
-        <SkillCard
-          key={index}
-          skill={skill}
-          color={colors[index]}
-          innerRef={(el) => (refs.current[index] = el)}
-        />
-      ))}
-    </div>
+const SkillGrid = ({ skills, colors }) => (
+  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-3 gap-8">
+    {skills.map((skill, index) => (
+      <motion.div
+        key={index}
+        variants={index % 2 === 0 ? leftDelayVariant : rightDelayVariant}
+        initial="hidden"
+        whileInView="visible"
+        custom={index} // Pass the index for delay calculation
+        viewport={{ once: true, amount: 0.3 }}
+      >
+        <SkillCard skill={skill} color={colors[index]} />
+      </motion.div>
+    ))}
   </div>
 );
 
+const leftDelayVariant = {
+  hidden: { x: -100, opacity: 0 },
+  visible: (index) => ({
+    x: 0,
+    opacity: 1,
+    transition: { type: "spring", duration: 1.2, delay: index * 0.1, ease: "easeOut" }
+  })
+};
+
+const rightDelayVariant = {
+  hidden: { x: 100, opacity: 0 },
+  visible: (index) => ({
+    x: 0,
+    opacity: 1,
+    transition: { type: "spring", duration: 1.2, delay: index * 0.1, ease: "easeOut" }
+  })
+};
+
 const SkillSection = () => {
-  const sectionRef = useRef(null);
-  const titleRef = useRef(null);
   const frontendRef = useRef([]);
   const backendRef = useRef([]);
-
+  
   const frontendColors = useMemo(() => generateRandomColors(frontendSkills.length), []);
   const backendColors = useMemo(() => generateRandomColors(backendSkills.length), []);
-
-  useEffect(() => {
-    const animateSkills = () => {
-      // Title Animation
-      gsap.fromTo(
-        titleRef.current,
-        { opacity: 0, y: -30 },
-        { opacity: 1, y: 0, duration: 1.2, ease: "power3.out" }
-      );
-
-      const animateGroup = (refs) => {
-        refs.current.forEach((el, index) => {
-          if (!el) return;
-          gsap.fromTo(
-            el,
-            { opacity: 0, y: 50 },
-            {
-              opacity: 1,
-              y: 0,
-              duration: 1.2,
-              delay: 0.2 + index * 0.1, 
-              ease: "power3.out",
-            }
-          );
-        });
-      };
-
-      animateGroup(frontendRef);
-      animateGroup(backendRef);
-    };
-    animateSkills();
-  }, []);
-
+  
   return (
     <section
       id="skills"
-      ref={sectionRef}
-      className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white py-20 px-6"
+      className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white py-20 px-6 overflow-hidden"
     >
-      <div className="text-center mb-20" ref={titleRef}>
+      <div className="text-center mb-20">
         <h1 className="text-4xl md:text-6xl font-bold tracking-tight">My Skills</h1>
         <p className="text-gray-400 mt-4 text-lg max-w-xl mx-auto">
           My Expertise in Frontend and Backend Technologies
         </p>
       </div>
-
+      
       <div className="max-w-7xl mx-auto grid gap-20 lg:grid-cols-2 items-start">
-        <SkillGrid
-          skills={frontendSkills}
-          colors={frontendColors}
-          refs={frontendRef}
-        />
-        <SkillGrid
-          skills={backendSkills}
-          colors={backendColors}
-          refs={backendRef}
-        />
+        <SkillGrid skills={frontendSkills} colors={frontendColors} />
+        <SkillGrid skills={backendSkills} colors={backendColors} />
       </div>
     </section>
   );

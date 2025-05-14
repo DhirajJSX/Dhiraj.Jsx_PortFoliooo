@@ -19,12 +19,11 @@ const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [showSocialHandles, setShowSocialHandles] = useState(false);
   const profileRef = useRef(null);
-
   const sectionOffsets = useRef({});
   const navigate = useNavigate();
 
   const hireMe = () => {
-    console.log(navigate("./hireme"));
+    navigate("/hireme");
   };
 
   const handleMobileMenuClick = () => setIsMobileMenuOpen((prev) => !prev);
@@ -39,20 +38,16 @@ const Header = () => {
         projects: document.getElementById("project-section")?.offsetTop || 0,
       };
     };
-
     updateOffsets();
     window.addEventListener("resize", updateOffsets);
-
     const handleScroll = () => {
       const scrollY = window.scrollY + 100;
       const { home, about, skills, projects } = sectionOffsets.current;
-
       if (scrollY < about) setActiveSection("home");
       else if (scrollY < skills) setActiveSection("about");
       else if (scrollY < projects) setActiveSection("skills");
       else setActiveSection("projects");
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -72,47 +67,16 @@ const Header = () => {
 
   const navItems = [
     { id: "home", label: "Home", icon: <HomeIcon />, bg: "bg-yellow-400" },
-    {
-      id: "about",
-      label: "About Me",
-      icon: <ContactSupportIcon />,
-      bg: "bg-cyan-500",
-    },
-    {
-      id: "skills",
-      label: "Skills",
-      icon: <BarChartIcon />,
-      bg: "bg-fuchsia-500",
-    },
-    {
-      id: "projects",
-      label: "Projects",
-      icon: <FormatPaintIcon />,
-      bg: "bg-green-400",
-    },
+    { id: "about", label: "About", icon: <ContactSupportIcon />, bg: "bg-cyan-500" },
+    { id: "skills", label: "Skills", icon: <BarChartIcon />, bg: "bg-fuchsia-500" },
+    { id: "projects", label: "Projects", icon: <FormatPaintIcon />, bg: "bg-green-400" },
   ];
 
   const socialLinks = [
-    {
-      icon: <LinkedInIcon fontSize="large" />,
-      label: "Linkedin",
-      href: "https://www.linkedin.com/in/bhawsar-dhiraj/",
-    },
-    {
-      icon: <InstagramIcon fontSize="large" />,
-      label: "Instagram",
-      href: "https://www.instagram.com/dhiraj.bhawsar_/",
-    },
-    {
-      icon: <GitHubIcon fontSize="large" />,
-      label: "Github",
-      href: "https://github.com/Dhirajbhavsar9900",
-    },
-    {
-      icon: <WhatsAppIcon fontSize="large" />,
-      label: "Whatsapp",
-      href: "https://wa.me/+918999509230",
-    },
+    { icon: <LinkedInIcon fontSize="large" />, label: "Linkedin", href: "https://www.linkedin.com/in/bhawsar-dhiraj/" },
+    { icon: <InstagramIcon fontSize="large" />, label: "Instagram", href: "https://www.instagram.com/dhiraj.bhawsar_/" },
+    { icon: <GitHubIcon fontSize="large" />, label: "Github", href: "https://github.com/Dhirajbhavsar9900" },
+    { icon: <WhatsAppIcon fontSize="large" />, label: "Whatsapp", href: "https://wa.me/+918999509230" },
   ];
 
   return (
@@ -171,8 +135,6 @@ const Header = () => {
               DHIRAJ BHAWSAR
             </motion.h1>
           </motion.div>
-
-          {/* Mobile Menu Button */}
           <motion.div
             className={`md:hidden ml-auto ${isMobileMenuOpen ? "active" : ""}`}
             onClick={handleMobileMenuClick}
@@ -183,45 +145,25 @@ const Header = () => {
           >
             <button className="group rounded-lg flex items-center justify-center focus:outline-none">
               <div className="grid gap-1.5">
-                <span
-                  className={`h-[3px] w-6 bg-white rounded-full transition ${
-                    isMobileMenuOpen ? "rotate-45 translate-y-2" : ""
-                  }`}
-                />
-                <span
-                  className={`h-[3px] w-6 bg-white rounded-full transition ${
-                    isMobileMenuOpen ? "opacity-0" : ""
-                  }`}
-                />
-                <span
-                  className={`h-[3px] w-6 bg-white rounded-full transition ${
-                    isMobileMenuOpen ? "-rotate-45 -translate-y-2.5" : ""
-                  }`}
-                />
+                <span className={`h-[3px] w-6 bg-white rounded-full transition ${isMobileMenuOpen ? "rotate-45 translate-y-2" : ""}`} />
+                <span className={`h-[3px] w-6 bg-white rounded-full transition ${isMobileMenuOpen ? "opacity-0" : ""}`} />
+                <span className={`h-[3px] w-6 bg-white rounded-full transition ${isMobileMenuOpen ? "-rotate-45 -translate-y-2.5" : ""}`} />
               </div>
             </button>
           </motion.div>
         </div>
         <motion.div
           id="menu-div"
-          className={`w-full md:w-auto rounded-full mt-2 md:mt-0 text-center md:flex md:items-center font-Josefin ${
-            isMobileMenuOpen ? "block text-white" : "hidden"
-          }`}
+          className={`w-full md:w-auto rounded-full mt-2 md:mt-0 text-center md:flex md:items-center font-Josefin ${isMobileMenuOpen ? "block text-white" : "hidden"}`}
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
         >
-          <ul className="flex flex-col md:bg-black/50 md:p-1 rounded-full md:flex-row items-center gap-3">
+          <ul className="flex flex-col md:bg-black/50 md:p-1 p-4 rounded-full md:flex-row items-center gap-3">
             {navItems.map(({ id, label, icon, bg }) => (
               <ScrollLink
                 key={id}
-                to={
-                  id === "about"
-                    ? "about-section"
-                    : id === "projects"
-                    ? "project-section"
-                    : id
-                }
+                to={id === "about" ? "about-section" : id === "projects" ? "project-section" : id}
                 smooth={true}
                 duration={400}
                 spy={true}
@@ -232,22 +174,19 @@ const Header = () => {
                 }}
                 className="nav-link"
               >
-                <li
-                  className={`p-3.5 text-white flex justify-center items-center transition-all duration-200 cursor-pointer group ${
-                    activeSection === id
-                      ? `${bg} rounded-full`
-                      : `hover:${bg} hover:rounded-full`
-                  } w-full md:w-auto`}
-                >
-                  <span className="text-[17px] flex items-center">{label}</span>
-                  <span className="ml-1.5 flex items-center">{icon}</span>
-                </li>
+                <li className={`p-3.5 text-white w-full md:w-auto transition-all duration-200 cursor-pointer group ${activeSection === id ? `${bg} rounded-full` : `hover:${bg} hover:rounded-full`}`}>
+                  <div className="flex items-center justify-center gap-2 text-[17px] leading-none">
+                    <span className="flex items-center">{label}</span>
+                    <span className="flex items-center text-[18px]">{icon}</span>
+                  </div>
+                </li>                
               </ScrollLink>
             ))}
-
-            {/* Mobile Hire Me */}
             <li className="text-white flex justify-center items-center transition-all duration-200 cursor-pointer group md:hidden">
-              <button onClick={hireMe} className="relative inline-flex items-center justify-center px-4 py-3 overflow-hidden font-medium border border-gray-200 bg-white rounded-[12px] shadow-md group hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out w-full md:w-auto">
+              <button
+                onClick={hireMe}
+                className="relative inline-flex items-center justify-center px-4 py-3 overflow-hidden font-medium border border-gray-200 bg-white rounded-[12px] shadow-md group hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out w-full md:w-auto"
+              >
                 <span className="absolute inset-0 bg-gradient-to-r from-blue-100 via-transparent to-blue-100 opacity-0 group-hover:opacity-60 transition-all duration-300 rounded-[12px] blur-sm"></span>
                 <span className="relative z-10 flex items-center font-Josefin text-black text-base tracking-wide">
                   <span className="mr-2">Hire Me</span>
@@ -257,8 +196,6 @@ const Header = () => {
             </li>
           </ul>
         </motion.div>
-
-        {/* Desktop Hire Me */}
         <div className="hidden md:flex items-center justify-center">
           <button
             onClick={hireMe}
@@ -267,7 +204,7 @@ const Header = () => {
             <span className="absolute inset-0 bg-gradient-to-r from-blue-100 via-transparent to-blue-100 opacity-0 group-hover:opacity-60 transition-all duration-300 rounded-[12px] blur-sm"></span>
             <span className="relative z-10 flex items-center font-Josefin text-black text-base tracking-wide">
               <span className="mr-2">Hire Me</span>
-              <WorkIcon className="text-black transition-transform duration-300 group-hover:rotate-[-20deg] group-hover:scale-105" />
+              <WorkIcon className="text-black transition-transform duration-300 group-hover:rotate-[6deg] group-hover:scale-110" />
             </span>
           </button>
         </div>
