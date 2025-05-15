@@ -9,14 +9,6 @@ Welcome to my portfolio! This project is built with React and Vite, styled with 
 - [Demo](#demo)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Configuration](#configuration)
-- [Environment Variables](#environment-variables)
-- [Technologies](#technologies)
-- [Project Structure](#project-structure)
-- [Contributing](#contributing)
-- [Acknowledgments](#acknowledgments)
-- [Credits](#credits)
-- [License](#license)
 
 ## Introduction
 
