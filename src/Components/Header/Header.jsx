@@ -118,7 +118,7 @@ const Header = () => {
                     href={href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 flex items-center hover:bg-[#111827] hover:text-white rounded-lg font-Pacifico"
+                    className="p-2 flex items-center  hover:bg-[#111827] hover:text-white rounded-lg font-Pacifico"
                   >
                     {icon}
                     <span className="ml-2">{label}</span>
