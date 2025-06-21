@@ -69,7 +69,7 @@ const Footer = () => {
             </svg>
           </a>
           <a
-            href="https://github.com/Dhirajbhavsar9900"
+            href="https://github.com/dhirajjsx"
             target="_blank"
             rel="noopener noreferrer"
             className="w-14 h-14 flex items-center justify-center rounded-lg bg-white hover:shadow-md hover:shadow-gray-200 group transition-all duration-500"
