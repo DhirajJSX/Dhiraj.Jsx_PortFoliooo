@@ -1,7 +1,6 @@
 import { useEffect, useRef, useMemo } from "react";
 import { motion } from "framer-motion";
 
-// Image Imports
 import Html from "../../assets/Img/Html.png";
 import Css from "../../assets/Img/Css.png";
 import Sass from "../../assets/Img/Sass.png";
