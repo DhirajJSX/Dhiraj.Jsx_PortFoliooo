@@ -1,7 +1,7 @@
 import { useEffect, useState, useMemo } from "react";
 import { motion } from "framer-motion";
 import "./HeroSection.css";
-import ProfileImage from "./../../assets/Img/Untitled-3.png";
+import ProfileImage from "./../../assets/Img/New Image.png";
 import Pdf from "./../../assets/pdf/Dhiraj Bhawsasr Resume(Updated).pdf";
 
 const HeroSection = () => {
