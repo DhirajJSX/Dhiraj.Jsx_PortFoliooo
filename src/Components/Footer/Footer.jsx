@@ -1,4 +1,4 @@
-import React from "react";
+
 import "./Footer.css";
 
 const Footer = () => {
@@ -69,7 +69,7 @@ const Footer = () => {
             </svg>
           </a>
           <a
-            href="https://github.com/dhirajjsx"
+            href="https://github.com/dhirajtsx"
             target="_blank"
             rel="noopener noreferrer"
             className="w-14 h-14 flex items-center justify-center rounded-lg bg-white hover:shadow-md hover:shadow-gray-200 group transition-all duration-500"

@@ -74,9 +74,9 @@ const Header = () => {
 
   const socialLinks = [
     { icon: <LinkedInIcon fontSize="large" />, label: "Linkedin", href: "https://www.linkedin.com/in/bhawsar-dhiraj/" },
-    { icon: <InstagramIcon fontSize="large" />, label: "Instagram", href: "https://www.instagram.com/dhiraj.bhawsar_/" },
-    { icon: <GitHubIcon fontSize="large" />, label: "Github", href: "https://github.com/Dhirajbhavsar9900" },
-    { icon: <WhatsAppIcon fontSize="large" />, label: "Whatsapp", href: "https://wa.me/+918999509230" },
+    { icon: <InstagramIcon fontSize="large" />, label: "Instagram", href: "https://www.instagram.com/Dhiraj.Tsx/" },
+    { icon: <GitHubIcon fontSize="large" />, label: "Github", href: "https://github.com/DhirajTsx" },
+    // { icon: <WhatsAppIcon fontSize="large" />, label: "Whatsapp", href: "https://wa.me/+918999509230" },
   ];
 
   return (
